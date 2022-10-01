@@ -1,3 +1,6 @@
+// Project files
+import Placeholder from "assets/images/placeholders/card-basic.png";
+
 interface iProps {
   id: number;
   imageURL: string;
@@ -11,7 +14,10 @@ export default function CardBasic({ id, imageURL }: iProps) {
 
   return (
     <article onClick={onClick} className="card-basic">
-      <img src={imageURL} />
+      <img
+        src={imageURL}
+        onError={(event) => (event.currentTarget.src = Placeholder)}
+      />
     </article>
   );
 }
