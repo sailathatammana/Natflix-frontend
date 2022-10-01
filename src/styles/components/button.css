@@ -12,6 +12,7 @@ button,
   font-weight: bold;
   border: none;
   font-size: var(--default-text-size);
+  cursor: pointer;
 }
 
 .button-gray {
