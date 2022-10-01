@@ -50,9 +50,11 @@ export default function Home() {
     <div id="home">
       <NavigationBar />
       <BannerHome item={data[0]} />
-      <ContainerCards title="Series" data={series} />
-      <ContainerCards title="Movies" data={movies} />
-      <ContainerCards title="Documentaries" data={documentaries} />
+      <div className="containers">
+        <ContainerCards title="Series" data={series} />
+        <ContainerCards title="Movies" data={movies} />
+        <ContainerCards title="Documentaries" data={documentaries} />
+      </div>
     </div>
   );
 }
