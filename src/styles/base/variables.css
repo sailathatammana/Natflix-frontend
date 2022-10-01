@@ -1,10 +1,10 @@
 /* Colors */
 :root {
-  --netflix-red: #e50914;
-  --gray-1: #181818;
-  --gray-2: #242424;
-  --gray-3: #333333;
-  --gray-4: #4d4d4d;
+  --color-netflix-red: #e50914;
+  --color-gray-1: #181818;
+  --color-gray-2: #242424;
+  --color-gray-3: #333333;
+  --color-gray-4: #4d4d4d;
 }
 
 /* Spacing */
@@ -16,5 +16,5 @@
 
 /* Other */
 :root {
-  --border-radius: 4px;
+  --radius: 4px;
 }

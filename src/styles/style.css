@@ -2,3 +2,6 @@
 @import "./base/fonts.css";
 @import "./base/variables.css";
 @import "./base/layout";
+
+/* Components */
+@import "./components/card-basic.css";

@@ -1,0 +1,8 @@
+.card-basic {
+  overflow: hidden;
+  width: 235px;
+  height: 130px;
+  background-color: var(--color-gray-3);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
