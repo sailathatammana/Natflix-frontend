@@ -1,6 +1,7 @@
 // Project files
 import CardBasic from "components/CardBasic";
 import CardTop10 from "components/CardTop10";
+import NavigationBar from "components/NavigationBar";
 import "./styles/style.css";
 
 export default function App() {
@@ -24,7 +25,12 @@ export default function App() {
       </p>
 
       {/* Buttons */}
-      <button className="button">Click me!</button>
+      <button className="button">Red button</button>
+      <button className="button button-white">White button</button>
+      <button className="button button-gray">Gray button</button>
+
+      {/* Navigation bar */}
+      <NavigationBar />
 
       {/* Cards */}
       <CardBasic id={42} imageURL="https://picsum.photos/300/200" />

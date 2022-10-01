@@ -1,0 +1,21 @@
+.navigation-bar {
+  display: flex; /* for aligning items using modern CSS */
+  height: 65px;
+  padding: 0 var(--default-padding);
+  align-items: center; /* used with flex to align items on the vertical axis */
+}
+
+.navigation-bar img {
+  height: 25px;
+  margin-right: var(--space-big);
+}
+
+.navigation-bar a {
+  text-decoration: none;
+  color: white;
+  margin-right: var(--space-medium);
+}
+
+.navigation-bar button {
+  margin-left: auto; /* used with flex to push the item to the oposite side */
+}
