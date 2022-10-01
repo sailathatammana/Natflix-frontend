@@ -2,12 +2,12 @@
 import { useEffect, useState } from "react";
 
 // Project files
-import NavigationBar from "components/NavigationBar";
 import ContainerCards from "components/ContainerCards";
-import StatusLoading from "components/StatusLoading";
+import NavigationBar from "components/NavigationBar";
 import StatusError from "components/StatusError";
-import iContent from "interfaces/iContent";
+import StatusLoading from "components/StatusLoading";
 import eStatus from "interfaces/eStatus";
+import iContent from "interfaces/iContent";
 
 // Fake data
 import FakeContent from "fake-data/fake-content.json";
@@ -29,7 +29,6 @@ export default function Home() {
     setTimeout(fakeAPICall, fakeDelayInMiliseconds);
   }, []);
 
-  // move to a fake script folder
   function fakeAPICall(): void {
     // Gets a random number. If is bigger than 0 we get a server success
     const chanceToSucced = Math.floor(Math.random() * 10);
