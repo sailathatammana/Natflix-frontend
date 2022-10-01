@@ -1,5 +1,6 @@
 // Project files
 import CardBasic from "components/CardBasic";
+import CardTop10 from "components/CardTop10";
 import "./styles/style.css";
 
 export default function App() {
@@ -20,7 +21,10 @@ export default function App() {
         sequi voluptates magnam laborum facere numquam quisquam, tempora
         recusandae molestiae!
       </p>
-      <CardBasic id={1} imageURL="https://picsum.photos/300/200" />
+      <CardBasic id={42} imageURL="https://picsum.photos/300/200" />
+      <CardTop10 id={69} number={1} imageURL="https://picsum.photos/200/300" />
+      <CardTop10 id={70} number={5} imageURL="https://picsum.photos/200/300" />
+      <CardTop10 id={71} number={10} imageURL="https://picsum.photos/200/300" />
     </div>
   );
 }
