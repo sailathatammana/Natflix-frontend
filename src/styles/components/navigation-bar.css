@@ -1,5 +1,9 @@
 .navigation-bar {
   display: flex; /* for aligning items using modern CSS */
+  position: fixed;
+  background-color: black;
+  z-index: 1;
+  width: 100%;
   height: 65px;
   padding: 0 var(--default-padding);
   align-items: center; /* used with flex to align items on the vertical axis */
@@ -16,6 +20,6 @@
   margin-right: var(--space-medium);
 }
 
-.navigation-bar button {
+.navigation-bar .search {
   margin-left: auto; /* used with flex to push the item to the oposite side */
 }

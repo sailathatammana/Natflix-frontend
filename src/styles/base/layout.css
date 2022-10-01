@@ -9,6 +9,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box; /* to fix legacy issues with padding messing up when adding with or border width */
+}
+
 img {
   /* make images responsible (mobile first) */
   max-width: 100%;
