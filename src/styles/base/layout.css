@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: NetflixSans, Helvetica, Arial, sans-serif;
+
+  /* Makes fonts look good on compatible browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
