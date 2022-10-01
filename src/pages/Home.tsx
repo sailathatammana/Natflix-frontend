@@ -11,6 +11,7 @@ import iContent from "interfaces/iContent";
 
 // Fake data
 import FakeContent from "fake-data/fake-content.json";
+import BannerHome from "components/BannerHome";
 
 export default function Home() {
   // Local state
@@ -31,7 +32,7 @@ export default function Home() {
 
   function fakeAPICall(): void {
     // Gets a random number. If is bigger than 0 we get a server success
-    const chanceToSucced = Math.floor(Math.random() * 10);
+    const chanceToSucced = Math.floor(Math.random() * 100);
 
     if (chanceToSucced > 0) {
       setData(FakeContent);
@@ -48,6 +49,7 @@ export default function Home() {
   return (
     <div id="home">
       <NavigationBar />
+      <BannerHome item={data[0]} />
       <ContainerCards title="Series" data={series} />
       <ContainerCards title="Movies" data={movies} />
       <ContainerCards title="Documentaries" data={documentaries} />
