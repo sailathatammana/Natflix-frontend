@@ -9,3 +9,6 @@
 @import "./components/card-basic.css";
 @import "./components/card-top-10.css";
 @import "./components/navigation-bar.css";
+
+/* Pages */
+@import "./pages/home.css";

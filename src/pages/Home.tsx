@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 // Project files
 import NavigationBar from "components/NavigationBar";
 import iContent from "interfaces/iContent";
+import ContainerCards from "components/ContainerCards";
 
 // Fake data
 import FakeContent from "fake-data/fake-content.json";
-import CardBasic from "components/CardBasic";
 
 export default function Home() {
   // Local state
@@ -15,6 +15,9 @@ export default function Home() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
+  const series = data.filter((item) => item.type_id == 1);
+  const movies = data.filter((item) => item.type_id == 2);
+  const documentaries = data.filter((item) => item.type_id == 3);
 
   // Methods
   useEffect(() => {
@@ -24,8 +27,8 @@ export default function Home() {
   }, []);
 
   function fakeAPICall(): void {
-    // 3 out of 4 times the call will be a success, 1 out 4 it will fail
-    const chanceToSucced = Math.floor(Math.random() * 4);
+    // Gets a random number. If is bigger than 0 we get a server success
+    const chanceToSucced = Math.floor(Math.random() * 10);
 
     if (chanceToSucced > 0) {
       setData(FakeContent);
@@ -35,21 +38,6 @@ export default function Home() {
     }
   }
 
-  // Components
-  const series = data.filter((item) => item.type_id == 1);
-  const movies = data.filter((item) => item.type_id == 2);
-  const documentaries = data.filter((item) => item.type_id == 3);
-
-  const CardsSeries = series.map((item) => (
-    <CardBasic key={item.id} id={item.id} imageURL={item.thumbnail_url} />
-  ));
-  const CardsMovies = movies.map((item) => (
-    <CardBasic key={item.id} id={item.id} imageURL={item.thumbnail_url} />
-  ));
-  const CardsDocumentaries = documentaries.map((item) => (
-    <CardBasic key={item.id} id={item.id} imageURL={item.thumbnail_url} />
-  ));
-
   // Safeguards
   if (status == 0) return <p>⏰ Loading</p>;
   if (status == 2) return <p>❌ Could not load data</p>;
@@ -57,27 +45,9 @@ export default function Home() {
   return (
     <div id="home">
       <NavigationBar />
-
-      {/* Series */}
-      <section>
-        <h2>Series</h2>
-        {CardsSeries}
-      </section>
-
-      {/* Movies */}
-      <section>
-        <h2>Movies</h2>
-        {CardsMovies}
-      </section>
-
-      {/* Documentaries */}
-      <section>
-        <h2>Documentaries</h2>
-        {CardsDocumentaries}
-      </section>
-
-      {/* Footer */}
-      <footer>© 1997-2022 Netflix, Inc.</footer>
+      <ContainerCards title="Series" data={series} />
+      <ContainerCards title="Movies" data={movies} />
+      <ContainerCards title="Documentaries" data={documentaries} />
     </div>
   );
 }
