@@ -3,15 +3,18 @@ import { useEffect, useState } from "react";
 
 // Project files
 import NavigationBar from "components/NavigationBar";
-import iContent from "interfaces/iContent";
 import ContainerCards from "components/ContainerCards";
+import StatusLoading from "components/StatusLoading";
+import StatusError from "components/StatusError";
+import iContent from "interfaces/iContent";
+import eStatus from "interfaces/eStatus";
 
 // Fake data
 import FakeContent from "fake-data/fake-content.json";
 
 export default function Home() {
   // Local state
-  const [status, setStatus] = useState(0); // 0 = loading, 1 = loaded, 2 = error;
+  const [status, setStatus] = useState(eStatus.LOADING);
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
@@ -26,21 +29,22 @@ export default function Home() {
     setTimeout(fakeAPICall, fakeDelayInMiliseconds);
   }, []);
 
+  // move to a fake script folder
   function fakeAPICall(): void {
     // Gets a random number. If is bigger than 0 we get a server success
     const chanceToSucced = Math.floor(Math.random() * 10);
 
     if (chanceToSucced > 0) {
       setData(FakeContent);
-      setStatus(1);
+      setStatus(eStatus.READY);
     } else {
-      setStatus(2);
+      setStatus(eStatus.ERROR);
     }
   }
 
   // Safeguards
-  if (status == 0) return <p>⏰ Loading</p>;
-  if (status == 2) return <p>❌ Could not load data</p>;
+  if (status == eStatus.LOADING) return <StatusLoading />;
+  if (status == eStatus.ERROR) return <StatusError />;
 
   return (
     <div id="home">
