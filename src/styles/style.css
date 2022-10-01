@@ -1,8 +1,10 @@
 /* Base */
 @import "./base/fonts.css";
+@import "./base/typography.css";
 @import "./base/variables.css";
 @import "./base/layout";
 
 /* Components */
+@import "./components/button.css";
 @import "./components/card-basic.css";
 @import "./components/card-top-10.css";
