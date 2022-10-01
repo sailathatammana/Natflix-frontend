@@ -5,10 +5,10 @@
     "type_id": 1,
     "category_id": 3,
     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "logo_url": "logos/1.jpg",
-    "poster_url": "posters/1.jpg",
-    "banner_url": "banners/1.jpg",
-    "thumbnail_url": "thumbnails/1.jpg"
+    "logo_url": "fake-images/logos/1.jpg",
+    "poster_url": "fake-images/posters/1.jpg",
+    "banner_url": "fake-images/banners/1.jpg",
+    "thumbnail_url": "fake-images/thumbnails/1.jpg"
   },
   {
     "id": 2,
@@ -16,10 +16,10 @@
     "type_id": 1,
     "category_id": 2,
     "summary": "Amet commodo nulla facilisi nullam vehicula ipsum. Sit amet luctus venenatis lectus magna fringilla urna. Felis bibendum ut tristique et egestas quis ipsum. ",
-    "logo_url": "logos/2.jpg",
-    "poster_url": "posters/2.jpg",
-    "banner_url": "banners/2.jpg",
-    "thumbnail_url": "thumbnails/2.jpg"
+    "logo_url": "fake-images/logos/2.jpg",
+    "poster_url": "fake-images/posters/2.jpg",
+    "banner_url": "fake-images/banners/2.jpg",
+    "thumbnail_url": "fake-images/thumbnails/2.jpg"
   },
   {
     "id": 3,
@@ -27,10 +27,10 @@
     "type_id": 1,
     "category_id": 3,
     "summary": "Ipsum dolor sit amet consectetur adipiscing elit ut. Id ornare arcu odio ut sem. Rhoncus dolor purus non enim. Id semper risus in hendrerit gravida rutrum quisque non.",
-    "logo_url": "logos/3.jpg",
-    "poster_url": "posters/3.jpg",
-    "banner_url": "banners/3.jpg",
-    "thumbnail_url": "thumbnails/3.jpg"
+    "logo_url": "fake-images/logos/3.jpg",
+    "poster_url": "fake-images/posters/3.jpg",
+    "banner_url": "fake-images/banners/3.jpg",
+    "thumbnail_url": "fake-images/thumbnails/3.jpg"
   },
   {
     "id": 4,
@@ -38,10 +38,10 @@
     "type_id": 1,
     "category_id": 3,
     "summary": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque.",
-    "logo_url": "logos/4.jpg",
-    "poster_url": "posters/4.jpg",
-    "banner_url": "banners/4.jpg",
-    "thumbnail_url": "thumbnails/4.jpg"
+    "logo_url": "fake-images/logos/4.jpg",
+    "poster_url": "fake-images/posters/4.jpg",
+    "banner_url": "fake-images/banners/4.jpg",
+    "thumbnail_url": "fake-images/thumbnails/4.jpg"
   },
   {
     "id": 5,
@@ -49,10 +49,10 @@
     "type_id": 1,
     "category_id": 2,
     "summary": "At erat pellentesque adipiscing commodo. Augue eget arcu dictum varius duis at. Massa sapien faucibus et molestie ac. Nam libero justo laoreet sit amet cursus sit amet. ",
-    "logo_url": "logos/5.jpg",
-    "poster_url": "posters/5.jpg",
-    "banner_url": "banners/5.jpg",
-    "thumbnail_url": "thumbnails/5.jpg"
+    "logo_url": "fake-images/logos/5.jpg",
+    "poster_url": "fake-images/posters/5.jpg",
+    "banner_url": "fake-images/banners/5.jpg",
+    "thumbnail_url": "fake-images/thumbnails/5.jpg"
   },
   {
     "id": 6,
@@ -60,10 +60,10 @@
     "type_id": 1,
     "category_id": 2,
     "summary": "Tincidunt eget nullam non nisi est sit. Facilisis gravida neque convallis a cras. Non sodales neque sodales ut etiam sit amet nisl. Neque laoreet suspendisse interdum consectetur libero id.",
-    "logo_url": "logos/6.jpg",
-    "poster_url": "posters/6.jpg",
-    "banner_url": "banners/6.jpg",
-    "thumbnail_url": "thumbnails/6.jpg"
+    "logo_url": "fake-images/logos/6.jpg",
+    "poster_url": "fake-images/posters/6.jpg",
+    "banner_url": "fake-images/banners/6.jpg",
+    "thumbnail_url": "fake-images/thumbnails/6.jpg"
   },
   {
     "id": 7,
@@ -71,10 +71,10 @@
     "type_id": 1,
     "category_id": 2,
     "summary": "Sem nulla pharetra diam sit amet nisl. Sed risus pretium quam vulputate. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin.",
-    "logo_url": "logos/7.jpg",
-    "poster_url": "posters/7.jpg",
-    "banner_url": "banners/7.jpg",
-    "thumbnail_url": "thumbnails/7.jpg"
+    "logo_url": "fake-images/logos/7.jpg",
+    "poster_url": "fake-images/posters/7.jpg",
+    "banner_url": "fake-images/banners/7.jpg",
+    "thumbnail_url": "fake-images/thumbnails/7.jpg"
   },
   {
     "id": 8,
@@ -82,10 +82,10 @@
     "type_id": 1,
     "category_id": 4,
     "summary": "Nisl rhoncus mattis rhoncus urna neque viverra. Sit amet volutpat consequat mauris nunc congue nisi vitae. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim.",
-    "logo_url": "logos/8.jpg",
-    "poster_url": "posters/8.jpg",
-    "banner_url": "banners/8.jpg",
-    "thumbnail_url": "thumbnails/8.jpg"
+    "logo_url": "fake-images/logos/8.jpg",
+    "poster_url": "fake-images/posters/8.jpg",
+    "banner_url": "fake-images/banners/8.jpg",
+    "thumbnail_url": "fake-images/thumbnails/8.jpg"
   },
   {
     "id": 9,
@@ -93,10 +93,10 @@
     "type_id": 1,
     "category_id": 2,
     "summary": "Tempus quam pellentesque nec nam aliquam. Viverra orci sagittis eu volutpat odio facilisis mauris sit amet. Quis blandit turpis cursus in. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque.",
-    "logo_url": "logos/9.jpg",
-    "poster_url": "posters/9.jpg",
-    "banner_url": "banners/9.jpg",
-    "thumbnail_url": "thumbnails/9.jpg"
+    "logo_url": "fake-images/logos/9.jpg",
+    "poster_url": "fake-images/posters/9.jpg",
+    "banner_url": "fake-images/banners/9.jpg",
+    "thumbnail_url": "fake-images/thumbnails/9.jpg"
   },
   {
     "id": 10,
@@ -104,10 +104,10 @@
     "type_id": 1,
     "category_id": 2,
     "summary": "Iaculis eu non diam phasellus vestibulum lorem sed risus. Nullam eget felis eget nunc lobortis mattis. Orci ac auctor augue mauris augue neque gravida.",
-    "logo_url": "logos/10.jpg",
-    "poster_url": "posters/10.jpg",
-    "banner_url": "banners/10.jpg",
-    "thumbnail_url": "thumbnails/10.jpg"
+    "logo_url": "fake-images/logos/10.jpg",
+    "poster_url": "fake-images/posters/10.jpg",
+    "banner_url": "fake-images/banners/10.jpg",
+    "thumbnail_url": "fake-images/thumbnails/10.jpg"
   },
   {
     "id": 11,
@@ -115,10 +115,10 @@
     "type_id": 1,
     "category_id": 4,
     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "logo_url": "logos/11.jpg",
-    "poster_url": "posters/11.jpg",
-    "banner_url": "banners/11.jpg",
-    "thumbnail_url": "thumbnails/11.jpg"
+    "logo_url": "fake-images/logos/11.jpg",
+    "poster_url": "fake-images/posters/11.jpg",
+    "banner_url": "fake-images/banners/11.jpg",
+    "thumbnail_url": "fake-images/thumbnails/11.jpg"
   },
   {
     "id": 12,
@@ -126,10 +126,10 @@
     "type_id": 1,
     "category_id": 4,
     "summary": "Amet commodo nulla facilisi nullam vehicula ipsum. Sit amet luctus venenatis lectus magna fringilla urna. Felis bibendum ut tristique et egestas quis ipsum. ",
-    "logo_url": "logos/12.jpg",
-    "poster_url": "posters/12.jpg",
-    "banner_url": "banners/12.jpg",
-    "thumbnail_url": "thumbnails/12.jpg"
+    "logo_url": "fake-images/logos/12.jpg",
+    "poster_url": "fake-images/posters/12.jpg",
+    "banner_url": "fake-images/banners/12.jpg",
+    "thumbnail_url": "fake-images/thumbnails/12.jpg"
   },
   {
     "id": 13,
@@ -137,10 +137,10 @@
     "type_id": 1,
     "category_id": 3,
     "summary": "Ipsum dolor sit amet consectetur adipiscing elit ut. Id ornare arcu odio ut sem. Rhoncus dolor purus non enim. Id semper risus in hendrerit gravida rutrum quisque non.",
-    "logo_url": "logos/13.jpg",
-    "poster_url": "posters/13.jpg",
-    "banner_url": "banners/13.jpg",
-    "thumbnail_url": "thumbnails/13.jpg"
+    "logo_url": "fake-images/logos/13.jpg",
+    "poster_url": "fake-images/posters/13.jpg",
+    "banner_url": "fake-images/banners/13.jpg",
+    "thumbnail_url": "fake-images/thumbnails/13.jpg"
   },
   {
     "id": 14,
@@ -148,10 +148,10 @@
     "type_id": 1,
     "category_id": 2,
     "summary": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque.",
-    "logo_url": "logos/14.jpg",
-    "poster_url": "posters/14.jpg",
-    "banner_url": "banners/14.jpg",
-    "thumbnail_url": "thumbnails/14.jpg"
+    "logo_url": "fake-images/logos/14.jpg",
+    "poster_url": "fake-images/posters/14.jpg",
+    "banner_url": "fake-images/banners/14.jpg",
+    "thumbnail_url": "fake-images/thumbnails/14.jpg"
   },
   {
     "id": 15,
@@ -159,10 +159,10 @@
     "type_id": 1,
     "category_id": 4,
     "summary": "At erat pellentesque adipiscing commodo. Augue eget arcu dictum varius duis at. Massa sapien faucibus et molestie ac. Nam libero justo laoreet sit amet cursus sit amet. ",
-    "logo_url": "logos/15.jpg",
-    "poster_url": "posters/15.jpg",
-    "banner_url": "banners/15.jpg",
-    "thumbnail_url": "thumbnails/15.jpg"
+    "logo_url": "fake-images/logos/15.jpg",
+    "poster_url": "fake-images/posters/15.jpg",
+    "banner_url": "fake-images/banners/15.jpg",
+    "thumbnail_url": "fake-images/thumbnails/15.jpg"
   },
   {
     "id": 16,
@@ -170,10 +170,10 @@
     "type_id": 2,
     "category_id": 2,
     "summary": "Tincidunt eget nullam non nisi est sit. Facilisis gravida neque convallis a cras. Non sodales neque sodales ut etiam sit amet nisl. Neque laoreet suspendisse interdum consectetur libero id.",
-    "logo_url": "logos/16.jpg",
-    "poster_url": "posters/16.jpg",
-    "banner_url": "banners/16.jpg",
-    "thumbnail_url": "thumbnails/16.jpg"
+    "logo_url": "fake-images/logos/16.jpg",
+    "poster_url": "fake-images/posters/16.jpg",
+    "banner_url": "fake-images/banners/16.jpg",
+    "thumbnail_url": "fake-images/thumbnails/16.jpg"
   },
   {
     "id": 17,
@@ -181,10 +181,10 @@
     "type_id": 2,
     "category_id": 2,
     "summary": "Sem nulla pharetra diam sit amet nisl. Sed risus pretium quam vulputate. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin.",
-    "logo_url": "logos/17.jpg",
-    "poster_url": "posters/17.jpg",
-    "banner_url": "banners/17.jpg",
-    "thumbnail_url": "thumbnails/17.jpg"
+    "logo_url": "fake-images/logos/17.jpg",
+    "poster_url": "fake-images/posters/17.jpg",
+    "banner_url": "fake-images/banners/17.jpg",
+    "thumbnail_url": "fake-images/thumbnails/17.jpg"
   },
   {
     "id": 18,
@@ -192,10 +192,10 @@
     "type_id": 2,
     "category_id": 3,
     "summary": "Nisl rhoncus mattis rhoncus urna neque viverra. Sit amet volutpat consequat mauris nunc congue nisi vitae. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim.",
-    "logo_url": "logos/18.jpg",
-    "poster_url": "posters/18.jpg",
-    "banner_url": "banners/18.jpg",
-    "thumbnail_url": "thumbnails/18.jpg"
+    "logo_url": "fake-images/logos/18.jpg",
+    "poster_url": "fake-images/posters/18.jpg",
+    "banner_url": "fake-images/banners/18.jpg",
+    "thumbnail_url": "fake-images/thumbnails/18.jpg"
   },
   {
     "id": 19,
@@ -203,10 +203,10 @@
     "type_id": 2,
     "category_id": 2,
     "summary": "Tempus quam pellentesque nec nam aliquam. Viverra orci sagittis eu volutpat odio facilisis mauris sit amet. Quis blandit turpis cursus in. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque.",
-    "logo_url": "logos/19.jpg",
-    "poster_url": "posters/19.jpg",
-    "banner_url": "banners/19.jpg",
-    "thumbnail_url": "thumbnails/19.jpg"
+    "logo_url": "fake-images/logos/19.jpg",
+    "poster_url": "fake-images/posters/19.jpg",
+    "banner_url": "fake-images/banners/19.jpg",
+    "thumbnail_url": "fake-images/thumbnails/19.jpg"
   },
   {
     "id": 20,
@@ -214,10 +214,10 @@
     "type_id": 2,
     "category_id": 4,
     "summary": "Iaculis eu non diam phasellus vestibulum lorem sed risus. Nullam eget felis eget nunc lobortis mattis. Orci ac auctor augue mauris augue neque gravida.",
-    "logo_url": "logos/20.jpg",
-    "poster_url": "posters/20.jpg",
-    "banner_url": "banners/20.jpg",
-    "thumbnail_url": "thumbnails/20.jpg"
+    "logo_url": "fake-images/logos/20.jpg",
+    "poster_url": "fake-images/posters/20.jpg",
+    "banner_url": "fake-images/banners/20.jpg",
+    "thumbnail_url": "fake-images/thumbnails/20.jpg"
   },
   {
     "id": 21,
@@ -225,10 +225,10 @@
     "type_id": 2,
     "category_id": 2,
     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "logo_url": "logos/21.jpg",
-    "poster_url": "posters/21.jpg",
-    "banner_url": "banners/21.jpg",
-    "thumbnail_url": "thumbnails/21.jpg"
+    "logo_url": "fake-images/logos/21.jpg",
+    "poster_url": "fake-images/posters/21.jpg",
+    "banner_url": "fake-images/banners/21.jpg",
+    "thumbnail_url": "fake-images/thumbnails/21.jpg"
   },
   {
     "id": 22,
@@ -236,10 +236,10 @@
     "type_id": 3,
     "category_id": 5,
     "summary": "Amet commodo nulla facilisi nullam vehicula ipsum. Sit amet luctus venenatis lectus magna fringilla urna. Felis bibendum ut tristique et egestas quis ipsum. ",
-    "logo_url": "logos/22.jpg",
-    "poster_url": "posters/22.jpg",
-    "banner_url": "banners/22.jpg",
-    "thumbnail_url": "thumbnails/22.jpg"
+    "logo_url": "fake-images/logos/22.jpg",
+    "poster_url": "fake-images/posters/22.jpg",
+    "banner_url": "fake-images/banners/22.jpg",
+    "thumbnail_url": "fake-images/thumbnails/22.jpg"
   },
   {
     "id": 23,
@@ -247,10 +247,10 @@
     "type_id": 3,
     "category_id": 5,
     "summary": "Ipsum dolor sit amet consectetur adipiscing elit ut. Id ornare arcu odio ut sem. Rhoncus dolor purus non enim. Id semper risus in hendrerit gravida rutrum quisque non.",
-    "logo_url": "logos/23.jpg",
-    "poster_url": "posters/23.jpg",
-    "banner_url": "banners/23.jpg",
-    "thumbnail_url": "thumbnails/23.jpg"
+    "logo_url": "fake-images/logos/23.jpg",
+    "poster_url": "fake-images/posters/23.jpg",
+    "banner_url": "fake-images/banners/23.jpg",
+    "thumbnail_url": "fake-images/thumbnails/23.jpg"
   },
   {
     "id": 24,
@@ -258,10 +258,10 @@
     "type_id": 3,
     "category_id": 5,
     "summary": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque.",
-    "logo_url": "logos/24.jpg",
-    "poster_url": "posters/24.jpg",
-    "banner_url": "banners/24.jpg",
-    "thumbnail_url": "thumbnails/24.jpg"
+    "logo_url": "fake-images/logos/24.jpg",
+    "poster_url": "fake-images/posters/24.jpg",
+    "banner_url": "fake-images/banners/24.jpg",
+    "thumbnail_url": "fake-images/thumbnails/24.jpg"
   },
   {
     "id": 25,
@@ -269,10 +269,10 @@
     "type_id": 3,
     "category_id": 5,
     "summary": "At erat pellentesque adipiscing commodo. Augue eget arcu dictum varius duis at. Massa sapien faucibus et molestie ac. Nam libero justo laoreet sit amet cursus sit amet. ",
-    "logo_url": "logos/25.jpg",
-    "poster_url": "posters/25.jpg",
-    "banner_url": "banners/25.jpg",
-    "thumbnail_url": "thumbnails/25.jpg"
+    "logo_url": "fake-images/logos/25.jpg",
+    "poster_url": "fake-images/posters/25.jpg",
+    "banner_url": "fake-images/banners/25.jpg",
+    "thumbnail_url": "fake-images/thumbnails/25.jpg"
   },
   {
     "id": 26,
@@ -280,10 +280,10 @@
     "type_id": 3,
     "category_id": 5,
     "summary": "Tincidunt eget nullam non nisi est sit. Facilisis gravida neque convallis a cras. Non sodales neque sodales ut etiam sit amet nisl. Neque laoreet suspendisse interdum consectetur libero id.",
-    "logo_url": "logos/26.jpg",
-    "poster_url": "posters/26.jpg",
-    "banner_url": "banners/26.jpg",
-    "thumbnail_url": "thumbnails/26.jpg"
+    "logo_url": "fake-images/logos/26.jpg",
+    "poster_url": "fake-images/posters/26.jpg",
+    "banner_url": "fake-images/banners/26.jpg",
+    "thumbnail_url": "fake-images/thumbnails/26.jpg"
   },
   {
     "id": 27,
@@ -291,9 +291,9 @@
     "type_id": 3,
     "category_id": 5,
     "summary": "Sem nulla pharetra diam sit amet nisl. Sed risus pretium quam vulputate. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin.",
-    "logo_url": "logos/27.jpg",
-    "poster_url": "posters/27.jpg",
-    "banner_url": "banners/27.jpg",
-    "thumbnail_url": "thumbnails/27.jpg"
+    "logo_url": "fake-images/logos/27.jpg",
+    "poster_url": "fake-images/posters/27.jpg",
+    "banner_url": "fake-images/banners/27.jpg",
+    "thumbnail_url": "fake-images/thumbnails/27.jpg"
   }
 ]

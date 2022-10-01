@@ -12,6 +12,8 @@ export default function CardBasic({ id, imageURL }: iProps) {
     alert(`Clicked on ${id}`);
   }
 
+  console.log(imageURL);
+
   return (
     <article onClick={onClick} className="card-basic">
       <img
