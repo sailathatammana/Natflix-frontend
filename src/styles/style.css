@@ -5,7 +5,7 @@
 @import "./base/layout";
 
 /* Components */
-@import "./components/banner-home.css";
+@import "./components/banners.css";
 @import "./components/button.css";
 @import "./components/card-basic.css";
 @import "./components/card-top-10.css";

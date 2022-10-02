@@ -9,17 +9,15 @@ interface iProps {
 }
 
 export default function BannerModalContent({ item, onClick }: iProps) {
-  const { id, banner_url, logo_url, title } = item;
+  const { banner_url, logo_url } = item;
 
   // Components
   const titleLogo = <img src={logo_url} className="logo" />;
-  const titleText = <h3>{title}</h3>;
 
   return (
-    <header>
+    <header className="banner banner-modal-content">
       <div className="content">
-        {/* Check if the banner image exist otherwise use the title as a backup */}
-        {logo_url === "" ? titleText : titleLogo}
+        {logo_url && titleLogo}
         <div className="buttons">
           <button onClick={onClick} className="button-white">
             Play

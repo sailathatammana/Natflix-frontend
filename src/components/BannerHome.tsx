@@ -23,7 +23,7 @@ export default function BannerHome({ item }: iProps) {
   const titleText = <h3>{title}</h3>;
 
   return (
-    <header className="banner-home">
+    <header className="banner banner-home">
       <div className="content">
         {/* Check if the banner image exist otherwise use the title as a backup */}
         {logo_url === "" ? titleText : titleLogo}

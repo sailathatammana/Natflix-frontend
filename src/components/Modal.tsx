@@ -16,11 +16,11 @@ export default function Modal() {
   if (modal === null) return null;
 
   return createPortal(
-    <div id="modal">
+    <div className="modal">
       <div className="background" role="button" onClick={() => setModal(null)}>
         {/* empty on purpose */}
       </div>
-      <div className="content">{modal}</div>
+      <div className="window">{modal}</div>
     </div>,
     element
   );

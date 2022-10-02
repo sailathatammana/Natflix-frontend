@@ -1,6 +1,14 @@
 .modal-content {
   background-color: var(--color-gray-1);
   color: white;
-  padding: var(--default-padding);
   border-radius: var(--radius);
+}
+
+.modal-content .banner {
+  margin-bottom: var(--space-medium);
+}
+
+.modal-content .description {
+  padding: 0 var(--default-padding);
+  padding-bottom: var(--default-padding);
 }
