@@ -14,7 +14,7 @@ import iContent from "interfaces/iContent";
 
 interface iResponse {
   status: string;
-  data: Array<any> | Object;
+  data: Array<any> | any;
 }
 
 export default async function fakeFetch(): Promise<iResponse> {
