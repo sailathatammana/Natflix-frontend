@@ -1,5 +1,7 @@
 // Project files
 import Placeholder from "assets/images/placeholders/card-basic.png";
+import ModalContent from "./ModalContent";
+import { useModal } from "state/ModalContext";
 
 interface iProps {
   id: number;
@@ -7,9 +9,16 @@ interface iProps {
 }
 
 export default function CardBasic({ id, imageURL }: iProps) {
+  // Global state
+  const { setModal } = useModal();
+
+  // Properties
+  const Modal = <ModalContent id={id} />;
+
   // Methods
-  function onClick(): void {
-    alert(`Clicked on ${id}`);
+  function onClick() {
+    console.log("clicked on card", id);
+    setModal(Modal);
   }
 
   return (
