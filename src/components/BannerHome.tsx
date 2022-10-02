@@ -10,10 +10,6 @@ export default function BannerHome({ item }: iProps) {
   const { id, banner_url, logo_url, title, summary } = item;
 
   // Methods
-  function onPlay(): void {
-    alert(`Wanting to watch ${id}`);
-  }
-
   function onMoreInfo(): void {
     alert(`Wanting to learn more about ${id}`);
   }
@@ -29,9 +25,6 @@ export default function BannerHome({ item }: iProps) {
         {logo_url === "" ? titleText : titleLogo}
         <p>{summary}</p>
         <div className="buttons">
-          <button onClick={onPlay} className="button-white">
-            Play
-          </button>
           <button onClick={onMoreInfo} className="button-gray">
             More info
           </button>
