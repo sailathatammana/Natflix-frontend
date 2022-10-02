@@ -17,7 +17,10 @@ interface iResponse {
   data: Array<any> | any;
 }
 
-export default async function fakeFetch(): Promise<iResponse> {
+export default async function fakeFetch(
+  endPoint: string,
+  id: number = 0
+): Promise<iResponse> {
   const chanceToSucced = Math.floor(Math.random() * 10);
   const result = { data: {}, status: "" };
 
@@ -32,14 +35,14 @@ export default async function fakeFetch(): Promise<iResponse> {
       result.status = "ok"; // if worked but there is not data
       break;
     default:
-      result.data = content();
+      result.data = getData(endPoint, id);
       result.status = "ok";
   }
 
   return result;
 }
 
-function getData(endPoint: string, id: number = 0): Array<any> | any {
+function getData(endPoint: string, id: number): Array<any> | any {
   let result: Array<any> = [];
 
   switch (endPoint) {

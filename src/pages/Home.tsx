@@ -1,3 +1,6 @@
+// Fake data
+import fakeFetch from "scripts/fakeFetch";
+
 // Node modules
 import { useEffect, useState } from "react";
 
@@ -10,7 +13,6 @@ import StatusEmpty from "components/StatusEmpty";
 import StatusLoading from "components/StatusLoading";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
-import fakeFetch from "scripts/fakeFetch";
 
 export default function Home() {
   // Local state
@@ -24,7 +26,7 @@ export default function Home() {
 
   // Methods
   useEffect(() => {
-    fakeFetch().then((response) => {
+    fakeFetch("content").then((response) => {
       if (response.status == "ok") {
         setData(response.data);
         setStatus(eStatus.READY);
