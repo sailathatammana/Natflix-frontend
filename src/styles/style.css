@@ -6,7 +6,7 @@
 
 /* Components */
 @import "./components/banners.css";
-@import "./components/button.css";
+@import "./components/buttons.css";
 @import "./components/card-basic.css";
 @import "./components/card-top-10.css";
 @import "./components/modal.css";

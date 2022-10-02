@@ -1,6 +1,9 @@
 // Project files
+import IconInfo from "assets/images/icons/icon-info-white.svg";
 import Placeholder from "assets/images/placeholders/banner.png";
+import ModalContent from "components/ModalContent";
 import iContent from "interfaces/iContent";
+import { useModal } from "state/ModalContext";
 
 interface iProps {
   item: iContent;
@@ -9,12 +12,16 @@ interface iProps {
 export default function BannerHome({ item }: iProps) {
   const { id, banner_url, logo_url, title, summary } = item;
 
+  // Global state
+  const { setModal } = useModal();
+
   // Methods
   function onMoreInfo(): void {
     alert(`Wanting to learn more about ${id}`);
   }
 
   // Components
+  const Modal = <ModalContent id={id} />;
   const titleLogo = <img src={logo_url} className="logo" />;
   const titleText = <h3>{title}</h3>;
 
@@ -25,7 +32,11 @@ export default function BannerHome({ item }: iProps) {
         {logo_url === "" ? titleText : titleLogo}
         <p>{summary}</p>
         <div className="buttons">
-          <button onClick={onMoreInfo} className="button-gray">
+          <button
+            onClick={() => setModal(Modal)}
+            className="button button-gray"
+          >
+            <img className="icon" src={IconInfo} />
             More info
           </button>
         </div>

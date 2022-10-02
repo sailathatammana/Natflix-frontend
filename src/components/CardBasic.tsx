@@ -12,7 +12,7 @@ export default function CardBasic({ id, imageURL }: iProps) {
   // Global state
   const { setModal } = useModal();
 
-  // Properties
+  // Components
   const Modal = <ModalContent id={id} />;
 
   return (

@@ -2,7 +2,6 @@
   button (without a dot) is for the real <button> tag
   .button (with a dot) is for other tags that need to look like buttons. Example: <a>
 */
-button,
 .button {
   min-width: 136px; /* using min-width sets the initial size while allowing to grow as needed */
   height: 44px;
@@ -12,7 +11,13 @@ button,
   font-weight: bold;
   border: none;
   font-size: var(--default-text-size);
+  line-height: 22px;
   cursor: pointer;
+}
+
+.button .icon {
+  height: 16px;
+  margin-right: var(--space-small);
 }
 
 .button-gray {
