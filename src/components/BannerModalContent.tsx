@@ -19,7 +19,7 @@ export default function BannerModalContent({ item, onClick }: iProps) {
       <div className="content">
         {logo_url && titleLogo}
         <div className="buttons">
-          <button onClick={onClick} className="button-white">
+          <button onClick={onClick} className="button button-white">
             Play
           </button>
         </div>
