@@ -1,17 +1,18 @@
+// Fake data (remove this with real server content)
+import FakeContent from "fake-data/fake-content.json";
+
 // Node modules
 import { useEffect, useState } from "react";
 
 // Project files
+import BannerHome from "components/BannerHome";
 import ContainerCards from "components/ContainerCards";
 import NavigationBar from "components/NavigationBar";
 import StatusError from "components/StatusError";
+import StatusEmpty from "components/StatusEmpty";
 import StatusLoading from "components/StatusLoading";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
-
-// Fake data
-import FakeContent from "fake-data/fake-content.json";
-import BannerHome from "components/BannerHome";
 
 export default function Home() {
   // Local state
@@ -45,6 +46,7 @@ export default function Home() {
   // Safeguards
   if (status == eStatus.LOADING) return <StatusLoading />;
   if (status == eStatus.ERROR) return <StatusError />;
+  if (data.length === 0) return <StatusEmpty />;
 
   return (
     <div id="home">
