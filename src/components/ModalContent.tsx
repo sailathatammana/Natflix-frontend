@@ -20,9 +20,8 @@ export default function ModalContent({ id }: iProps) {
 
   // Methods
   useEffect(() => {
-    fakeFetch("contentDetails").then((response) => {
+    fakeFetch("contentDetails", id).then((response) => {
       if (response.status == "ok") {
-        console.log("contentDetails", response.data);
         setData(response.data);
         setStatus(eStatus.READY);
       } else {
@@ -41,11 +40,25 @@ export default function ModalContent({ id }: iProps) {
 
   return (
     <div className="modal-content">
-      <h1>Modal content</h1>
-      <p>id: @{id}@</p>
-      <button onClick={onClick} className="button-white">
-        Play
-      </button>
+      {/* Header */}
+      <header>
+        {/* Refactor: add interface */}
+        {/* @ts-ignore */}
+        <h3>{data.title}</h3>
+        <button onClick={onClick} className="button-white">
+          Play
+        </button>
+      </header>
+
+      {/* Section */}
+      <section className="description">
+        <p>YEAR • X seasons • CATEGORY</p>
+        {/* Refactor: add interface */}
+        {/* @ts-ignore */}
+        <p>{data.summary}</p>
+      </section>
+
+      {/* Episode chooser */}
     </div>
   );
 }

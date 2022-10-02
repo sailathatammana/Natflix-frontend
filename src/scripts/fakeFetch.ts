@@ -19,7 +19,7 @@ interface iResponse {
 
 export default async function fakeFetch(
   endPoint: string,
-  id: number = 0
+  id: number = NaN
 ): Promise<iResponse> {
   const chanceToSucced = Math.floor(Math.random() * 10);
   const result = { data: {}, status: "" };
