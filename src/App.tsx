@@ -17,9 +17,9 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/video/:code" element={<VideoPlayer />} />
           </Routes>
+          {/* To handle the modal/popups of the website */}
+          <Modal />
         </BrowserRouter>
-        {/* To handle the modal/popups of the website */}
-        <Modal />
       </ModalProvider>
     </div>
   );
