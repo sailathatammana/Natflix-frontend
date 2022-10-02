@@ -15,14 +15,8 @@ export default function CardBasic({ id, imageURL }: iProps) {
   // Properties
   const Modal = <ModalContent id={id} />;
 
-  // Methods
-  function onClick() {
-    console.log("clicked on card", id);
-    setModal(Modal);
-  }
-
   return (
-    <article onClick={onClick} className="card-basic">
+    <article onClick={() => setModal(Modal)} className="card-basic">
       <img
         src={imageURL}
         onError={(event) => (event.currentTarget.src = Placeholder)}

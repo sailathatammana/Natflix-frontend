@@ -1,0 +1,6 @@
+.modal-content {
+  background-color: var(--color-gray-1);
+  color: white;
+  padding: var(--default-padding);
+  border-radius: var(--radius);
+}
