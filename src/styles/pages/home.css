@@ -1,10 +1,10 @@
+#home .banner-home {
+  margin-bottom: var(--space-big);
+}
+
 #home .container-cards {
   margin-bottom: var(--space-medium);
   padding: 0 var(--default-padding);
-}
-
-#home .containers {
-  margin-top: -5%; /* to be a bit on top of the hero banner on purpose */
 }
 
 #home .container-cards div {
