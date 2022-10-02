@@ -3,7 +3,7 @@
 }
 
 #home .container-cards {
-  margin-bottom: var(--space-medium);
+  margin-bottom: var(--space-big);
   padding: 0 var(--default-padding);
 }
 
@@ -11,7 +11,11 @@
   display: flex;
   overflow-x: scroll;
   column-gap: var(--space-medium);
-  padding-bottom: var(--space-medium); /* so the scrollbar don't touch cards */
+}
+
+/* Remove scrollbar space */
+#home .container-cards div::-webkit-scrollbar {
+  display: none;
 }
 
 #home .card-basic {
