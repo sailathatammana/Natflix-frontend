@@ -20,9 +20,9 @@ export default function Home() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
-  const series = data.filter((item) => item.type_id == 1);
-  const movies = data.filter((item) => item.type_id == 2);
-  const documentaries = data.filter((item) => item.type_id == 3);
+  const series = data.filter((item) => item.type_id === 1);
+  const movies = data.filter((item) => item.type_id === 2);
+  const documentaries = data.filter((item) => item.type_id === 3);
 
   // Methods
   useEffect(() => {
@@ -44,8 +44,8 @@ export default function Home() {
   }
 
   // Safeguards
-  if (status == eStatus.LOADING) return <StatusLoading />;
-  if (status == eStatus.ERROR) return <StatusError />;
+  if (status === eStatus.LOADING) return <StatusLoading />;
+  if (status === eStatus.ERROR) return <StatusError />;
   if (data.length === 0) return <StatusEmpty />;
 
   return (
