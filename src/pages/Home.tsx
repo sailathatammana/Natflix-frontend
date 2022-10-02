@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div id="home">
       <NavigationBar />
-      <BannerHome item={data[0]} />
+      <BannerHome item={data[27]} />
       <div className="containers">
         <ContainerCards title="Series" data={series} />
         <ContainerCards title="Movies" data={movies} />
