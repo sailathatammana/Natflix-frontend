@@ -1,29 +1,20 @@
 // Node modules
-import { useParams } from "react-router-dom";
-import YouTube, { YouTubeEvent, YouTubeProps } from "react-youtube";
+import { Link, useParams } from "react-router-dom";
+import ArrowBack from "assets/images/icons/icon-back-white.svg";
 
-// Test code: BTKERGGNqRI
 export default function VideoPlayer() {
   // Global state
   const { code } = useParams();
 
   // Properties
-  const options: YouTubeProps["opts"] = {
-    height: "390",
-    width: "640",
-    playerVars: { autoplay: 1 },
-  };
-
-  // Methods
-  function onReady(event: YouTubeEvent<any>): void {
-    alert("pausing video");
-    event.target.pauseVideo();
-  }
+  const videoSource = `https://youtube.com/embed/${code}`;
 
   return (
     <div id="video-player">
-      <h1>Watch video</h1>
-      <YouTube videoId="BTKERGGNqRI" opts={options} onReady={onReady} />
+      <Link className="button-back" to="/">
+        <img src={ArrowBack} />
+      </Link>
+      <iframe className="youtube-player" src={videoSource} allow="fullscreen" />
     </div>
   );
 }

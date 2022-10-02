@@ -1,0 +1,11 @@
+#video-player .button-back {
+  position: absolute;
+  margin: var(--default-padding);
+  color: white;
+}
+
+#video-player .youtube-player {
+  border: none;
+  width: 100%;
+  height: 100vh;
+}
