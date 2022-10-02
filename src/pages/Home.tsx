@@ -1,6 +1,3 @@
-// Fake data (remove this with real server content)
-import FakeContent from "fake-data/fake-content.json";
-
 // Node modules
 import { useEffect, useState } from "react";
 
@@ -13,6 +10,7 @@ import StatusEmpty from "components/StatusEmpty";
 import StatusLoading from "components/StatusLoading";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
+import fakeFetch from "scripts/fakeFetch";
 
 export default function Home() {
   // Local state
@@ -26,21 +24,19 @@ export default function Home() {
 
   // Methods
   useEffect(() => {
-    const fakeDelayInMiliseconds = 1000;
-
-    setTimeout(fakeAPICall, fakeDelayInMiliseconds);
+    fakeFetch().then((response) => {
+      if (response.status == "ok") onSuccess(response.data);
+      else onFailure();
+    });
   }, []);
 
-  function fakeAPICall(): void {
-    // Gets a random number. If is bigger than 0 we get a server success
-    const chanceToSucced = Math.floor(Math.random() * 100);
+  function onSuccess(data: Array<any>) {
+    setData(data);
+    setStatus(eStatus.READY);
+  }
 
-    if (chanceToSucced > 0) {
-      setData(FakeContent);
-      setStatus(eStatus.READY);
-    } else {
-      setStatus(eStatus.ERROR);
-    }
+  function onFailure() {
+    setStatus(eStatus.ERROR);
   }
 
   // Safeguards
