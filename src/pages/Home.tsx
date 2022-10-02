@@ -25,19 +25,14 @@ export default function Home() {
   // Methods
   useEffect(() => {
     fakeFetch().then((response) => {
-      if (response.status == "ok") onSuccess(response.data);
-      else onFailure();
+      if (response.status == "ok") {
+        setData(response.data);
+        setStatus(eStatus.READY);
+      } else {
+        setStatus(eStatus.ERROR);
+      }
     });
   }, []);
-
-  function onSuccess(data: Array<any>) {
-    setData(data);
-    setStatus(eStatus.READY);
-  }
-
-  function onFailure() {
-    setStatus(eStatus.ERROR);
-  }
 
   // Safeguards
   if (status === eStatus.LOADING) return <StatusLoading />;
