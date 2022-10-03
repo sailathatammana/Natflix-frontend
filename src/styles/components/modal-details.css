@@ -1,5 +1,5 @@
 .modal-details {
-  max-width: 850px;
+  width: 320px;
   max-height: 85vh; /* to enable scrolling when the we have the episode chooser  */
   background-color: var(--color-gray-1);
   color: white;
@@ -15,13 +15,34 @@
 
 .modal-details .description,
 .modal-details .episode-chooser {
-  margin: 0 var(--default-padding);
+  margin: 0 var(--space-medium);
 }
 
 /* Media queries */
-/* Larger than mobile */
-@media (min-width: 400px) {
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .modal-details {
+    width: 400px;
+  }
+}
+
+@media (min-width: 750px) {
+  .modal-details {
+    width: 640px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .modal-details {
+    width: 850px;
+  }
+
   .modal-details .description p {
     max-width: 460px;
+  }
+
+  .modal-details .description,
+  .modal-details .episode-chooser {
+    margin: 0 var(--default-padding);
   }
 }
