@@ -12,7 +12,7 @@ export default function ItemEpisode({ item, onClick }: iProps) {
 
   return (
     <article className="item-episode" onClick={() => onClick(video_code)}>
-      <span className="episode-number">{episode}</span>
+      <span className="number">{episode}</span>
       <img
         src={thumbnail_url}
         onError={(event) => (event.currentTarget.src = Placeholder)}

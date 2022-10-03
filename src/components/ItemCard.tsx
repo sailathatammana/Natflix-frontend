@@ -8,7 +8,7 @@ interface iProps {
   item: iContent;
 }
 
-export default function CardBasic({ item }: iProps) {
+export default function ItemCard({ item }: iProps) {
   const { thumbnail_url } = item;
 
   // Global state

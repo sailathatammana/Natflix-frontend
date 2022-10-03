@@ -11,7 +11,7 @@
   background-color: var(--color-gray-3);
 }
 
-.item-episode .episode-number {
+.item-episode .number {
   font-size: 24px;
   margin: var(--space-medium);
 }

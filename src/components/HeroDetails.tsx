@@ -2,9 +2,9 @@
 import { MouseEventHandler } from "react";
 
 // Project files
+import IconPlay from "assets/images/icons/icon-play-black.svg";
 import Placeholder from "assets/images/placeholders/banner.png";
 import iContent from "interfaces/iContent";
-import iDetailsContent from "interfaces/iDetailsContent";
 
 interface iProps {
   item: iContent;
@@ -27,6 +27,7 @@ export default function HeroDetails({ item, videoCode, onClick }: iProps) {
             onClick={() => onClick(videoCode)}
             className="button button-white"
           >
+            <img className="icon" src={IconPlay} />
             Play
           </button>
         </div>

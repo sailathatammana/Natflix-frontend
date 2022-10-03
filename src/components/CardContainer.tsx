@@ -1,14 +1,14 @@
 // Project files
+import ItemCard from "components/ItemCard";
 import iContent from "interfaces/iContent";
-import CardBasic from "./CardBasic";
 
 interface iProps {
   title: String;
   data: iContent[];
 }
 
-export default function ContainerCards({ title, data }: iProps) {
-  const Cards = data.map((item) => <CardBasic key={item.id} item={item} />);
+export default function CardContainer({ title, data }: iProps) {
+  const Cards = data.map((item) => <ItemCard key={item.id} item={item} />);
 
   return (
     <section className="container-cards">

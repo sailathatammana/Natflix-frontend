@@ -4,7 +4,7 @@ interface iProps {
   imageURL: string;
 }
 
-export default function CardTop10({ id, number, imageURL }: iProps) {
+export default function ItemTop10({ id, number, imageURL }: iProps) {
   // Methods
   function onClick(): void {
     alert(`Clicked on ${id}`);
