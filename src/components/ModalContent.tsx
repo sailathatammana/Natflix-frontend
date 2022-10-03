@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 // Project files
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
-import BannerModalContent from "components/BannerModalContent";
+import HeroDetails from "components/HeroDetails";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
 import iDetails from "interfaces/iDetails";
@@ -52,7 +52,7 @@ export default function ModalContent({ item }: iProps) {
 
   return (
     <div className="modal-content">
-      <BannerModalContent item={item} onClick={onClick} />
+      <HeroDetails item={item} onClick={onClick} />
 
       <section className="description">
         <p>YEAR • X seasons • CATEGORY</p>

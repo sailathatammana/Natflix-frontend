@@ -11,13 +11,13 @@
   font-weight: bold;
   border: none;
   font-size: var(--default-text-size);
-  line-height: 22px;
   cursor: pointer;
 }
 
 .button .icon {
   height: 16px;
   margin-right: var(--space-small);
+  vertical-align: text-bottom; /* to align with the text */
 }
 
 .button-gray {

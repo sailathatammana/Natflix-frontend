@@ -9,7 +9,7 @@ interface iProps {
   item: iContent;
 }
 
-export default function BannerHome({ item }: iProps) {
+export default function HeroHome({ item }: iProps) {
   const { banner_url, logo_url, title, summary } = item;
 
   // Global state

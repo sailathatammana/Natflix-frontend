@@ -5,7 +5,7 @@ import fakeFetch from "scripts/fakeFetch";
 import { useEffect, useState } from "react";
 
 // Project files
-import BannerHome from "components/BannerHome";
+import HeroHome from "components/HeroHome";
 import ContainerCards from "components/ContainerCards";
 import NavigationBar from "components/NavigationBar";
 import StatusError from "components/StatusError";
@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <div id="home">
       <NavigationBar />
-      <BannerHome item={data[27]} />
+      <HeroHome item={data[27]} />
       <div className="containers">
         <ContainerCards title="Series" data={series} />
         <ContainerCards title="Movies" data={movies} />

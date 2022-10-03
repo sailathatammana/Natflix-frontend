@@ -8,7 +8,7 @@ interface iProps {
   onClick: MouseEventHandler;
 }
 
-export default function BannerModalContent({ item, onClick }: iProps) {
+export default function HeroDetails({ item, onClick }: iProps) {
   const { banner_url, logo_url } = item;
 
   // Components
