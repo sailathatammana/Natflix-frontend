@@ -13,7 +13,11 @@ export default function InputSelect({ data, state, onChange }: iProps) {
   ));
 
   return (
-    <select value={state} onChange={(event) => onChange(event)}>
+    <select
+      className="input-select text-paragraph"
+      value={state}
+      onChange={(event) => onChange(event)}
+    >
       {Options}
     </select>
   );

@@ -23,7 +23,9 @@ h3 {
   margin-bottom: var(--space-medium);
 }
 
-p {
+/* the .text class is for elements like input that require the same size as the <p> tag */
+p,
+.text-paragraph {
   font-size: var(--default-text-size);
   margin-bottom: var(--space-medium);
 }

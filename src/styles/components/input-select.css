@@ -1,0 +1,11 @@
+.input-select {
+  height: 44px;
+  padding-left: var(--space-medium);
+  padding-right: var(--space-big); /* to fix the image of the arrow down */
+  background-color: var(--color-gray-2);
+  color: white;
+  border: solid 1px var(--color-gray-4);
+  background: url("../../assets/images/icons/icon-caret-down-white.svg")
+    no-repeat right; /* the arrow down is just an image */
+  -webkit-appearance: none; /* to remove a glass like visual effect that Safari puts on inputs by default */
+}
