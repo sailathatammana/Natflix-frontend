@@ -1,6 +1,6 @@
 // Project files
 import Placeholder from "assets/images/placeholders/card-basic.png";
-import ModalContent from "components/ModalContent";
+import ModalDetails from "components/ModalDetails";
 import iContent from "interfaces/iContent";
 import { useModal } from "state/ModalContext";
 
@@ -15,7 +15,7 @@ export default function CardBasic({ item }: iProps) {
   const { setModal } = useModal();
 
   // Components
-  const Modal = <ModalContent item={item} />;
+  const Modal = <ModalDetails item={item} />;
 
   return (
     <article onClick={() => setModal(Modal)} className="card-basic">

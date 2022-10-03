@@ -1,7 +1,7 @@
 // Project files
 import IconInfo from "assets/images/icons/icon-info-white.svg";
 import Placeholder from "assets/images/placeholders/banner.png";
-import ModalContent from "components/ModalContent";
+import ModalDetails from "components/ModalDetails";
 import iContent from "interfaces/iContent";
 import { useModal } from "state/ModalContext";
 
@@ -16,7 +16,7 @@ export default function BannerHome({ item }: iProps) {
   const { setModal } = useModal();
 
   // Components
-  const Modal = <ModalContent item={item} />;
+  const Modal = <ModalDetails item={item} />;
   const titleLogo = <img src={logo_url} className="logo" />;
   const titleText = <h3>{title}</h3>;
 

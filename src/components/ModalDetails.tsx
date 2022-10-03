@@ -11,14 +11,14 @@ import StatusLoading from "components/StatusLoading";
 import HeroDetails from "components/HeroDetails";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
-import iDetails from "interfaces/iDetails";
+import iDetails from "interfaces/iDetailsContent";
 import { useModal } from "state/ModalContext";
 
 interface iProps {
   item: iContent;
 }
 
-export default function ModalContent({ item }: iProps) {
+export default function ModalDetails({ item }: iProps) {
   const { id, summary } = item;
 
   // Global state
