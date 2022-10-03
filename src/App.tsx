@@ -6,6 +6,7 @@ import Modal from "components/Modal";
 import Home from "pages/Home";
 import VideoPlayer from "pages/VideoPlayer";
 import NotFound from "pages/NotFound";
+import Test from "pages/Test";
 import { ModalProvider } from "state/ModalContext";
 import "styles/style.css";
 
@@ -15,6 +16,7 @@ export default function App() {
       <ModalProvider>
         <BrowserRouter>
           <Routes>
+            <Route path="/test" element={<Test />} />
             <Route path="/" element={<Home />} />
             <Route path="/video/:code" element={<VideoPlayer />} />
             <Route path="*" element={<NotFound />} />
