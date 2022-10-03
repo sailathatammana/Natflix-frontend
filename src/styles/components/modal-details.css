@@ -1,6 +1,6 @@
 .modal-details {
   max-width: 850px;
-  max-height: 90vh; /* to enable scrolling when the we have the episode chooser  */
+  max-height: 85vh; /* to enable scrolling when the we have the episode chooser  */
   background-color: var(--color-gray-1);
   color: white;
   border-radius: var(--radius);

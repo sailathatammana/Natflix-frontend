@@ -22,6 +22,11 @@ export default function BannerHome({ item }: iProps) {
 
   return (
     <header className="hero hero-home">
+      <img
+        className="background-image"
+        src={banner_url}
+        onError={(event) => (event.currentTarget.src = Placeholder)}
+      />
       <div className="content">
         {/* Check if the banner image exist otherwise use the title as a backup */}
         {logo_url === "" ? titleText : titleLogo}
@@ -36,11 +41,6 @@ export default function BannerHome({ item }: iProps) {
           </button>
         </div>
       </div>
-      <img
-        className="background-image"
-        src={banner_url}
-        onError={(event) => (event.currentTarget.src = Placeholder)}
-      />
     </header>
   );
 }

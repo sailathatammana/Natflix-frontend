@@ -20,6 +20,11 @@ export default function HeroDetails({ item, videoCode, onClick }: iProps) {
 
   return (
     <header className="hero hero-details">
+      <img
+        className="background-image"
+        src={banner_url}
+        onError={(event) => (event.currentTarget.src = Placeholder)}
+      />
       <div className="content">
         {logo_url && titleLogo}
         <div className="buttons">
@@ -32,11 +37,6 @@ export default function HeroDetails({ item, videoCode, onClick }: iProps) {
           </button>
         </div>
       </div>
-      <img
-        className="background-image"
-        src={banner_url}
-        onError={(event) => (event.currentTarget.src = Placeholder)}
-      />
     </header>
   );
 }
