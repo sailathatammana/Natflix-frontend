@@ -1,7 +1,9 @@
 .status {
-  margin: 0 auto;
-  margin-top: var(--space-big);
+  display: grid;
+  place-items: center;
   max-width: 240px;
+  height: 100vh;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -10,7 +12,7 @@
   margin-bottom: var(--space-small);
 }
 
-.status.loading {
+.status.loading img {
   animation: spin 4s linear infinite;
 }
 

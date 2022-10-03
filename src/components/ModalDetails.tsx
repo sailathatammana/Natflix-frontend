@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 // Project files
 import EpisodeChooser from "components/EpisodeChooser";
 import HeroDetails from "components/HeroDetails";
+import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
 import eStatus from "interfaces/eStatus";
@@ -51,11 +52,10 @@ export default function ModalDetails({ item }: iProps) {
   function getFirstVideoCode(isASeries: boolean): string {
     let result = "";
 
-    console.log("details", details);
-
     if (isASeries) {
       result = details[0].video_code;
     } else {
+      // Refactor
       // @ts-ignore
       result = details.video_code;
     }
@@ -71,6 +71,7 @@ export default function ModalDetails({ item }: iProps) {
   // Safeguards
   if (status === eStatus.LOADING) return <StatusLoading />;
   if (status === eStatus.ERROR) return <StatusError />;
+  if (details.length === 0) return <StatusEmpty />;
 
   return (
     <div className="modal-details">
