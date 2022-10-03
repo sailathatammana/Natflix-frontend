@@ -1,20 +1,17 @@
-// Node modules
-import { MouseEventHandler } from "react";
-
 // Project files
 import iDetailsSeries from "interfaces/iDetailsSeries";
 import Placeholder from "assets/images/placeholders/card-basic.png";
 
 interface iProps {
   item: iDetailsSeries;
-  onClick: MouseEventHandler;
+  onClick: Function;
 }
 
 export default function ItemEpisode({ item, onClick }: iProps) {
-  const { episode, title, summary, thumbnail_url } = item;
+  const { episode, title, summary, thumbnail_url, video_code } = item;
 
   return (
-    <article onClick={onClick}>
+    <article className="item-episode" onClick={() => onClick(video_code)}>
       <span className="episode-number">{episode}</span>
       <img
         src={thumbnail_url}

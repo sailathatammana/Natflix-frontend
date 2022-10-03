@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Project files
+import EpisodeChooser from "components/EpisodeChooser";
+import HeroDetails from "components/HeroDetails";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
-import HeroDetails from "components/HeroDetails";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
-import iDetails from "interfaces/iDetailsContent";
+import iDetailsContent from "interfaces/iDetailsContent";
+import iDetailsSeries from "interfaces/iDetailsSeries";
 import { useModal } from "state/ModalContext";
 
 interface iProps {
@@ -27,7 +29,12 @@ export default function ModalDetails({ item }: iProps) {
 
   // Local state
   const [status, setStatus] = useState(eStatus.LOADING);
-  const [details, setDetails] = useState({} as iDetails);
+  const [details, setDetails] = useState(
+    {} as iDetailsContent | [] as iDetailsSeries[]
+  );
+
+  // Properties
+  const isASeries: boolean = Array.isArray(details);
 
   // Methods
   useEffect(() => {
@@ -41,8 +48,14 @@ export default function ModalDetails({ item }: iProps) {
     });
   }, []);
 
-  function onClick(): void {
-    navigate(`video/${details.videoCode}`);
+  function getFirstVideoCode(): string {
+    let result = "";
+
+    return result;
+  }
+
+  function onClick(videoCode: string): void {
+    navigate(`video/${videoCode}`);
     setModal(null);
   }
 
@@ -52,7 +65,11 @@ export default function ModalDetails({ item }: iProps) {
 
   return (
     <div className="modal-content">
-      <HeroDetails item={item} onClick={onClick} />
+      <HeroDetails
+        item={item}
+        videoCode={getFirstVideoCode()}
+        onClick={onClick}
+      />
 
       <section className="description">
         <p>YEAR • X seasons • CATEGORY</p>
@@ -60,6 +77,7 @@ export default function ModalDetails({ item }: iProps) {
       </section>
 
       {/* Episode chooser */}
+      {isASeries && <EpisodeChooser episodes={details} onClick={onClick} />}
     </div>
   );
 }

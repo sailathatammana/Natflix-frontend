@@ -4,13 +4,15 @@ import { MouseEventHandler } from "react";
 // Project files
 import Placeholder from "assets/images/placeholders/banner.png";
 import iContent from "interfaces/iContent";
+import iDetailsContent from "interfaces/iDetailsContent";
 
 interface iProps {
   item: iContent;
-  onClick: MouseEventHandler;
+  videoCode: string;
+  onClick: Function;
 }
 
-export default function HeroDetails({ item, onClick }: iProps) {
+export default function HeroDetails({ item, videoCode, onClick }: iProps) {
   const { banner_url, logo_url } = item;
 
   // Components
@@ -21,7 +23,10 @@ export default function HeroDetails({ item, onClick }: iProps) {
       <div className="content">
         {logo_url && titleLogo}
         <div className="buttons">
-          <button onClick={onClick} className="button button-white">
+          <button
+            onClick={() => onClick(videoCode)}
+            className="button button-white"
+          >
             Play
           </button>
         </div>

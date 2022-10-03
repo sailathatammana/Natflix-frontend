@@ -1,13 +1,21 @@
 // Project files
+import ItemEpisodes from "components/ItemEpisode";
 import iDetailsSeries from "interfaces/iDetailsSeries";
 
 interface iProps {
   episodes: iDetailsSeries[];
+  onClick: Function;
 }
 
-export default function EpisodeChooser({ episodes }: iProps) {
+export default function EpisodeChooser({ episodes, onClick }: iProps) {
   // Properties
-  const number_of_sesions: number = 0;
+  const numberOfSeasons: number = 0;
+  const selectedSeason = 1;
+
+  // Components
+  const Episodes = episodes.map((item) => (
+    <ItemEpisodes key={item.id} item={item} onClick={onClick} />
+  ));
 
   return (
     <section className="episode-chooser">
@@ -19,20 +27,7 @@ export default function EpisodeChooser({ episodes }: iProps) {
           <option value="3">Season 3</option>
         </select>
       </header>
-      <div>
-        <article>
-          <h3>EPISODE NAME</h3>
-          <p>SUMMARY</p>
-        </article>
-        <article>
-          <h3>EPISODE NAME</h3>
-          <p>SUMMARY</p>
-        </article>
-        <article>
-          <h3>EPISODE NAME</h3>
-          <p>SUMMARY</p>
-        </article>
-      </div>
+      <div>{Episodes}</div>
     </section>
   );
 }
