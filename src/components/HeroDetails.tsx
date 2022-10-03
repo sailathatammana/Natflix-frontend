@@ -1,7 +1,9 @@
+// Node modules
+import { MouseEventHandler } from "react";
+
 // Project files
 import Placeholder from "assets/images/placeholders/banner.png";
 import iContent from "interfaces/iContent";
-import { MouseEventHandler } from "react";
 
 interface iProps {
   item: iContent;

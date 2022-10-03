@@ -1,4 +1,14 @@
-export default function EpisodeChooser() {
+// Project files
+import iDetailsSeries from "interfaces/iDetailsSeries";
+
+interface iProps {
+  episodes: iDetailsSeries[];
+}
+
+export default function EpisodeChooser({ episodes }: iProps) {
+  // Properties
+  const number_of_sesions: number = 0;
+
   return (
     <section className="episode-chooser">
       <header>
