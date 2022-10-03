@@ -22,8 +22,8 @@
   --nav-bar: 65px; /* so we can position elements below the navbar */
 }
 
-/* Media queries */
 /* CSS cannot handle variables for media queries, but we list them here so everyone is on the same page */
+/* Media queries */
 /* Larger than mobile */
 @media (min-width: 400px) {
 }
