@@ -2,6 +2,8 @@
   background-color: var(--color-gray-1);
   color: white;
   border-radius: var(--radius);
+  overflow: scroll;
+  height: 600px; /* to enable scrolling when the we have the episode chooser  */
 }
 
 .modal-content .banner {

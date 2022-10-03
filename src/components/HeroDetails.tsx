@@ -19,7 +19,7 @@ export default function HeroDetails({ item, videoCode, onClick }: iProps) {
   const titleLogo = <img src={logo_url} className="logo" />;
 
   return (
-    <header className="banner banner-modal-content">
+    <header className="hero hero-details">
       <div className="content">
         {logo_url && titleLogo}
         <div className="buttons">
