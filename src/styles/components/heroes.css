@@ -1,26 +1,24 @@
-.hero,
-.hero .background-image {
-  aspect-ratio: 21/9;
-}
-
 /* To stack the text on top of the image */
 .hero {
   display: grid;
   place-items: center start;
+  background-color: red;
 }
 
-.hero.hero-details {
-  place-items: end start;
-}
-
-/* To stack the text on top of the image */
+/*
+ * To stack the text on top of the image withouth using z-index 
+ * taken from: https://www.youtube.com/shorts/oy2iUDT0mf8
+*/
 .hero > * {
   grid-column: 1 / -1;
   grid-row: 1 / -1;
 }
 
+.hero .background-image {
+  aspect-ratio: 3/5;
+}
+
 .hero .content {
-  width: 460px;
   padding: var(--default-padding);
 }
 
@@ -30,4 +28,27 @@
 
 .hero .background-image {
   width: 100%;
+}
+
+/* Specific changes for the hero inside the modal */
+.hero-details {
+  place-items: end start;
+}
+
+.hero-details .logo {
+  margin-bottom: var(--space-medium);
+}
+
+/* Media queries */
+@media (min-width: 400px) {
+  .hero {
+    background-color: yellow;
+  }
+  .hero .content {
+    max-width: 460px;
+  }
+
+  .hero .background-image {
+    aspect-ratio: 21/9;
+  }
 }

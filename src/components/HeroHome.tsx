@@ -17,8 +17,8 @@ export default function BannerHome({ item }: iProps) {
 
   // Components
   const Modal = <ModalDetails item={item} />;
-  const titleLogo = <img src={logo_url} className="logo" />;
-  const titleText = <h3>{title}</h3>;
+  const Logo = <img src={logo_url} className="logo" />;
+  const Heading = <h3>{title}</h3>;
 
   return (
     <header className="hero hero-home">
@@ -28,18 +28,12 @@ export default function BannerHome({ item }: iProps) {
         onError={(event) => (event.currentTarget.src = Placeholder)}
       />
       <div className="content">
-        {/* Check if the banner image exist otherwise use the title as a backup */}
-        {logo_url === "" ? titleText : titleLogo}
+        {logo_url === "" ? Heading : Logo}
         <p>{summary}</p>
-        <div className="buttons">
-          <button
-            onClick={() => setModal(Modal)}
-            className="button button-gray"
-          >
-            <img className="icon" src={IconInfo} />
-            More info
-          </button>
-        </div>
+        <button onClick={() => setModal(Modal)} className="button-gray">
+          <img className="icon" src={IconInfo} />
+          More info
+        </button>
       </div>
     </header>
   );

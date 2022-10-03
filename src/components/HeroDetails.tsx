@@ -27,15 +27,10 @@ export default function HeroDetails({ item, videoCode, onClick }: iProps) {
       />
       <div className="content">
         {logo_url && titleLogo}
-        <div className="buttons">
-          <button
-            onClick={() => onClick(videoCode)}
-            className="button button-white"
-          >
-            <img className="icon" src={IconPlay} />
-            Play
-          </button>
-        </div>
+        <button onClick={() => onClick(videoCode)} className="button-white">
+          <img className="icon" src={IconPlay} />
+          Play
+        </button>
       </div>
     </header>
   );
