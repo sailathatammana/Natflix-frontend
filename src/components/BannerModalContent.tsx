@@ -1,10 +1,10 @@
 // Project files
 import Placeholder from "assets/images/placeholders/banner.png";
-import iContentDetails from "interfaces/iContentDetails";
+import iContent from "interfaces/iContent";
 import { MouseEventHandler } from "react";
 
 interface iProps {
-  item: iContentDetails;
+  item: iContent;
   onClick: MouseEventHandler;
 }
 

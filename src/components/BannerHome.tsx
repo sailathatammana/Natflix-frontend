@@ -10,18 +10,13 @@ interface iProps {
 }
 
 export default function BannerHome({ item }: iProps) {
-  const { id, banner_url, logo_url, title, summary } = item;
+  const { banner_url, logo_url, title, summary } = item;
 
   // Global state
   const { setModal } = useModal();
 
-  // Methods
-  function onMoreInfo(): void {
-    alert(`Wanting to learn more about ${id}`);
-  }
-
   // Components
-  const Modal = <ModalContent id={id} />;
+  const Modal = <ModalContent item={item} />;
   const titleLogo = <img src={logo_url} className="logo" />;
   const titleText = <h3>{title}</h3>;
 

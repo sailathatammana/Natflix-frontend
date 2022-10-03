@@ -8,29 +8,32 @@ import { useNavigate } from "react-router-dom";
 // Project files
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
-import iContentDetails from "interfaces/iContentDetails";
+import BannerModalContent from "components/BannerModalContent";
 import eStatus from "interfaces/eStatus";
+import iContent from "interfaces/iContent";
+import iDetails from "interfaces/iDetails";
 import { useModal } from "state/ModalContext";
-import BannerModalContent from "./BannerModalContent";
 
 interface iProps {
-  id: number;
+  item: iContent;
 }
 
-export default function ModalContent({ id }: iProps) {
+export default function ModalContent({ item }: iProps) {
+  const { id, summary } = item;
+
   // Global state
   const navigate = useNavigate();
   const { setModal } = useModal();
 
   // Local state
   const [status, setStatus] = useState(eStatus.LOADING);
-  const [data, setData] = useState({} as iContentDetails);
+  const [details, setDetails] = useState({} as iDetails);
 
   // Methods
   useEffect(() => {
     fakeFetch("contentDetails", id).then((response) => {
       if (response.status == "ok") {
-        setData(response.data);
+        setDetails(response.data);
         setStatus(eStatus.READY);
       } else {
         setStatus(eStatus.ERROR);
@@ -39,7 +42,7 @@ export default function ModalContent({ id }: iProps) {
   }, []);
 
   function onClick(): void {
-    navigate(`video/${data.videoCode}`);
+    navigate(`video/${details.videoCode}`);
     setModal(null);
   }
 
@@ -49,11 +52,11 @@ export default function ModalContent({ id }: iProps) {
 
   return (
     <div className="modal-content">
-      <BannerModalContent item={data} onClick={onClick} />
+      <BannerModalContent item={item} onClick={onClick} />
 
       <section className="description">
         <p>YEAR • X seasons • CATEGORY</p>
-        <p>{data.summary}</p>
+        <p>{summary}</p>
       </section>
 
       {/* Episode chooser */}

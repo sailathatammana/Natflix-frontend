@@ -8,9 +8,7 @@ interface iProps {
 }
 
 export default function ContainerCards({ title, data }: iProps) {
-  const Cards = data.map((item) => (
-    <CardBasic key={item.id} id={item.id} imageURL={item.thumbnail_url} />
-  ));
+  const Cards = data.map((item) => <CardBasic key={item.id} item={item} />);
 
   return (
     <section className="container-cards">
