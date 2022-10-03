@@ -1,4 +1,5 @@
 #home .hero-home {
+  padding-top: var(--nav-bar);
   margin-bottom: var(--space-big);
 }
 
