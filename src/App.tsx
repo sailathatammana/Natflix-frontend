@@ -2,9 +2,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Project files
+import Modal from "components/Modal";
 import Home from "pages/Home";
 import VideoPlayer from "pages/VideoPlayer";
-import Modal from "components/Modal";
+import NotFound from "pages/NotFound";
 import { ModalProvider } from "state/ModalContext";
 import "styles/style.css";
 
@@ -16,6 +17,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/video/:code" element={<VideoPlayer />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           {/* To handle the modal/popups of the website */}
           <Modal />
