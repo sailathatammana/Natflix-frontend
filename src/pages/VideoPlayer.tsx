@@ -1,6 +1,8 @@
 // Node modules
 import { Link, useParams } from "react-router-dom";
-import ArrowBack from "assets/images/icons/icon-back-white.svg";
+
+// Project files
+import Icon from "assets/images/icons/icon-back-white.svg";
 
 export default function VideoPlayer() {
   // Global state
@@ -12,7 +14,7 @@ export default function VideoPlayer() {
   return (
     <div id="video-player">
       <Link className="button-back" to="/">
-        <img src={ArrowBack} />
+        <img src={Icon} />
       </Link>
       <iframe className="youtube-player" src={videoSource} allow="fullscreen" />
     </div>
