@@ -21,7 +21,7 @@ export default async function fakeFetch(
   endPoint: string,
   id: number = NaN
 ): Promise<iResponse> {
-  const chanceToSucced = Math.floor(Math.random() * 50);
+  const chanceToSucced = Math.floor(Math.random() * 100);
   const result = { data: {}, status: "" };
 
   await delay(1000);

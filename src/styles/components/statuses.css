@@ -1,0 +1,21 @@
+.status {
+  margin: 0 auto;
+  margin-top: var(--space-big);
+  max-width: 240px;
+  text-align: center;
+}
+
+.status img {
+  width: 40px;
+  margin-bottom: var(--space-small);
+}
+
+.status.loading {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
