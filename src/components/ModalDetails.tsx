@@ -73,7 +73,7 @@ export default function ModalDetails({ item }: iProps) {
   if (status === eStatus.ERROR) return <StatusError />;
 
   return (
-    <div className="modal-content">
+    <div className="modal-details">
       <HeroDetails
         item={item}
         videoCode={getFirstVideoCode(isASeries)}
