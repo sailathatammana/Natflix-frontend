@@ -11,16 +11,16 @@ import SingleDocumentary from "./fake-data/singleDocumentary.json";
 
 // Project files
 import iContent from "interfaces/iContent";
+import iDetailsContent from "interfaces/iDetailsContent";
+import iDetailsSeries from "interfaces/iDetailsSeries";
 
 interface iResponse {
   status: string;
   data: Array<any> | any;
 }
 
-export default async function fakeFetch(
-  endPoint: string,
-  id: number = NaN
-): Promise<iResponse> {
+// prettier-ignore
+export default async function fakeFetch(endPoint: string, id: number = NaN): Promise<iResponse> {
   const chanceToSucced = Math.floor(Math.random() * 100);
   const result = { data: {}, status: "" };
 
@@ -32,7 +32,7 @@ export default async function fakeFetch(
       break;
     case 1:
       result.data = [];
-      result.status = "ok"; // if worked but there is not data
+      result.status = "ok"; // if worked but there is no data
       break;
     default:
       result.data = getData(endPoint, id);
@@ -42,8 +42,8 @@ export default async function fakeFetch(
   return result;
 }
 
-function getData(endPoint: string, id: number): Array<any> | any {
-  let result: Array<any> = [];
+function getData(endPoint: string, id: number): any {
+  let result: any;
 
   switch (endPoint) {
     case "content":
@@ -65,9 +65,9 @@ function content(): Array<iContent> {
   return result;
 }
 
-function contentDetails(id: number): any {
+function contentDetails(id: number): iDetailsContent | iDetailsSeries[] {
   const content = Content.filter((item) => item.id === id)[0];
-  let result;
+  let result: iDetailsContent | iDetailsSeries[];
 
   switch (content.type_id) {
     case 1:
@@ -80,7 +80,7 @@ function contentDetails(id: number): any {
       result = SingleDocumentary;
       break;
     default:
-      result = {};
+      throw new Error("Invalid type id");
   }
 
   return result;

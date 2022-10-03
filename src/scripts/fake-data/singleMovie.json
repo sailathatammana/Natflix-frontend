@@ -1,10 +1,5 @@
 {
-  "id": 22,
-  "title": "Servant of the people",
-  "type_id": 2,
-  "category_id": 2,
-  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  "logo_url": "",
-  "banner_url": "",
+  "id": 1,
+  "content_id": 22,
   "videoCode": "FJUd2GhzCm0"
 }
