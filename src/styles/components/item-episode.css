@@ -1,6 +1,7 @@
 .item-episode {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+
   padding: var(--space-medium);
   border-bottom: solid 1px var(--color-gray-4);
   cursor: pointer;
@@ -11,12 +12,31 @@
 }
 
 .item-episode .number {
-  margin-right: var(--space-medium);
-  font-size: 24px;
+  display: none; /* to hide on mobile due to lack of space */
 }
 
 .item-episode img {
-  width: 130px;
-  margin-right: var(--space-medium);
+  margin-bottom: var(--space-small);
   border-radius: var(--radius);
+}
+
+/* Media queries */
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .item-episode {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .item-episode .number {
+    display: initial;
+    margin-right: var(--space-medium);
+    font-size: 24px;
+  }
+
+  .item-episode img {
+    width: 130px;
+    margin-bottom: 0;
+    margin-right: var(--space-medium);
+  }
 }
