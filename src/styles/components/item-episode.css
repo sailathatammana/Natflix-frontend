@@ -1,8 +1,7 @@
 .item-episode {
   display: flex;
   align-items: center;
-  padding: var(--space-small);
-  background-color: var(--color-gray-2);
+  padding: var(--space-medium);
   border-bottom: solid 1px var(--color-gray-4);
   cursor: pointer;
 }
@@ -12,8 +11,8 @@
 }
 
 .item-episode .number {
+  margin-right: var(--space-medium);
   font-size: 24px;
-  margin: var(--space-medium);
 }
 
 .item-episode img {

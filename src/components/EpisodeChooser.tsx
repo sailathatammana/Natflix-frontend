@@ -27,11 +27,7 @@ export default function EpisodeChooser({ episodes, onClick }: iProps) {
     <section className="episode-chooser">
       <header>
         <h2>Episodes</h2>
-        <select name="cars">
-          <option value="1">Season 1</option>
-          <option value="2">Season 2</option>
-          <option value="3">Season 3</option>
-        </select>
+        {/* Input Select goes here */}
       </header>
       <div>{Episodes}</div>
     </section>

@@ -6,11 +6,16 @@
   height: 750px; /* to enable scrolling when the we have the episode chooser  */
 }
 
-.modal-content .banner {
+.modal-content .hero {
   margin-bottom: var(--space-medium);
 }
 
 .modal-content .description {
   padding: 0 var(--default-padding);
-  padding-bottom: var(--default-padding);
+  margin-bottom: var(--space-medium);
+}
+
+.modal-content .episode-chooser {
+  padding: 0 var(--default-padding);
+  margin-bottom: var(--default-padding);
 }
