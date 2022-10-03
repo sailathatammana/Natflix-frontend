@@ -3,6 +3,7 @@
   padding-left: var(--space-medium);
   padding-right: var(--space-big); /* to fix the image of the arrow down */
   background-color: var(--color-gray-2);
+  font-size: var(--default-text);
   color: white;
   border: solid 1px var(--color-gray-4);
   background-image: url("../../assets/images/icons/icon-caret-down-white.svg");
