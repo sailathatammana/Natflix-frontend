@@ -12,7 +12,6 @@ export default function NavigationBar() {
         <a href="#">Films</a>
         <a href="#">Documentaries</a>
       </div>
-      <input className="search" type="text" placeholder="search" />
     </nav>
   );
 }
