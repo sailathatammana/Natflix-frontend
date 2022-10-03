@@ -5,7 +5,8 @@
   background-color: var(--color-gray-2);
   color: white;
   border: solid 1px var(--color-gray-4);
-  background: url("../../assets/images/icons/icon-caret-down-white.svg")
-    no-repeat right; /* the arrow down is just an image */
+  background-image: url("../../assets/images/icons/icon-caret-down-white.svg");
+  background-repeat: no-repeat;
+  background-position: right;
   -webkit-appearance: none; /* to remove a glass like visual effect that Safari puts on inputs by default */
 }
