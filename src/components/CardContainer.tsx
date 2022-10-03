@@ -11,7 +11,7 @@ export default function CardContainer({ title, data }: iProps) {
   const Cards = data.map((item) => <ItemCard key={item.id} item={item} />);
 
   return (
-    <section className="container-cards">
+    <section className="card-container">
       <h2>{title}</h2>
       <div>{Cards}</div>
     </section>

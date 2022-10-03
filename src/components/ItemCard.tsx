@@ -18,7 +18,7 @@ export default function ItemCard({ item }: iProps) {
   const Modal = <ModalDetails item={item} />;
 
   return (
-    <article onClick={() => setModal(Modal)} className="card-basic">
+    <article onClick={() => setModal(Modal)} className="item-card">
       <img
         src={thumbnail_url}
         onError={(event) => (event.currentTarget.src = Placeholder)}

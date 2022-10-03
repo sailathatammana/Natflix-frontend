@@ -21,7 +21,7 @@ interface iProps {
 }
 
 export default function ModalDetails({ item }: iProps) {
-  const { id, summary } = item;
+  const { id, title, summary } = item;
 
   // Global state
   const navigate = useNavigate();
@@ -81,7 +81,7 @@ export default function ModalDetails({ item }: iProps) {
       />
 
       <section className="description">
-        <p>YEAR • X seasons • CATEGORY</p>
+        <h2>{title}</h2>
         <p>{summary}</p>
       </section>
 

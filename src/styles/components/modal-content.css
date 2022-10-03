@@ -1,9 +1,11 @@
 .modal-content {
+  max-width: 850px;
+  max-height: 90vh; /* to enable scrolling when the we have the episode chooser  */
   background-color: var(--color-gray-1);
   color: white;
   border-radius: var(--radius);
   overflow: scroll;
-  height: 750px; /* to enable scrolling when the we have the episode chooser  */
+  padding-bottom: var(--default-padding);
 }
 
 .modal-content .hero {
@@ -15,7 +17,10 @@
   margin-bottom: var(--space-medium);
 }
 
+.modal-content .description p {
+  max-width: 460px;
+}
+
 .modal-content .episode-chooser {
   padding: 0 var(--default-padding);
-  margin-bottom: var(--default-padding);
 }

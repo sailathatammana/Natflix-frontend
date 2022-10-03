@@ -2,23 +2,23 @@
   margin-bottom: var(--space-big);
 }
 
-#home .container-cards {
+#home .card-container {
   margin-bottom: var(--space-big);
   padding: 0 var(--default-padding);
 }
 
-#home .container-cards div {
+#home .card-container div {
   display: flex;
   overflow-x: scroll;
   column-gap: var(--space-medium);
 }
 
 /* Remove scrollbar space */
-#home .container-cards div::-webkit-scrollbar {
+#home .card-container div::-webkit-scrollbar {
   display: none;
 }
 
-#home .card-basic {
+#home .item-card {
   flex-grow: 0;
   flex-shrink: 0;
 }

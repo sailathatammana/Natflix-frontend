@@ -11,7 +11,7 @@ export default function ItemTop10({ id, number, imageURL }: iProps) {
   }
 
   return (
-    <article onClick={onClick} className="card-top-10">
+    <article onClick={onClick} className="item-top-10">
       <span>{number}</span>
       <img src={imageURL} />
     </article>
