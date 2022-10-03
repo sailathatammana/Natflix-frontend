@@ -48,8 +48,17 @@ export default function ModalDetails({ item }: iProps) {
     });
   }, []);
 
-  function getFirstVideoCode(): string {
+  function getFirstVideoCode(isASeries: boolean): string {
     let result = "";
+
+    console.log("details", details);
+
+    if (isASeries) {
+      result = details[0].video_code;
+    } else {
+      // @ts-ignore
+      result = details.video_code;
+    }
 
     return result;
   }
@@ -67,7 +76,7 @@ export default function ModalDetails({ item }: iProps) {
     <div className="modal-content">
       <HeroDetails
         item={item}
-        videoCode={getFirstVideoCode()}
+        videoCode={getFirstVideoCode(isASeries)}
         onClick={onClick}
       />
 

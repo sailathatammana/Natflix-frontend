@@ -5,5 +5,5 @@
 export default interface iDetailsContent {
   id: number;
   content_id: number;
-  videoCode: string;
+  video_code: string;
 }
