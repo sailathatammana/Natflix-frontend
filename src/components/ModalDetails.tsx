@@ -13,7 +13,7 @@ import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
-import iDetailsContent from "interfaces/iDetailsContent";
+import iDetailsOther from "interfaces/iDetailsOther";
 import iDetailsSeries from "interfaces/iDetailsSeries";
 import { useModal } from "state/ModalContext";
 
@@ -22,7 +22,7 @@ interface iProps {
 }
 
 export default function ModalDetails({ item }: iProps) {
-  const { id, title, summary } = item;
+  const { id, type_id, title, summary } = item;
 
   // Global state
   const navigate = useNavigate();
@@ -30,14 +30,14 @@ export default function ModalDetails({ item }: iProps) {
 
   // Local state
   const [status, setStatus] = useState(eStatus.LOADING);
-  const [details, setDetails] = useState(
-    {} as iDetailsContent | [] as iDetailsSeries[]
-  );
+  const [dataOther, setDataOther] = useState({} as iDetailsOther);
+  const [dataSerie, setDataSerie] = useState(Array<iDetailsSeries>);
 
   // Properties
-  const isASeries: boolean = Array.isArray(details);
-  // @ts-ignore
-  const firstVideoCode = isASeries ? details[0].video_code : details.video_code;
+  const isASeries: boolean = type_id === 1;
+  const emptyOther: boolean = Object(dataOther).length === 0;
+  const emptySeries: boolean = dataSerie.length === 0;
+  const videoCode = isASeries ? dataSerie[0]?.video_code : dataOther.video_code;
 
   // Methods
   useEffect(() => {
@@ -49,7 +49,7 @@ export default function ModalDetails({ item }: iProps) {
   }, []);
 
   function onSuccess(data: any) {
-    setDetails(data);
+    isASeries ? setDataSerie(data) : setDataOther(data);
     setStatus(eStatus.READY);
   }
 
@@ -65,16 +65,16 @@ export default function ModalDetails({ item }: iProps) {
   // Safeguards
   if (status === eStatus.LOADING) return <StatusLoading />;
   if (status === eStatus.ERROR) return <StatusError />;
-  if (details.length === 0) return <StatusEmpty />;
+  if (emptyOther && emptySeries) return <StatusEmpty />;
 
   return (
     <div className="modal-details">
-      <HeroDetails item={item} videoCode={firstVideoCode} onClick={onClick} />
+      <HeroDetails item={item} videoCode={videoCode} onClick={onClick} />
       <section className="description">
         <h2>{title}</h2>
         <p>{summary}</p>
       </section>
-      {isASeries && <EpisodeChooser episodes={details} onClick={onClick} />}
+      {isASeries && <EpisodeChooser episodes={dataSerie} onClick={onClick} />}
     </div>
   );
 }

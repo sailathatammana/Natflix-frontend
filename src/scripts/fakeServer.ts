@@ -1,6 +1,6 @@
 // Project files
 import iContent from "interfaces/iContent";
-import iDetailsContent from "interfaces/iDetailsContent";
+import iDetailsOther from "interfaces/iDetailsOther";
 import iDetailsSeries from "interfaces/iDetailsSeries";
 import Content from "./fake-data/content.json";
 import SingleMovie from "./fake-data/singleMovie.json";
@@ -30,9 +30,9 @@ function content(): Array<iContent> {
   return result;
 }
 
-function contentDetails(id: number): iDetailsContent | iDetailsSeries[] {
+function contentDetails(id: number): iDetailsOther | iDetailsSeries[] {
   const content = Content.filter((item) => item.id === id)[0];
-  let result: iDetailsContent | iDetailsSeries[];
+  let result: iDetailsOther | iDetailsSeries[];
 
   switch (content.type_id) {
     case 1:
