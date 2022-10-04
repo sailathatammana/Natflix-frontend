@@ -16,19 +16,19 @@ This is a dummy frontend meaning that it has hardcoded data. The students must r
 
 This is a complex project, thus here are some hierarchy diagrams to understand the project structure.
 
-![](public/readme-images/diagram-1.png)
-
 ## Main diagram
 
 The entry point is `App.tsx` it has a browser router for multi-page navigation. Currently it has the Home page and the VideoPlayer page.
 
 In addition, it has a Modal manager to handle modals/popups globally using Content API.
 
-![](public/readme-images/diagram-2.png)
+![](public/readme-images/diagram-1.png)
 
 ## Home page
 
-![](public/readme-images/diagram-3.png)
+The home page has a hero header that showcases the first item and also filters the content by movies, series, or documentaries.
+
+![](public/readme-images/diagram-2.png)
 
 # Modal details
 
@@ -38,8 +38,10 @@ Here the user can click on the play button to play the movie or documentary. If 
 
 If is a tv-series, the user can click on the dropdown menu to filter epidodes by season and then click on any episode to watch it.
 
-![](public/readme-images/diagram-4.png)
+![](public/readme-images/diagram-3.png)
 
 ## Video page
 
 The video page takes the video code sent from the play button or episode item inside the modal detail and opens a YouTube video corresponding to the video code.
+
+![](public/readme-images/diagram-4.png)
