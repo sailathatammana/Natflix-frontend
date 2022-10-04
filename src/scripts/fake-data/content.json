@@ -172,7 +172,7 @@
     "summary": "Tincidunt eget nullam non nisi est sit. Facilisis gravida neque convallis a cras. Non sodales neque sodales ut etiam sit amet nisl. Neque laoreet suspendisse interdum consectetur libero id.",
     "logo_url": "",
     "poster_url": "",
-    "banner_url": "",
+    "banner_url": "fake-images/banners/16.png",
     "thumbnail_url": "fake-images/thumbnails/16.png"
   },
   {
@@ -238,7 +238,7 @@
     "summary": "Amet commodo nulla facilisi nullam vehicula ipsum. Sit amet luctus venenatis lectus magna fringilla urna. Felis bibendum ut tristique et egestas quis ipsum. ",
     "logo_url": "",
     "poster_url": "",
-    "banner_url": "",
+    "banner_url": "fake-images/banners/22.png",
     "thumbnail_url": "fake-images/thumbnails/22.png"
   },
   {
