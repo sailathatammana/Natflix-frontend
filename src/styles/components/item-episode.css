@@ -28,15 +28,18 @@
     align-items: center;
   }
 
-  .item-episode .number {
-    display: initial;
-    margin-right: var(--space-medium);
-    font-size: 24px;
-  }
-
   .item-episode img {
     width: 130px;
     margin-bottom: 0;
     margin-right: var(--space-medium);
+  }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  .item-episode .number {
+    display: initial;
+    margin-right: var(--space-medium);
+    font-size: 24px;
   }
 }
