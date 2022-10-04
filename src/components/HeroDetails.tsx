@@ -1,6 +1,3 @@
-// Node modules
-import { MouseEventHandler } from "react";
-
 // Project files
 import IconPlay from "assets/images/icons/icon-play-black.svg";
 import Placeholder from "assets/images/placeholders/banner.png";
@@ -16,7 +13,7 @@ export default function HeroDetails({ item, videoCode, onClick }: iProps) {
   const { banner_url, logo_url } = item;
 
   // Components
-  const titleLogo = <img src={logo_url} className="logo" />;
+  const Logo = <img src={logo_url} className="logo" />;
 
   return (
     <header className="hero hero-details">
@@ -26,7 +23,7 @@ export default function HeroDetails({ item, videoCode, onClick }: iProps) {
         onError={(event) => (event.currentTarget.src = Placeholder)}
       />
       <div className="content">
-        {logo_url && titleLogo}
+        {logo_url && Logo}
         <button onClick={() => onClick(videoCode)} className="button-white">
           <img className="icon" src={IconPlay} />
           Play

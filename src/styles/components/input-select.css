@@ -1,4 +1,4 @@
-.input-select {
+select {
   height: 44px;
   padding-left: var(--space-medium);
   padding-right: var(--space-big); /* to fix the image of the arrow down */

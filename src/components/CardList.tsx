@@ -7,7 +7,7 @@ interface iProps {
   data: iContent[];
 }
 
-export default function CardContainer({ title, data }: iProps) {
+export default function CardList({ title, data }: iProps) {
   // Components
   const Cards = data.map((item) => <ItemCard key={item.id} item={item} />);
 

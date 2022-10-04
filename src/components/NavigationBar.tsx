@@ -1,4 +1,7 @@
-// Project file
+// Node modules
+import { Link } from "react-router-dom";
+
+// Project files
 import Logo from "assets/images/logo.svg";
 
 export default function NavigationBar() {
@@ -6,11 +9,11 @@ export default function NavigationBar() {
     <nav className="navigation-bar">
       <img src={Logo} />
       <div>
-        <a href="#">Home</a>
-        <a href="#">Series</a>
-        <a href="#">Series</a>
-        <a href="#">Films</a>
-        <a href="#">Documentaries</a>
+        <Link to="/">Home</Link>
+        <Link to="/">Series</Link>
+        <Link to="/">Series</Link>
+        <Link to="/">Films</Link>
+        <Link to="/">Documentaries</Link>
       </div>
     </nav>
   );

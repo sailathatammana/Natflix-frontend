@@ -13,11 +13,7 @@ export default function InputSelect({ data, state, onChange }: iProps) {
   ));
 
   return (
-    <select
-      className="input-select"
-      value={state}
-      onChange={(event) => onChange(event)}
-    >
+    <select value={state} onChange={(event) => onChange(event)}>
       {Options}
     </select>
   );

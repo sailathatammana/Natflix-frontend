@@ -16,9 +16,9 @@ export default function BannerHome({ item }: iProps) {
   const { setModal } = useModal();
 
   // Components
-  const Modal = <ModalDetails item={item} />;
-  const Logo = <img src={logo_url} className="logo" />;
   const Heading = <h3>{title}</h3>;
+  const Logo = <img src={logo_url} className="logo" />;
+  const Modal = <ModalDetails item={item} />;
 
   return (
     <header className="hero hero-home">

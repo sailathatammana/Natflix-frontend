@@ -1,4 +1,4 @@
-// Fake data
+// Fake data (replace this with a real fetch)
 import fakeFetch from "scripts/fakeFetch";
 
 // Node modules
@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 // Project files
 import BannerHome from "components/HeroHome";
-import ContainerCards from "components/CardContainer";
+import ContainerCards from "components/CardList";
 import NavigationBar from "components/NavigationBar";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";

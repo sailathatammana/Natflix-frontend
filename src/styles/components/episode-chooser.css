@@ -5,10 +5,10 @@
 }
 
 .episode-chooser h2,
-.input-select {
+.episode-chooser select {
   margin-bottom: 0;
 }
 
-.episode-chooser .input-select {
+.episode-chooser select {
   margin-left: auto;
 }

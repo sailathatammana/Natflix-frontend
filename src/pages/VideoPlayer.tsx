@@ -2,7 +2,7 @@
 import { Link, useParams } from "react-router-dom";
 
 // Project files
-import Icon from "assets/images/icons/icon-back-white.svg";
+import IconArrowBack from "assets/images/icons/icon-back-white.svg";
 
 export default function VideoPlayer() {
   // Global state
@@ -14,7 +14,7 @@ export default function VideoPlayer() {
   return (
     <div id="video-player">
       <Link className="button-back" to="/">
-        <img src={Icon} />
+        <img src={IconArrowBack} />
       </Link>
       <iframe className="youtube-player" src={videoSource} allow="fullscreen" />
     </div>
