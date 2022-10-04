@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Natflix
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The frontend for project #5 in the TietoEvry Java Course.
 
-## Available Scripts
+# About
 
-In the project directory, you can run:
+This is a dummy frontend meaning that it has hardcoded data. The students must replace the false api calls done using a method called `fakeFetch()` and replace it with the real native `fetch()` method in JavaScript.
 
-### `npm start`
+# Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#0 Clone the repository
+#0 Open a terminal and type `npm install` inside the repository folder
+#0 Run `npm start` to open the project in `localhost:3000`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Organization
 
-### `npm test`
+This is a complex project, thus here are some hierarchy diagrams to understand the project structure.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![](public/readme-images/diagram-1.png)
 
-### `npm run build`
+## Main diagram
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The entry point is `App.tsx` it has a browser router for multi-page navigation. Currently it has the Home page and the VideoPlayer page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In addition, it has a Modal manager to handle modals/popups globally using Content API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![](public/readme-images/diagram-2.png)
 
-### `npm run eject`
+## Home page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![](public/readme-images/diagram-3.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Modal details
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Once the user clicks on the more info button or item card, the modal manager opens this specific component to display the complementary information.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Here the user can click on the play button to play the movie or documentary. If the user selected an tv-series, then the play button will play the first epidode of the first season.
 
-## Learn More
+If is a tv-series, the user can click on the dropdown menu to filter epidodes by season and then click on any episode to watch it.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![](public/readme-images/diagram-4.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Video page
+
+The video page takes the video code sent from the play button or episode item inside the modal detail and opens a YouTube video corresponding to the video code.
