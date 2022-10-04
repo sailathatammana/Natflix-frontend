@@ -36,7 +36,8 @@ export default function ModalDetails({ item }: iProps) {
 
   // Properties
   const isASeries: boolean = Array.isArray(details);
-  const firstVideoCode = getFirstVideoCode();
+  // @ts-ignore
+  const firstVideoCode = isASeries ? details[0].video_code : details.video_code;
 
   // Methods
   useEffect(() => {
@@ -54,11 +55,6 @@ export default function ModalDetails({ item }: iProps) {
 
   function onFailure() {
     setStatus(eStatus.ERROR);
-  }
-
-  function getFirstVideoCode(): string {
-    // @ts-ignore
-    return isASeries ? details[0].video_code : details.video_code;
   }
 
   function onClick(videoCode: string): void {
