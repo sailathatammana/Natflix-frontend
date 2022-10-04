@@ -10,12 +10,13 @@ body {
 }
 
 * {
-  box-sizing: border-box; /* to fix legacy issues with padding messing up when adding with or border width */
+  box-sizing: border-box; /* to fix legacy issues with padding messing up when adding with or borders */
 }
 
 img {
   /* make images responsible (mobile first) */
   max-width: 100%;
   height: auto;
+
   object-fit: cover; /* To avoid streched images that look distorted */
 }

@@ -8,10 +8,10 @@ button,
   height: 44px;
   background-color: var(--color-netflix-red);
   color: white;
-  border-radius: var(--radius);
   font-weight: bold;
-  border: none;
   font-size: var(--default-text-size);
+  border: none;
+  border-radius: var(--radius);
   cursor: pointer;
 }
 

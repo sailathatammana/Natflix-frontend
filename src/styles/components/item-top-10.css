@@ -1,9 +1,9 @@
-.card-top-10 {
+.item-top-10 {
   overflow: hidden;
   cursor: pointer;
 }
 
-.card-top-10 span {
+.item-top-10 span {
   color: black;
   font-size: 230px;
   font-weight: bold;
@@ -13,7 +13,7 @@
   -webkit-text-stroke: 4px var(--color-gray-4);
 }
 
-.card-top-10 img {
+.item-top-10 img {
   margin-left: -10px; /* to cover the number */
   width: 120px;
   height: 170px;

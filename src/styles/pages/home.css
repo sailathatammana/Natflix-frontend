@@ -3,19 +3,19 @@
   margin-bottom: var(--space-big);
 }
 
-#home .card-container {
+#home .card-list {
   margin-bottom: var(--space-big);
   padding: 0 var(--default-padding);
 }
 
-#home .card-container div {
+#home .card-list div {
   display: flex;
   overflow-x: scroll;
   column-gap: var(--space-medium);
 }
 
 /* Remove scrollbar space */
-#home .card-container div::-webkit-scrollbar {
+#home .card-list div::-webkit-scrollbar {
   display: none;
 }
 

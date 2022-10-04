@@ -12,7 +12,7 @@ export default function CardList({ title, data }: iProps) {
   const Cards = data.map((item) => <ItemCard key={item.id} item={item} />);
 
   return (
-    <section className="card-container">
+    <section className="card-list">
       <h2>{title}</h2>
       <div>{Cards}</div>
     </section>

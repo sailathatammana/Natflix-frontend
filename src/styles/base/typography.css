@@ -2,7 +2,7 @@ h1,
 h2,
 h3,
 p {
-  margin-top: 0;
+  margin-top: 0; /* removes a weird layout that makes these element have space on top */
 }
 
 h1 {
@@ -23,7 +23,6 @@ h3 {
   margin-bottom: var(--space-medium);
 }
 
-/* the .text class is for elements like input that require the same size as the <p> tag */
 p {
   font-size: var(--default-text-size);
   margin-bottom: var(--space-medium);
