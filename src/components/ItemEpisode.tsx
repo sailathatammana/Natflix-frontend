@@ -8,7 +8,13 @@ interface iProps {
 }
 
 export default function ItemEpisode({ item, onClick }: iProps) {
-  const { episode, title, summary, thumbnail_url, video_code } = item;
+  const {
+    episode_number: episode,
+    title,
+    summary,
+    thumbnail_url,
+    video_code,
+  } = item;
 
   return (
     <article className="item-episode" onClick={() => onClick(video_code)}>

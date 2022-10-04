@@ -17,11 +17,11 @@ export default function EpisodeChooser({ episodes, onClick }: iProps) {
 
   // Properties
   const seasonsAvailable = episodes
-    .map((item) => item.season)
+    .map((item) => item.season_number)
     .sort((a, b) => b - a);
   const numberOfSeasons: number = seasonsAvailable[0]; // take the highest number
   const selectedEpisodes = episodes.filter(
-    (item) => item.season === Number(selectedSeason)
+    (item) => item.season_number === Number(selectedSeason)
   );
   const inputSelectLabels = generateSeasonLabels(numberOfSeasons);
 
