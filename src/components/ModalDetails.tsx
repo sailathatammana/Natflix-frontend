@@ -36,31 +36,29 @@ export default function ModalDetails({ item }: iProps) {
 
   // Properties
   const isASeries: boolean = Array.isArray(details);
+  const firstVideoCode = getFirstVideoCode();
 
   // Methods
   useEffect(() => {
     fakeFetch("contentDetails", id).then((response) => {
-      if (response.status == "ok") {
-        setDetails(response.data);
-        setStatus(eStatus.READY);
-      } else {
-        setStatus(eStatus.ERROR);
-      }
+      const { data, status } = response;
+
+      status === "ok" ? onSuccess(data) : onFailure();
     });
   }, []);
 
-  function getFirstVideoCode(isASeries: boolean): string {
-    let result = "";
+  function onSuccess(data: any) {
+    setDetails(data);
+    setStatus(eStatus.READY);
+  }
 
-    if (isASeries) {
-      result = details[0].video_code;
-    } else {
-      // Refactor
-      // @ts-ignore
-      result = details.video_code;
-    }
+  function onFailure() {
+    setStatus(eStatus.ERROR);
+  }
 
-    return result;
+  function getFirstVideoCode(): string {
+    // @ts-ignore
+    return isASeries ? details[0].video_code : details.video_code;
   }
 
   function onClick(videoCode: string): void {
@@ -75,18 +73,11 @@ export default function ModalDetails({ item }: iProps) {
 
   return (
     <div className="modal-details">
-      <HeroDetails
-        item={item}
-        videoCode={getFirstVideoCode(isASeries)}
-        onClick={onClick}
-      />
-
+      <HeroDetails item={item} videoCode={firstVideoCode} onClick={onClick} />
       <section className="description">
         <h2>{title}</h2>
         <p>{summary}</p>
       </section>
-
-      {/* Episode chooser */}
       {isASeries && <EpisodeChooser episodes={details} onClick={onClick} />}
     </div>
   );
