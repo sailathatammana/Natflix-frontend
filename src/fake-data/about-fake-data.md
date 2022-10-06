@@ -1,4 +1,4 @@
-# About fake data
+# About fake-data/
 
 This folder contains hardcoded data to simulate the database.
 

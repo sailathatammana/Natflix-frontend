@@ -7,12 +7,15 @@ import { useParams } from "react-router-dom";
 
 // Project files
 import Item from "components/ItemAdminContent";
+import FormEdit from "components/FormEdit";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
 import { useModal } from "state/ModalContext";
+import iDetailsOther from "interfaces/iDetailsOther";
+import iDetailsSeries from "interfaces/iDetailsSeries";
 
 export default function AdminContent() {
   // Global state
@@ -44,11 +47,12 @@ export default function AdminContent() {
     setStatus(eStatus.ERROR);
   }
 
-  function onEdit(id: number) {
-    // 1 endpoint to save (to know if is a movie, docu, serie, etc)
-    // 2 json data with what fields to create
-    // 3 item with id to edit
-    setModal(<FormEdit />);
+  function onCreate() {
+    alert("Adding new item");
+  }
+
+  function onEdit(item: iContent | iDetailsOther | iDetailsSeries) {
+    setModal(<FormEdit endPoint={`toBeDecided`} fields={fields} item={item} />);
   }
 
   function onDelete(id: number) {

@@ -5,7 +5,6 @@ export default interface iContent {
   category_id: number;
   summary: string;
   logo_url: string;
-  poster_url: string;
   banner_url: string;
   thumbnail_url: string;
 }
