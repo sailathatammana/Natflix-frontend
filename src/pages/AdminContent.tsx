@@ -32,11 +32,9 @@ export default function AdminContent() {
 
   // Methods
   useEffect(() => {
-    fakeFetch(`${endPoint}/`).then((response) => {
-      const { data, status } = response;
-
-      status === "ok" ? onSuccess(data) : onFailure();
-    });
+    fakeFetch(`${endPoint}/`)
+      .then((response) => onSuccess(response.data))
+      .catch(onFailure);
   }, []);
 
   function onSuccess(data: iContent[]) {

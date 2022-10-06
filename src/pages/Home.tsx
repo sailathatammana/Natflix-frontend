@@ -20,17 +20,16 @@ export default function Home() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
+  const endPoint = "content/";
   const series = data.filter((item) => item.type_id === 1);
   const movies = data.filter((item) => item.type_id === 2);
   const documentaries = data.filter((item) => item.type_id === 3);
 
   // Methods
   useEffect(() => {
-    fakeFetch("content/").then((response) => {
-      const { data, status } = response;
-
-      status === "ok" ? onSuccess(data) : onFailure();
-    });
+    fakeFetch(endPoint)
+      .then((response) => onSuccess(response.data))
+      .catch(onFailure);
   }, []);
 
   function onSuccess(data: iContent[]) {

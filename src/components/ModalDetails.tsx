@@ -34,6 +34,7 @@ export default function ModalDetails({ item }: iProps) {
   const [dataSerie, setDataSerie] = useState(Array<iDetailsSeries>);
 
   // Properties
+  const endPoint = "details/:content-type/:id";
   const isASeries: boolean = type_id === 1;
   const emptyOther: boolean = Object(dataOther).length === 0;
   const emptySeries: boolean = dataSerie.length === 0;
@@ -41,11 +42,9 @@ export default function ModalDetails({ item }: iProps) {
 
   // Methods
   useEffect(() => {
-    fakeFetch("details/", id).then((response) => {
-      const { data, status } = response;
-
-      status === "ok" ? onSuccess(data) : onFailure();
-    });
+    fakeFetch(endPoint, id)
+      .then((response) => onSuccess(response.data))
+      .catch(onFailure);
   }, []);
 
   function onSuccess(data: any) {
