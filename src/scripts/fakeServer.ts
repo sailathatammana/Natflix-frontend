@@ -1,21 +1,34 @@
-// Project files
-import iContent from "interfaces/iContent";
-import iDetailsOther from "interfaces/iDetailsOther";
-import iDetailsSeries from "interfaces/iDetailsSeries";
+// Fake data
 import Content from "./fake-data/content.json";
+import Documentaries from "./fake-data/documentaries.json";
+import Movies from "./fake-data/movies.json";
+import Series from "./fake-data/series.json";
+import SingleDocumentary from "./fake-data/singleDocumentary.json";
 import SingleMovie from "./fake-data/singleMovie.json";
 import SingleSerie from "./fake-data/singleSerie.json";
-import SingleDocumentary from "./fake-data/singleDocumentary.json";
+
+// Project files
+import iDetailsOther from "interfaces/iDetailsOther";
+import iDetailsSeries from "interfaces/iDetailsSeries";
 
 export default function fakeServer(endPoint: string, id: number): any {
-  let result: any;
+  let result;
 
   switch (endPoint) {
     case "content":
-      result = content();
+      result = Content;
       break;
     case "contentDetails":
-      result = contentDetails(id);
+      result = getContentDetails(id);
+      break;
+    case "movies":
+      result = Movies;
+      break;
+    case "documentaries":
+      result = Documentaries;
+      break;
+    case "series":
+      result = Series;
       break;
     default:
       throw new Error("invalid endpoint");
@@ -24,13 +37,7 @@ export default function fakeServer(endPoint: string, id: number): any {
   return result;
 }
 
-function content(): Array<iContent> {
-  const result = Content;
-
-  return result;
-}
-
-function contentDetails(id: number): iDetailsOther | iDetailsSeries[] {
+function getContentDetails(id: number): iDetailsOther | iDetailsSeries[] {
   const content = Content.filter((item) => item.id === id)[0];
   let result: iDetailsOther | iDetailsSeries[];
 
