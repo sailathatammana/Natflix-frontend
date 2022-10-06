@@ -22,7 +22,7 @@
 
 .hero .content {
   max-width: 460px;
-  padding: var(--default-padding);
+  padding: var(--page-space);
 }
 
 .hero .logo {

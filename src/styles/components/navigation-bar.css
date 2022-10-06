@@ -4,7 +4,7 @@
   background-color: black;
   width: 100%;
   height: var(--nav-bar);
-  padding: 0 var(--default-padding);
+  padding: 0 var(--page-space);
   align-items: center; /* used with flex to align items on the vertical axis */
 }
 

@@ -1,6 +1,6 @@
 #video-player .button-back {
   position: absolute;
-  margin: var(--default-padding);
+  margin: var(--page-space);
   color: white;
 }
 

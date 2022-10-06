@@ -5,7 +5,7 @@
   color: white;
   border-radius: var(--radius);
   overflow: scroll;
-  padding-bottom: var(--default-padding);
+  padding-bottom: var(--page-space);
 }
 
 .modal-details .hero,
@@ -45,6 +45,6 @@
 
   .modal-details .description,
   .modal-details .episode-chooser {
-    margin: 0 var(--default-padding);
+    margin: 0 var(--page-space);
   }
 }

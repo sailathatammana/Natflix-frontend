@@ -1,0 +1,28 @@
+#admin {
+  margin: var(--space-medium);
+}
+
+#admin .items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--space-medium);
+}
+
+#admin .items img {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  #admin {
+    max-width: 960px;
+    margin: var(--page-space) auto;
+  }
+
+  #admin .items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
