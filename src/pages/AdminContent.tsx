@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // Project files
-import Item from "components/ItemAdminContent";
+import ItemAdmin from "components/ItemAdmin";
 import FormEdit from "components/FormUpdate";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
@@ -56,7 +56,7 @@ export default function AdminContent() {
 
   // Components
   const Items = data.map((item) => (
-    <Item key={item.id} item={item} onUpdate={onUpdate} />
+    <ItemAdmin key={item.id} item={item} onUpdate={onUpdate} />
   ));
 
   // Safeguards

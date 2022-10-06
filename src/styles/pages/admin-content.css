@@ -1,0 +1,15 @@
+#admin-content {
+  margin: var(--space-medium);
+}
+
+#admin-content .item-admin {
+  margin-bottom: var(--space-medium);
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  #admin {
+    max-width: 960px;
+    margin: var(--page-space) auto;
+  }
+}
