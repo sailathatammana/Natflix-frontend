@@ -28,12 +28,10 @@ export default function FormUpdateItem({ endPoint, fields, data }: iProps) {
     const editedItem = { ...form, id: data.id };
 
     event.preventDefault();
-    fakeFetch(endPoint, editedItem).then((response) => {
-      const { status } = response;
-
-      status === "ok" ? onSuccess() : onFailure();
-      setModal(null);
-    });
+    fakeFetch(endPoint, editedItem)
+      .then(() => onSuccess)
+      .catch(onFailure);
+    setModal(null);
   }
 
   function onSuccess() {
@@ -46,7 +44,7 @@ export default function FormUpdateItem({ endPoint, fields, data }: iProps) {
 
   // Components
   const InputFields = fields.map((item) => (
-    <InputField key={item.key} setup={item} state={[form, setForm]} />
+    <InputField key={item.key} fields={item} state={[form, setForm]} />
   ));
 
   return (

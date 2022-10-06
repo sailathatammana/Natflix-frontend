@@ -1,5 +1,8 @@
 // Fake data
 import Content from "./fake-data/content.json";
+import Movies from "./fake-data/movies.json";
+import Documentaries from "./fake-data/documentaries.json";
+import Series from "./fake-data/series.json";
 import SingleDocumentary from "./fake-data/singleDocumentary.json";
 import SingleMovie from "./fake-data/singleMovie.json";
 import SingleSerie from "./fake-data/singleSerie.json";
@@ -14,12 +17,20 @@ export default function fakeServer(endPoint: string, data: any = null): any {
     // Content
     case "content/":
       return Content;
-    case "content/create/":
+    case "content/create":
       return contentCreate(data);
-    case "content/delete/":
+    case "content/delete":
       return contentDelete(data);
-    case "content/update/":
+    case "content/update":
       return contentUpdate(data);
+
+    // Content filtered
+    case "content/movies":
+      return Movies;
+    case "content/documentaries":
+      return Documentaries;
+    case "content/series":
+      return Series;
 
     // Details
     case "details/:content-type/:id":

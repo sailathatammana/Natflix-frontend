@@ -14,13 +14,13 @@ import StatusLoading from "components/StatusLoading";
 import FieldsContent from "data/fields-content.json";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
-import { useModal } from "state/ModalContext";
 import iDetailsOther from "interfaces/iDetailsOther";
 import iDetailsSeries from "interfaces/iDetailsSeries";
+import { useModal } from "state/ModalContext";
 
 export default function AdminContent() {
   // Global state
-  const { code } = useParams();
+  const { first, second } = useParams();
   const { setModal } = useModal();
 
   // Local state
@@ -28,13 +28,12 @@ export default function AdminContent() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
-  const endPoint = "";
-
+  const endPoint: string = `${first}/${second}`;
   // Methods
   useEffect(() => {
-    fakeFetch(`${endPoint}/`)
+    fakeFetch(endPoint)
       .then((response) => onSuccess(response.data))
-      .catch(onFailure);
+      .catch((error) => onFailure(error));
   }, []);
 
   function onSuccess(data: iContent[]) {
@@ -42,7 +41,8 @@ export default function AdminContent() {
     setStatus(eStatus.READY);
   }
 
-  function onFailure() {
+  function onFailure(error: string) {
+    console.error(error);
     setStatus(eStatus.ERROR);
   }
 
@@ -72,7 +72,9 @@ export default function AdminContent() {
 
   return (
     <div id="admin-content">
-      <h1>Admin {code}</h1>
+      <h1>
+        Admin {first} {second}
+      </h1>
       <button onClick={onCreate}>Add a new item</button>
       {data.length === 0 ? <StatusEmpty /> : Items}
     </div>

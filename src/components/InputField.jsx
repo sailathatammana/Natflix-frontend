@@ -1,12 +1,12 @@
-export default function InputField({ setup, state }) {
-  const { key, autoFocus, label, placeholder, type, required } = setup;
+export default function InputField({ fields, state }) {
+  const { key, autoFocus, label, placeholder, type, required } = fields;
   const [value, setValue] = state;
 
   // Methods
   function onChange(event) {
     const clonedItem = { ...value };
-    clonedItem[key] = event.target.value;
 
+    clonedItem[key] = event.target.value;
     setValue(clonedItem);
   }
 
