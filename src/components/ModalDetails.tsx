@@ -41,7 +41,7 @@ export default function ModalDetails({ item }: iProps) {
 
   // Methods
   useEffect(() => {
-    fakeFetch("contentDetails", id).then((response) => {
+    fakeFetch("details/", id).then((response) => {
       const { data, status } = response;
 
       status === "ok" ? onSuccess(data) : onFailure();

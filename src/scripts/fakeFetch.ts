@@ -11,7 +11,7 @@ interface iResponse {
   data: Array<any> | any;
 }
 
-async function fakeFetch(url: string, id: number = NaN): Promise<iResponse> {
+async function fakeFetch(url: string, data: any = null): Promise<iResponse> {
   const chanceToSucced = generateRandomNumber(100);
   const result = { data: {}, status: "" };
 
@@ -26,7 +26,7 @@ async function fakeFetch(url: string, id: number = NaN): Promise<iResponse> {
       result.status = "ok";
       break;
     default:
-      result.data = fakeServer(url, id);
+      result.data = fakeServer(url, data);
       result.status = "ok";
   }
 

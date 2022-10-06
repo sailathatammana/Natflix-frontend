@@ -14,10 +14,10 @@ export default function ItemAdminContent({ item, onEdit, onDelete }: iProps) {
     <article className="item-admin-content">
       <span className="id">{id}</span>
       <h3>{title}</h3>
-      <button className="button-gray" onClick={() => onEdit(id)}>
+      <button className="button-gray" onClick={() => onEdit(item)}>
         Edit
       </button>
-      <button className="button-gray" onClick={() => onDelete(id)}>
+      <button className="button-gray" onClick={() => onDelete(item)}>
         Delete
       </button>
     </article>

@@ -10,34 +10,44 @@ import SingleSerie from "./fake-data/singleSerie.json";
 // Project files
 import iDetailsOther from "interfaces/iDetailsOther";
 import iDetailsSeries from "interfaces/iDetailsSeries";
+import iContent from "interfaces/iContent";
 
-export default function fakeServer(endPoint: string, id: number): any {
+export default function fakeServer(endPoint: string, data: any = null): any {
   let result;
 
   switch (endPoint) {
-    case "content":
+    case "content/":
       result = Content;
       break;
-    case "contentDetails":
-      result = getContentDetails(id);
+    case "details/":
+      result = getDetails(data);
       break;
-    case "movies":
+    case "movies/":
       result = Movies;
       break;
-    case "documentaries":
+    case "documentaries/":
       result = Documentaries;
       break;
-    case "series":
+    case "series/":
       result = Series;
       break;
+    case "content/create/":
+      result = createContent(data);
+      break;
+    case "content/edit/":
+      result = editContent(data);
+      break;
+    case "content/delete/":
+      result = deleteContent(data);
+      break;
     default:
-      throw new Error("invalid endpoint");
+      throw new Error(`invalid endpoint ${endPoint}`);
   }
 
   return result;
 }
 
-function getContentDetails(id: number): iDetailsOther | iDetailsSeries[] {
+function getDetails(id: number): iDetailsOther | iDetailsSeries[] {
   const content = Content.filter((item) => item.id === id)[0];
   let result: iDetailsOther | iDetailsSeries[];
 
@@ -52,8 +62,16 @@ function getContentDetails(id: number): iDetailsOther | iDetailsSeries[] {
       result = SingleDocumentary;
       break;
     default:
-      throw new Error("Invalid type id");
+      throw new Error(`Invalid type id ${id}`);
   }
 
   return result;
+}
+
+function createContent(item: iContent) {
+  return { data: `Created new content ${item.title}` };
+}
+
+function editContent(id: number) {
+  return { data: `Updated content with id ${id}` };
 }

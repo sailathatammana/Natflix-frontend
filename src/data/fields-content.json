@@ -24,14 +24,6 @@
     "type": "text"
   },
   {
-    "key": "category_id",
-    "autofocus": false,
-    "label": "Type of category",
-    "placeholder": "1: horror, 2: action, 3: comedy, 4: drama, 5: other",
-    "required": true,
-    "type": "text"
-  },
-  {
     "key": "summary",
     "autofocus": false,
     "label": "Summary",
@@ -44,7 +36,7 @@
     "autofocus": false,
     "label": "Logo URL",
     "placeholder": "www.google.com/logo.png",
-    "required": true,
+    "required": false,
     "type": "text"
   },
   {

@@ -26,7 +26,7 @@ export default function Home() {
 
   // Methods
   useEffect(() => {
-    fakeFetch("content").then((response) => {
+    fakeFetch("content/").then((response) => {
       const { data, status } = response;
 
       status === "ok" ? onSuccess(data) : onFailure();

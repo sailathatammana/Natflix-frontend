@@ -11,6 +11,7 @@ import FormEdit from "components/FormEdit";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
+import FieldsContent from "data/fields-content.json";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
 import { useModal } from "state/ModalContext";
@@ -27,7 +28,7 @@ export default function AdminContent() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
-  const request = code || "";
+  const request = `${code}/` || "/";
 
   // Methods
   useEffect(() => {
@@ -52,11 +53,16 @@ export default function AdminContent() {
   }
 
   function onEdit(item: iContent | iDetailsOther | iDetailsSeries) {
-    setModal(<FormEdit endPoint={`toBeDecided`} fields={fields} item={item} />);
+    const fields = FieldsContent;
+    const endPoint = `${request}/edit/${item.id}`;
+
+    setModal(<FormEdit endPoint={endPoint} fields={fields} data={item} />);
   }
 
   function onDelete(id: number) {
-    confirm(`Are you sure you want to delete item #${id}`);
+    const endPoint = `${request}/edit/${id}`;
+
+    alert(`Are you sure you want to delete item #${id} at ${endPoint}`);
   }
 
   // Components
