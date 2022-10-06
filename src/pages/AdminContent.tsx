@@ -28,11 +28,11 @@ export default function AdminContent() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
-  const request = `${code}/` || "/";
+  const endPoint = "";
 
   // Methods
   useEffect(() => {
-    fakeFetch(request).then((response) => {
+    fakeFetch(`${endPoint}/`).then((response) => {
       const { data, status } = response;
 
       status === "ok" ? onSuccess(data) : onFailure();
@@ -49,20 +49,18 @@ export default function AdminContent() {
   }
 
   function onCreate() {
-    alert("Adding new item");
+    alert("creating item");
   }
 
   function onEdit(item: iContent | iDetailsOther | iDetailsSeries) {
     const fields = FieldsContent;
-    const endPoint = `${request}/edit/${item.id}`;
+    const editEndPoint = `${endPoint}/edit/`;
 
-    setModal(<FormEdit endPoint={endPoint} fields={fields} data={item} />);
+    setModal(<FormEdit endPoint={editEndPoint} fields={fields} data={item} />);
   }
 
   function onDelete(id: number) {
-    const endPoint = `${request}/edit/${id}`;
-
-    alert(`Are you sure you want to delete item #${id} at ${endPoint}`);
+    alert(`deleting item ${id}`);
   }
 
   // Components
@@ -77,7 +75,7 @@ export default function AdminContent() {
   return (
     <div id="admin-content">
       <h1>Admin {code}</h1>
-      <button>Add a new item</button>
+      <button onClick={onCreate}>Add a new item</button>
       {data.length === 0 ? <StatusEmpty /> : Items}
     </div>
   );
