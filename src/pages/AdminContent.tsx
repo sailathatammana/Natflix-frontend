@@ -6,16 +6,18 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // Project files
+import Item from "components/ItemAdminContent";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
-import ItemAdminContent from "components/ItemAdminContent";
+import { useModal } from "state/ModalContext";
 
 export default function AdminContent() {
   // Global state
   const { code } = useParams();
+  const { setModal } = useModal();
 
   // Local state
   const [status, setStatus] = useState(eStatus.LOADING);
@@ -43,34 +45,30 @@ export default function AdminContent() {
   }
 
   function onEdit(id: number) {
-    // this opens the edit modal form
-    alert(`Trying to edit ${id}`);
+    // 1 endpoint to save (to know if is a movie, docu, serie, etc)
+    // 2 json data with what fields to create
+    // 3 item with id to edit
+    setModal(<FormEdit />);
   }
 
   function onDelete(id: number) {
-    // this opens the native confirm alert
-    alert(`Trying to edit ${id}`);
+    confirm(`Are you sure you want to delete item #${id}`);
   }
 
   // Components
   const Items = data.map((item) => (
-    <ItemAdminContent
-      key={item.id}
-      item={item}
-      onEdit={onEdit}
-      onDelete={onDelete}
-    />
+    <Item key={item.id} item={item} onEdit={onEdit} onDelete={onDelete} />
   ));
 
   // Safeguards
   if (status === eStatus.LOADING) return <StatusLoading />;
   if (status === eStatus.ERROR) return <StatusError />;
-  if (data.length === 0) return <StatusEmpty />;
 
   return (
     <div id="admin-content">
       <h1>Admin {code}</h1>
-      {Items}
+      <button>Add a new item</button>
+      {data.length === 0 ? <StatusEmpty /> : Items}
     </div>
   );
 }
