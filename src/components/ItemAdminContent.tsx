@@ -3,22 +3,18 @@ import iContent from "interfaces/iContent";
 
 interface iProps {
   item: iContent;
-  onEdit: Function;
-  onDelete: Function;
+  onUpdate: Function;
 }
 
-export default function ItemAdminContent({ item, onEdit, onDelete }: iProps) {
+export default function ItemAdminContent({ item, onUpdate }: iProps) {
   const { id, title } = item;
 
   return (
     <article className="item-admin-content">
       <span className="id">{id}</span>
       <h3>{title}</h3>
-      <button className="button-gray" onClick={() => onEdit(item)}>
-        Edit
-      </button>
-      <button className="button-gray" onClick={() => onDelete(item)}>
-        Delete
+      <button className="button-gray" onClick={() => onUpdate(item)}>
+        Update
       </button>
     </article>
   );

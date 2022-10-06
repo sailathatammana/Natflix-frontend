@@ -16,7 +16,7 @@ interface iProps {
   data: iContent | iDetailsOther | iDetailsSeries;
 }
 
-export default function FormUpdateItem({ endPoint, fields, data }: iProps) {
+export default function FormUpdate({ endPoint, fields, data }: iProps) {
   // Global state
   const { setModal } = useModal();
 
@@ -25,20 +25,22 @@ export default function FormUpdateItem({ endPoint, fields, data }: iProps) {
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    console.log("submitting...");
     const editedItem = { ...form, id: data.id };
 
     event.preventDefault();
     fakeFetch(endPoint, editedItem)
-      .then(() => onSuccess)
-      .catch(onFailure);
-    setModal(null);
+      .then(onSuccess)
+      .catch((error) => onFailure(error));
   }
 
   function onSuccess() {
     alert("Item edited!");
+    setModal(null);
   }
 
-  function onFailure() {
+  function onFailure(error: string) {
+    console.error(error);
     alert("Could not edit item");
   }
 
@@ -49,7 +51,7 @@ export default function FormUpdateItem({ endPoint, fields, data }: iProps) {
 
   return (
     <form className="form" onSubmit={onSubmit}>
-      <h2>Edit information</h2>
+      <h2>Update information</h2>
       {InputFields}
       <hr />
       <button className="button-gray">Save</button>

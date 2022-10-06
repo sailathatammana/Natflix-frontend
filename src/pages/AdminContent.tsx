@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 // Project files
 import Item from "components/ItemAdminContent";
-import FormEdit from "components/FormEdit";
+import FormEdit from "components/FormUpdate";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
@@ -29,6 +29,7 @@ export default function AdminContent() {
 
   // Properties
   const endPoint: string = `${first}/${second}`;
+
   // Methods
   useEffect(() => {
     fakeFetch(endPoint)
@@ -46,24 +47,16 @@ export default function AdminContent() {
     setStatus(eStatus.ERROR);
   }
 
-  function onCreate() {
-    alert("creating item");
-  }
-
-  function onEdit(item: iContent | iDetailsOther | iDetailsSeries) {
+  function onUpdate(item: iContent | iDetailsOther | iDetailsSeries) {
     const fields = FieldsContent;
-    const editEndPoint = `${endPoint}/edit/`;
+    const endPoint = `${first}/update`; // here we change from first/update to first/second/update
 
-    setModal(<FormEdit endPoint={editEndPoint} fields={fields} data={item} />);
-  }
-
-  function onDelete(id: number) {
-    alert(`deleting item ${id}`);
+    setModal(<FormEdit endPoint={endPoint} fields={fields} data={item} />);
   }
 
   // Components
   const Items = data.map((item) => (
-    <Item key={item.id} item={item} onEdit={onEdit} onDelete={onDelete} />
+    <Item key={item.id} item={item} onUpdate={onUpdate} />
   ));
 
   // Safeguards
@@ -75,7 +68,6 @@ export default function AdminContent() {
       <h1>
         Admin {first} {second}
       </h1>
-      <button onClick={onCreate}>Add a new item</button>
       {data.length === 0 ? <StatusEmpty /> : Items}
     </div>
   );

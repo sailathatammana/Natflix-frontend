@@ -44,7 +44,7 @@ export default function ModalDetails({ item }: iProps) {
   useEffect(() => {
     fakeFetch(endPoint, id)
       .then((response) => onSuccess(response.data))
-      .catch(onFailure);
+      .catch((error) => onFailure(error));
   }, []);
 
   function onSuccess(data: any) {
@@ -52,7 +52,8 @@ export default function ModalDetails({ item }: iProps) {
     setStatus(eStatus.READY);
   }
 
-  function onFailure() {
+  function onFailure(error: string) {
+    console.error(error);
     setStatus(eStatus.ERROR);
   }
 

@@ -29,7 +29,7 @@ export default function Home() {
   useEffect(() => {
     fakeFetch(endPoint)
       .then((response) => onSuccess(response.data))
-      .catch(onFailure);
+      .catch((error) => onFailure(error));
   }, []);
 
   function onSuccess(data: iContent[]) {
@@ -37,7 +37,8 @@ export default function Home() {
     setStatus(eStatus.READY);
   }
 
-  function onFailure() {
+  function onFailure(error: string) {
+    console.error(error);
     setStatus(eStatus.ERROR);
   }
 
