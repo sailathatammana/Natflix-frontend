@@ -12,7 +12,7 @@ export default function InputField({ fields, state }) {
 
   return (
     <label className="input-field">
-      <div>{label}:</div>
+      <span>{label}:</span>
       <input
         autoFocus={autoFocus}
         onChange={onChange}

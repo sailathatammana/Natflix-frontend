@@ -1,0 +1,20 @@
+.input-field {
+}
+
+.input-field span {
+  display: block;
+  margin-bottom: var(--space-small);
+  color: white;
+  font-style: var(--default-text-size);
+  font-weight: bold;
+}
+
+.input-field input {
+  min-width: 240px;
+  height: 44px;
+  padding: var(--space-small) var(--space-medium);
+  background-color: var(--color-gray-3);
+  color: white;
+  border-radius: var(--radius);
+  border: none;
+}
