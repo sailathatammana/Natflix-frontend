@@ -5,16 +5,26 @@
   display: block;
   margin-bottom: var(--space-small);
   color: white;
-  font-style: var(--default-text-size);
+  font-size: var(--default-text-size);
   font-weight: bold;
 }
 
 .input-field input {
-  min-width: 240px;
+  min-width: 320px;
   height: 44px;
   padding: var(--space-small) var(--space-medium);
   background-color: var(--color-gray-3);
   color: white;
+  font-size: var(--default-text-size);
   border-radius: var(--radius);
   border: none;
+}
+
+.input-field input::placeholder {
+  color: var(--color-gray-4);
+}
+
+.input-field input:focus {
+  outline: none;
+  border-bottom: solid 2px orange;
 }
