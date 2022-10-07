@@ -7,7 +7,8 @@ import { useParams } from "react-router-dom";
 
 // Project files
 import ItemAdmin from "components/ItemAdmin";
-import FormEdit from "components/FormUpdate";
+import FormCreate from "components/FormCreate";
+import FormUpdate from "components/FormUpdate";
 import NavigationBarAdmin from "components/NavigationBarAdmin";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
@@ -49,12 +50,18 @@ export default function AdminContent() {
     setStatus(eStatus.ERROR);
   }
 
+  function onCreate() {
+    const fields = FieldsContent;
+    const endPoint = `${first}/create`; // here we change from first/update to first/second/update
+
+    setModal(<FormCreate fields={fields} endPoint={endPoint} />);
+  }
+
   function onUpdate(item: iContent | iDetailsOther | iDetailsSeries) {
     const fields = FieldsContent;
-    const endPoint = `${first}/update`; // here we change from first/update to first/second/update
-    console.log("AdminContent.tsx onUpdate() endPoint", endPoint);
+    const endPoint = `${first}/update`;
 
-    setModal(<FormEdit endPoint={endPoint} fields={fields} data={item} />);
+    setModal(<FormUpdate endPoint={endPoint} fields={fields} data={item} />);
   }
 
   // Components
@@ -75,6 +82,8 @@ export default function AdminContent() {
         </h1>
       </header>
       {data.length === 0 ? <StatusEmpty /> : Items}
+      <hr />
+      <button onClick={onCreate}>Create item</button>
     </div>
   );
 }

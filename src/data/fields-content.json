@@ -50,7 +50,7 @@
   {
     "key": "thumbnail_url",
     "autofocus": false,
-    "label": "Logo URL",
+    "label": "Thumbail URL",
     "placeholder": "www.google.com/thumbnail.png",
     "required": true,
     "type": "text"
