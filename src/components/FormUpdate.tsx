@@ -25,7 +25,6 @@ export default function FormUpdate({ endPoint, fields, data }: iProps) {
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    console.log("submitting...");
     const editedItem = { ...form, id: data.id };
 
     event.preventDefault();

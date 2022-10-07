@@ -5,12 +5,18 @@ import { Link } from "react-router-dom";
 import ImageMovies from "assets/images/admin-movies.jpg";
 import ImageDocumentaries from "assets/images/admin-documentaries.jpg";
 import ImageSeries from "assets/images/admin-series.jpg";
+import NavigationBarAdmin from "components/NavigationBarAdmin";
 
 export default function Admin() {
   return (
-    <div id="admin">
-      <h1>Admin main menu</h1>
-      <p>Please choose one of the following options to start adding content:</p>
+    <div id="admin" className="admin-pages">
+      <NavigationBarAdmin />
+      <header>
+        <h1>Admin main menu</h1>
+        <p>
+          Please choose one of the following options to start adding content:
+        </p>
+      </header>
       <div className="items">
         <Link className="item" to="/admin/content/movies">
           <img src={ImageMovies} />

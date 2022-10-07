@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 // Project files
 import ItemAdmin from "components/ItemAdmin";
 import FormEdit from "components/FormUpdate";
+import NavigationBarAdmin from "components/NavigationBarAdmin";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
@@ -32,10 +33,11 @@ export default function AdminContent() {
 
   // Methods
   useEffect(() => {
+    setStatus(eStatus.LOADING);
     fakeFetch(endPoint)
       .then((response) => onSuccess(response.data))
       .catch((error) => onFailure(error));
-  }, []);
+  }, [first, second]);
 
   function onSuccess(data: iContent[]) {
     setData(data);
@@ -50,6 +52,7 @@ export default function AdminContent() {
   function onUpdate(item: iContent | iDetailsOther | iDetailsSeries) {
     const fields = FieldsContent;
     const endPoint = `${first}/update`; // here we change from first/update to first/second/update
+    console.log("AdminContent.tsx onUpdate() endPoint", endPoint);
 
     setModal(<FormEdit endPoint={endPoint} fields={fields} data={item} />);
   }
@@ -64,10 +67,13 @@ export default function AdminContent() {
   if (status === eStatus.ERROR) return <StatusError />;
 
   return (
-    <div id="admin-content">
-      <h1>
-        Admin {first} {second}
-      </h1>
+    <div id="admin-content" className="admin-pages">
+      <NavigationBarAdmin />
+      <header>
+        <h1>
+          Admin {first} {second}
+        </h1>
+      </header>
       {data.length === 0 ? <StatusEmpty /> : Items}
     </div>
   );
