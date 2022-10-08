@@ -10,6 +10,7 @@ import FormCreate from "components/FormCreate";
 import FormDelete from "components/FormDelete";
 import FormUpdate from "components/FormUpdate";
 import NavigationBarAdmin from "components/NavigationBarAdmin";
+import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
 import Fields from "data/fields-details-series.json";
@@ -74,7 +75,7 @@ export default function AdminDetailSeries() {
       <header>
         <h1>Admin details</h1>
       </header>
-      {Items}
+      {data.length === 0 ? <StatusEmpty /> : Items}
       <hr />
       <button onClick={onCreate}>Create episode</button>
     </div>
