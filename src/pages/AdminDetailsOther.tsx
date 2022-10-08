@@ -31,13 +31,6 @@ export default function AdminDetailsOther() {
       .catch((error) => onFailure(error));
   }, []);
 
-  function onSubmit(event: FormEvent) {
-    event.preventDefault();
-    fakeFetch(endPoint + "update/", data)
-      .then((response) => alert(response.data))
-      .catch(onFailure);
-  }
-
   function onSuccess(data: string) {
     setData(data);
     setStatus(eStatus.READY);
@@ -46,6 +39,13 @@ export default function AdminDetailsOther() {
   function onFailure(error: string) {
     console.error(error);
     setStatus(eStatus.ERROR);
+  }
+
+  function onSubmit(event: FormEvent) {
+    event.preventDefault();
+    fakeFetch(endPoint + "update/", data)
+      .then((response) => alert(response.data))
+      .catch(onFailure);
   }
 
   // Safeguards
