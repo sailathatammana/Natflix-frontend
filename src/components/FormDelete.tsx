@@ -17,7 +17,7 @@ export default function FormDelete({ endPoint, id }: iProps) {
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    fakeFetch(endPoint + "delete", id)
+    fakeFetch(endPoint + "/delete", id)
       .then(onSuccess)
       .catch((error) => onFailure(error));
   }

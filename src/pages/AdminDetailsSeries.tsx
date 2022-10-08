@@ -6,17 +6,22 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // Project files
+import FormCreate from "components/FormCreate";
+import FormDelete from "components/FormDelete";
+import FormUpdate from "components/FormUpdate";
 import NavigationBarAdmin from "components/NavigationBarAdmin";
-import InputField from "components/InputField";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
+import Fields from "data/fields-details-series.json";
 import eStatus from "interfaces/eStatus";
 import iDetailsSeries from "interfaces/iDetailsSeries";
-import ItemAdminEpisode from "components/ItemAdminEpisode";
+import ItemAdmin from "components/ItemAdminEpisode";
+import { useModal } from "state/ModalContext";
 
 export default function AdminDetailSeries() {
   // Global state
   const { code } = useParams();
+  const { setModal } = useModal();
 
   // Local state
   const [status, setStatus] = useState(eStatus.LOADING);
@@ -43,24 +48,20 @@ export default function AdminDetailSeries() {
   }
 
   function onCreate() {
-    alert("Series create");
+    setModal(<FormCreate fields={Fields} endPoint={endPoint} />);
   }
 
-  function onUpdate(episode: iDetailsSeries) {
-    alert(`Series update ${episode.id}`);
+  function onUpdate(item: iDetailsSeries) {
+    setModal(<FormUpdate endPoint={endPoint} fields={Fields} data={item} />);
   }
 
-  function onDelete(episodeId: number) {
-    alert(`Series delete ${episodeId}`);
+  function onDelete(id: number) {
+    setModal(<FormDelete endPoint={endPoint} id={id} />);
   }
 
   // Components
   const Items = data.map((item) => (
-    <ItemAdminEpisode
-      key={item.id}
-      item={item}
-      actions={[onUpdate, onDelete]}
-    />
+    <ItemAdmin key={item.id} item={item} actions={[onUpdate, onDelete]} />
   ));
 
   // Safeguards

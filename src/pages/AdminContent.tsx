@@ -15,10 +15,10 @@ import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
 import Fields from "data/fields-content.json";
+import eContentType from "interfaces/eContentType";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
 import { useModal } from "state/ModalContext";
-import eContentType from "interfaces/eContentType";
 
 export default function AdminContent() {
   // Global state
@@ -31,7 +31,7 @@ export default function AdminContent() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
-  const endPoint: string = `content/`;
+  const endPoint: string = "content";
 
   // Methods
   useEffect(() => {

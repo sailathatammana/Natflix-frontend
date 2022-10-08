@@ -16,7 +16,7 @@ import iDetailsSeries from "interfaces/iDetailsSeries";
 export default function fakeServer(endPoint: string, data: any = null): any {
   switch (endPoint) {
     // Content
-    case "content/":
+    case "content":
       return Content;
     case "content/create":
       return contentCreate(data);

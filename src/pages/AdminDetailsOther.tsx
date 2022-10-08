@@ -10,7 +10,7 @@ import NavigationBarAdmin from "components/NavigationBarAdmin";
 import InputField from "components/InputField";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
-import Fields from "data/field-details-other.json";
+import Fields from "data/fields-details-other.json";
 import eStatus from "interfaces/eStatus";
 
 export default function AdminDetailsOther() {
