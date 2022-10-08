@@ -8,7 +8,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/16.png"
+    "thumbnail_url": "/fake-images/thumbnails/16.png"
   },
   {
     "id": 17,
@@ -19,7 +19,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/17.png"
+    "thumbnail_url": "/fake-images/thumbnails/17.png"
   },
   {
     "id": 18,
@@ -30,7 +30,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/18.png"
+    "thumbnail_url": "/fake-images/thumbnails/18.png"
   },
   {
     "id": 19,
@@ -41,7 +41,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/19.png"
+    "thumbnail_url": "/fake-images/thumbnails/19.png"
   },
   {
     "id": 20,
@@ -52,7 +52,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/20.png"
+    "thumbnail_url": "/fake-images/thumbnails/20.png"
   },
   {
     "id": 21,
@@ -63,6 +63,6 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/21.png"
+    "thumbnail_url": "/fake-images/thumbnails/21.png"
   }
 ]

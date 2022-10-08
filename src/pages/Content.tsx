@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 // Project files
 import BannerHome from "components/HeroHome";
-import ContainerCards from "components/CardList";
+import ContainerCards from "components/ListCards";
 import NavigationBar from "components/NavigationBar";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
@@ -23,13 +23,12 @@ export default function Content() {
   const [status, setStatus] = useState(eStatus.LOADING);
   const [data, setData] = useState(new Array<iContent>());
 
-  console.log(data);
-
   // Properties
   const endPoint = "content/";
 
   // Methods
   useEffect(() => {
+    setStatus(eStatus.LOADING);
     fakeFetch(endPoint + code + "/")
       .then((response) => onSuccess(response.data))
       .catch((error) => onFailure(error));

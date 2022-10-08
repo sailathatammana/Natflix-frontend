@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 // Project files
 import BannerHome from "components/HeroHome";
-import ContainerCards from "components/CardList";
+import ContainerCards from "components/ListCards";
 import NavigationBar from "components/NavigationBar";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
