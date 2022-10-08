@@ -38,3 +38,7 @@ img {
 .admin-pages header {
   padding-top: var(--nav-bar);
 }
+
+.admin-pages .item-admin {
+  margin-bottom: var(--space-medium);
+}

@@ -40,6 +40,7 @@ export default function EpisodeChooser({ episodes, onClick }: iProps) {
 
     return result;
   }
+
   function onChange(event: ChangeEvent<HTMLSelectElement>): void {
     setSelectedSeason(event.currentTarget.value);
   }

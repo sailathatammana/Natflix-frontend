@@ -82,7 +82,7 @@ function detailsOtherUpdate(item: iDetailsOther): string {
 
 // Details series
 function detailsSeries(id: number): iDetailsSeries[] {
-  const content = Content.filter((item) => item.id === id)[0];
+  const content = Content.filter((item) => item.id === Number(id))[0];
 
   switch (content.type_id) {
     case eContentType.SERIES:

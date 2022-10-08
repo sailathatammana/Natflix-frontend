@@ -2,7 +2,7 @@
 import fakeFetch from "scripts/fakeFetch";
 
 // Node modules
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // Project files
@@ -10,19 +10,20 @@ import NavigationBarAdmin from "components/NavigationBarAdmin";
 import InputField from "components/InputField";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
-import Fields from "data/field-details-other.json";
 import eStatus from "interfaces/eStatus";
+import iDetailsSeries from "interfaces/iDetailsSeries";
+import ItemAdminEpisode from "components/ItemAdminEpisode";
 
-export default function AdminDetailsOther() {
+export default function AdminDetailSeries() {
   // Global state
   const { code } = useParams();
 
   // Local state
   const [status, setStatus] = useState(eStatus.LOADING);
-  const [data, setData] = useState("");
+  const [data, setData] = useState(new Array<iDetailsSeries>());
 
   // Properties
-  const endPoint: string = "details-other/:id";
+  const endPoint: string = "details-series/:id";
 
   // Methods
   useEffect(() => {
@@ -31,14 +32,7 @@ export default function AdminDetailsOther() {
       .catch((error) => onFailure(error));
   }, []);
 
-  function onSubmit(event: FormEvent) {
-    event.preventDefault();
-    fakeFetch(endPoint + "/update", data)
-      .then((response) => alert(response.data))
-      .catch(onFailure);
-  }
-
-  function onSuccess(data: string) {
+  function onSuccess(data: iDetailsSeries[]) {
     setData(data);
     setStatus(eStatus.READY);
   }
@@ -48,21 +42,40 @@ export default function AdminDetailsOther() {
     setStatus(eStatus.ERROR);
   }
 
+  function onCreate() {
+    alert("Series create");
+  }
+
+  function onUpdate(episode: iDetailsSeries) {
+    alert(`Series update ${episode.id}`);
+  }
+
+  function onDelete(episodeId: number) {
+    alert(`Series delete ${episodeId}`);
+  }
+
+  // Components
+  const Items = data.map((item) => (
+    <ItemAdminEpisode
+      key={item.id}
+      item={item}
+      actions={[onUpdate, onDelete]}
+    />
+  ));
+
   // Safeguards
   if (status === eStatus.LOADING) return <StatusLoading />;
   if (status === eStatus.ERROR) return <StatusError />;
 
   return (
-    <div id="admin-detail-others" className="admin-pages">
+    <div id="admin-detail-series" className="admin-pages">
       <NavigationBarAdmin />
       <header>
         <h1>Admin details</h1>
-        <form onSubmit={(event) => onSubmit(event)}>
-          <InputField fields={Fields} state={[data, setData]} />
-          <hr />
-          <button>Save</button>
-        </form>
       </header>
+      {Items}
+      <hr />
+      <button onClick={onCreate}>Create episode</button>
     </div>
   );
 }

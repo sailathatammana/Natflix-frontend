@@ -9,7 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import FormCreate from "components/FormCreate";
 import FormDelete from "components/FormDelete";
 import FormUpdate from "components/FormUpdate";
-import ItemAdmin from "components/ItemAdmin";
+import ItemAdminContent from "components/ItemAdminContent";
 import NavigationBarAdmin from "components/NavigationBarAdmin";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
@@ -74,7 +74,7 @@ export default function AdminContent() {
 
   // Components
   const Items = data.map((item) => (
-    <ItemAdmin
+    <ItemAdminContent
       key={item.id}
       item={item}
       actions={[onUpdate, onDelete, onDetails]}
@@ -93,7 +93,7 @@ export default function AdminContent() {
       </header>
       {data.length === 0 ? <StatusEmpty /> : Items}
       <hr />
-      <button onClick={onCreate}>Create item</button>
+      <button onClick={onCreate}>Create content</button>
     </div>
   );
 }

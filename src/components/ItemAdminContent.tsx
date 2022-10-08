@@ -6,7 +6,7 @@ interface iProps {
   actions: Function[];
 }
 
-export default function ItemAdmin({ item, actions }: iProps) {
+export default function ItemAdminContent({ item, actions }: iProps) {
   const { id, title } = item;
   const [onUpdate, onDelete, onDetails] = actions;
 
