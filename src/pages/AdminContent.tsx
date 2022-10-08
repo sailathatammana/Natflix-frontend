@@ -3,7 +3,7 @@ import fakeFetch from "scripts/fakeFetch";
 
 // Node modules
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 // Project files
 import FormCreate from "components/FormCreate";
@@ -14,16 +14,15 @@ import NavigationBarAdmin from "components/NavigationBarAdmin";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
-import FieldsContent from "data/fields-content.json";
+import Fields from "data/fields-content.json";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
-import iDetailsOther from "interfaces/iDetailsOther";
-import iDetailsSeries from "interfaces/iDetailsSeries";
 import { useModal } from "state/ModalContext";
 
 export default function AdminContent() {
   // Global state
-  const { first, second } = useParams();
+  const navigate = useNavigate();
+  const { code } = useParams();
   const { setModal } = useModal();
 
   // Local state
@@ -31,15 +30,15 @@ export default function AdminContent() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
-  const endPoint: string = `${first}/${second}`;
+  const endPoint: string = `content/`;
 
   // Methods
   useEffect(() => {
     setStatus(eStatus.LOADING);
-    fakeFetch(endPoint)
+    fakeFetch(endPoint + code)
       .then((response) => onSuccess(response.data))
       .catch((error) => onFailure(error));
-  }, [first, second]);
+  }, [code]);
 
   function onSuccess(data: iContent[]) {
     setData(data);
@@ -52,28 +51,33 @@ export default function AdminContent() {
   }
 
   function onCreate() {
-    const fields = FieldsContent;
-    const endPoint = `${first}/create`; // here we change from first/update to first/second/update
-
-    setModal(<FormCreate fields={fields} endPoint={endPoint} />);
+    setModal(<FormCreate fields={Fields} endPoint={endPoint} />);
   }
 
-  function onUpdate(item: iContent | iDetailsOther | iDetailsSeries) {
-    const fields = FieldsContent;
-    const endPoint = `${first}/update`;
-
-    setModal(<FormUpdate endPoint={endPoint} fields={fields} data={item} />);
+  function onUpdate(item: iContent) {
+    setModal(<FormUpdate endPoint={endPoint} fields={Fields} data={item} />);
   }
 
   function onDelete(id: number) {
-    const endPoint = `${first}/delete`;
-
     setModal(<FormDelete endPoint={endPoint} id={id} />);
+  }
+
+  function onDetails(item: iContent) {
+    const isASeries: boolean = item.type_id === 3;
+    const pageDetailsOthers = `admin/details-other/${item.id}`;
+    const pageDetailsSeries = `admin/details-series/${item.id}`;
+    const pageToNavigate = isASeries ? pageDetailsSeries : pageDetailsOthers;
+
+    navigate(pageToNavigate);
   }
 
   // Components
   const Items = data.map((item) => (
-    <ItemAdmin key={item.id} item={item} actions={[onUpdate, onDelete]} />
+    <ItemAdmin
+      key={item.id}
+      item={item}
+      actions={[onUpdate, onDelete, onDetails]}
+    />
   ));
 
   // Safeguards

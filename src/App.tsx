@@ -19,7 +19,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/admin" element={<Admin />} />
-            <Route path="/admin/:first/:second/" element={<AdminContent />} />
+            <Route path="/admin-content/:code" element={<AdminContent />} />
             <Route path="/video/:code" element={<VideoPlayer />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

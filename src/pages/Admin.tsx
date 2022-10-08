@@ -2,12 +2,18 @@
 import { Link } from "react-router-dom";
 
 // Project files
-import ImageMovies from "assets/images/admin-movies.jpg";
-import ImageDocumentaries from "assets/images/admin-documentaries.jpg";
-import ImageSeries from "assets/images/admin-series.jpg";
 import NavigationBarAdmin from "components/NavigationBarAdmin";
+import AdminLinks from "data/links-admin.json";
 
 export default function Admin() {
+  // Components
+  const Links = AdminLinks.map((item) => (
+    <Link key={item.id} className="item" to={item.url}>
+      <img src={item.imageURL} />
+      <h3>{item.label}</h3>
+    </Link>
+  ));
+
   return (
     <div id="admin" className="admin-pages">
       <NavigationBarAdmin />
@@ -17,20 +23,7 @@ export default function Admin() {
           Please choose one of the following options to start adding content:
         </p>
       </header>
-      <div className="items">
-        <Link className="item" to="/admin/content/movies">
-          <img src={ImageMovies} />
-          <h3>Movies</h3>
-        </Link>
-        <Link className="item" to="/admin/content/documentaries">
-          <img src={ImageDocumentaries} />
-          <h3>Documentaries</h3>
-        </Link>
-        <Link className="item" to="/admin/content/series">
-          <img src={ImageSeries} />
-          <h3>TV Series</h3>
-        </Link>
-      </div>
+      <div className="items">{Links}</div>
     </div>
   );
 }

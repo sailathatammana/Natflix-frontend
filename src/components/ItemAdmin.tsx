@@ -8,13 +8,16 @@ interface iProps {
 
 export default function ItemAdmin({ item, actions }: iProps) {
   const { id, title } = item;
-  const [onUpdate, onDelete] = actions;
+  const [onUpdate, onDelete, onDetails] = actions;
 
   return (
     <article className="item-admin">
       <span className="number">{id}</span>
       <h3>{title}</h3>
       <div className="buttons">
+        <button className="button-gray" onClick={() => onDetails(item)}>
+          Details
+        </button>
         <button className="button-gray" onClick={() => onUpdate(item)}>
           Update
         </button>
