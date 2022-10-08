@@ -6,6 +6,7 @@ import InputField from "components/InputField";
 import { useModal } from "state/ModalContext";
 import { generateFields } from "scripts/formUtilities";
 import fakeFetch from "scripts/fakeFetch";
+import InputSelect from "./InputSelect";
 
 interface iProps {
   endPoint: string;
@@ -41,9 +42,18 @@ export default function FormUpdate({ endPoint, fields, data }: iProps) {
   }
 
   // Components
-  const InputFields = fields.map((item) => (
-    <InputField key={item.key} fields={item} state={[form, setForm]} />
-  ));
+  const InputFields = fields.map((item, index) => {
+    switch (item.type) {
+      case "select":
+        return (
+          <InputSelect key={index} fields={item} state={[form, setForm]} />
+        );
+      case "image":
+        return <p key={index}>Image selector comming soon!</p>;
+      default:
+        return <InputField key={index} fields={item} state={[form, setForm]} />;
+    }
+  });
 
   return (
     <form className="form" onSubmit={onSubmit}>

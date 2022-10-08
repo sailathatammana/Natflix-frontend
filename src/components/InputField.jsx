@@ -11,7 +11,7 @@ export default function InputField({ fields, state }) {
   }
 
   return (
-    <label className="input-field">
+    <label className="input input-field">
       <span>{label}:</span>
       <input
         autoFocus={autoFocus}

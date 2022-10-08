@@ -41,18 +41,13 @@ export default function EpisodeChooser({ episodes, onClick }: iProps) {
     return result;
   }
 
-  function onChange(event: ChangeEvent<HTMLSelectElement>): void {
-    setSelectedSeason(event.currentTarget.value);
-  }
-
   return (
     <section className="episode-chooser">
       <header>
         <h2>Episodes</h2>
         <InputSelect
-          state={selectedSeason}
+          state={[selectedSeason, setSelectedSeason]}
           data={inputSelectLabels}
-          onChange={onChange}
         />
       </header>
       <div>{Episodes}</div>

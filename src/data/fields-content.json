@@ -13,7 +13,8 @@
     "label": "Type of content",
     "placeholder": "1 = series, 2 = movies, 3 = documentaries",
     "required": true,
-    "type": "text"
+    "type": "select",
+    "options": ["Series", "Movies", "Documentaries"]
   },
   {
     "key": "category_id",
@@ -21,7 +22,8 @@
     "label": "Type of category",
     "placeholder": "1: horror, 2: action, 3: comedy, 4: drama, 5: other",
     "required": true,
-    "type": "text"
+    "type": "select",
+    "options": ["Horror", "Action", "Comedy", "Drama", "Other"]
   },
   {
     "key": "summary",
@@ -37,7 +39,7 @@
     "label": "Logo URL",
     "placeholder": "www.google.com/logo.png",
     "required": false,
-    "type": "text"
+    "type": "image"
   },
   {
     "key": "banner_url",
@@ -45,7 +47,7 @@
     "label": "Banner URL",
     "placeholder": "www.google.com/banner.png",
     "required": true,
-    "type": "text"
+    "type": "image"
   },
   {
     "key": "thumbnail_url",
@@ -53,6 +55,6 @@
     "label": "Thumbail URL",
     "placeholder": "www.google.com/thumbnail.png",
     "required": true,
-    "type": "text"
+    "type": "image"
   }
 ]

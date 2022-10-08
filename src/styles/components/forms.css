@@ -5,6 +5,6 @@
   border-radius: var(--radius);
 }
 
-.form .input-field input {
+.form .input {
   margin-bottom: var(--space-medium);
 }
