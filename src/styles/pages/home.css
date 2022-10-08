@@ -1,5 +1,5 @@
 #home .hero-home {
-  padding-top: var(--navigation-bar);
+  padding-top: var(--nav-bar);
   margin-bottom: var(--space-big);
 }
 
@@ -8,14 +8,20 @@
   padding: 0 var(--page-space);
 }
 
-#home .card-list .item-card {
-  flex-grow: 0;
-  flex-shrink: 0;
+#home .card-list div {
+  display: flex;
+  overflow-x: scroll;
+  column-gap: var(--space-medium);
 }
 
 /* Remove scrollbar space */
 #home .card-list div::-webkit-scrollbar {
   display: none;
+}
+
+#home .item-card {
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 #home footer {
