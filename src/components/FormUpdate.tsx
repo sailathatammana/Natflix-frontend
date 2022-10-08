@@ -25,7 +25,7 @@ export default function FormUpdate({ endPoint, fields, data }: iProps) {
     const editedItem = { ...form, id: data.id };
 
     event.preventDefault();
-    fakeFetch(endPoint + "/update", editedItem)
+    fakeFetch(endPoint + "update/", editedItem)
       .then(onSuccess)
       .catch((error) => onFailure(error));
   }

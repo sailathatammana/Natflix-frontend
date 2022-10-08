@@ -28,7 +28,7 @@ export default function AdminDetailSeries() {
   const [data, setData] = useState(new Array<iDetailsSeries>());
 
   // Properties
-  const endPoint: string = "details-series/:id";
+  const endPoint: string = "details-series/:id/";
 
   // Methods
   useEffect(() => {

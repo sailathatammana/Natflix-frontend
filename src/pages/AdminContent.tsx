@@ -31,12 +31,12 @@ export default function AdminContent() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
-  const endPoint: string = "content";
+  const endPoint: string = "content/";
 
   // Methods
   useEffect(() => {
     setStatus(eStatus.LOADING);
-    fakeFetch(endPoint + code)
+    fakeFetch(endPoint + code + "/")
       .then((response) => onSuccess(response.data))
       .catch((error) => onFailure(error));
   }, [code]);

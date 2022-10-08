@@ -22,7 +22,7 @@ export default function AdminDetailsOther() {
   const [data, setData] = useState("");
 
   // Properties
-  const endPoint: string = "details-other/:id";
+  const endPoint: string = "details-other/:id/";
 
   // Methods
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function AdminDetailsOther() {
 
   function onSubmit(event: FormEvent) {
     event.preventDefault();
-    fakeFetch(endPoint + "/update", data)
+    fakeFetch(endPoint + "update/", data)
       .then((response) => alert(response.data))
       .catch(onFailure);
   }

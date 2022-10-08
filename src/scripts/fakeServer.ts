@@ -16,32 +16,38 @@ import iDetailsSeries from "interfaces/iDetailsSeries";
 export default function fakeServer(endPoint: string, data: any = null): any {
   switch (endPoint) {
     // Content
-    case "content":
+    case "content/":
       return Content;
-    case "content/create":
+    case "content/create/":
       return contentCreate(data);
-    case "content/delete":
+    case "content/delete/":
       return contentDelete(data);
-    case "content/update":
+    case "content/update/":
       return contentUpdate(data);
 
     // Content filtered
-    case "content/series":
+    case "content/series/":
       return Series;
-    case "content/movies":
+    case "content/movies/":
       return Movies;
-    case "content/documentaries":
+    case "content/documentaries/":
       return Documentaries;
 
     // Details others
-    case "details-other/:id":
+    case "details-other/:id/":
       return detailsOther(data);
-    case "details-other/:id/update":
+    case "details-other/:id/update/":
       return detailsOtherUpdate(data);
 
     // Details series
-    case "details-series/:id":
+    case "details-series/:id/":
       return detailsSeries(data);
+    case "details-series/:id/create/":
+      return detailsSeriesCreate(data);
+    case "details-series/:id/update/":
+      return detailsSeriesUpdate(data);
+    case "details-series/:id/delete/":
+      return detailsSeriesDelete(data);
 
     // Exception
     default:
@@ -54,8 +60,8 @@ function contentCreate(item: iContent): string {
   return `Created new content ${item.title}`;
 }
 
-function contentUpdate(id: number): string {
-  return `Updated content with id ${id}`;
+function contentUpdate(item: iContent): string {
+  return `Updated content ${item.title}`;
 }
 
 function contentDelete(id: number): string {
@@ -77,7 +83,7 @@ function detailsOther(id: number): iDetailsOther {
 }
 
 function detailsOtherUpdate(item: iDetailsOther): string {
-  return `Update details id ${item.id}`;
+  return `Update content details id ${item.id}`;
 }
 
 // Details series
@@ -90,4 +96,16 @@ function detailsSeries(id: number): iDetailsSeries[] {
     default:
       throw new Error(`Invalid type id ${id}`);
   }
+}
+
+function detailsSeriesCreate(item: iDetailsSeries) {
+  return `Created new episode ${item.title}`;
+}
+
+function detailsSeriesUpdate(item: iDetailsSeries) {
+  return `Update episode ${item.title}`;
+}
+
+function detailsSeriesDelete(id: number) {
+  return `Deleted episode with id ${id}`;
 }

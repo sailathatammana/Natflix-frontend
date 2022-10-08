@@ -20,7 +20,7 @@ export default function Home() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
-  const endPoint = "content";
+  const endPoint = "content/";
   const series = data.filter((item) => item.type_id === 1);
   const movies = data.filter((item) => item.type_id === 2);
   const documentaries = data.filter((item) => item.type_id === 3);
