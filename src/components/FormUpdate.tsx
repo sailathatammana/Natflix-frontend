@@ -41,6 +41,7 @@ export default function FormUpdate({ endPoint, fields, data }: iProps) {
     alert("Could not edit item");
   }
 
+  // Refactor, move to a single component shared by FormCreate and FormUpdate
   // Components
   const InputFields = fields.map((item, index) => {
     switch (item.type) {
