@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // Project files
-import ItemAdmin from "components/ItemAdmin";
 import FormCreate from "components/FormCreate";
+import FormDelete from "components/FormDelete";
 import FormUpdate from "components/FormUpdate";
+import ItemAdmin from "components/ItemAdmin";
 import NavigationBarAdmin from "components/NavigationBarAdmin";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
@@ -64,9 +65,18 @@ export default function AdminContent() {
     setModal(<FormUpdate endPoint={endPoint} fields={fields} data={item} />);
   }
 
+  function onDelete(id: number) {
+    setModal(<FormDelete endPoint={endPoint} id={id} />);
+  }
+
   // Components
   const Items = data.map((item) => (
-    <ItemAdmin key={item.id} item={item} onUpdate={onUpdate} />
+    <ItemAdmin
+      key={item.id}
+      item={item}
+      onUpdate={onUpdate}
+      onDelete={onDelete}
+    />
   ));
 
   // Safeguards
