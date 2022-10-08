@@ -3,12 +3,12 @@ import iContent from "interfaces/iContent";
 
 interface iProps {
   item: iContent;
-  onUpdate: Function;
-  onDelete: Function;
+  actions: Function[];
 }
 
-export default function ItemAdmin({ item, onUpdate, onDelete }: iProps) {
+export default function ItemAdmin({ item, actions }: iProps) {
   const { id, title } = item;
+  const [onUpdate, onDelete] = actions;
 
   return (
     <article className="item-admin">
@@ -19,7 +19,7 @@ export default function ItemAdmin({ item, onUpdate, onDelete }: iProps) {
           Update
         </button>
         <button className="button-gray" onClick={() => onDelete(id)}>
-          Update
+          Delete
         </button>
       </div>
     </article>

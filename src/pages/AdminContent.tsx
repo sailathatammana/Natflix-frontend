@@ -66,17 +66,14 @@ export default function AdminContent() {
   }
 
   function onDelete(id: number) {
+    const endPoint = `${first}/delete`;
+
     setModal(<FormDelete endPoint={endPoint} id={id} />);
   }
 
   // Components
   const Items = data.map((item) => (
-    <ItemAdmin
-      key={item.id}
-      item={item}
-      onUpdate={onUpdate}
-      onDelete={onDelete}
-    />
+    <ItemAdmin key={item.id} item={item} actions={[onUpdate, onDelete]} />
   ));
 
   // Safeguards
@@ -87,9 +84,7 @@ export default function AdminContent() {
     <div id="admin-content" className="admin-pages">
       <NavigationBarAdmin />
       <header>
-        <h1>
-          Admin {first} {second}
-        </h1>
+        <h1>Admin content</h1>
       </header>
       {data.length === 0 ? <StatusEmpty /> : Items}
       <hr />

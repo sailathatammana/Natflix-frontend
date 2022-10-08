@@ -40,9 +40,9 @@ export default function FormDelete({ endPoint, id }: iProps) {
         reverted.
       </p>
       <hr />
-      <button className="button-gray">Save</button>
+      <button className="button-gray">Delete</button>
       <button className="button-gray" onClick={() => setModal(null)}>
-        Cancel
+        Keep
       </button>
     </form>
   );
