@@ -1,6 +1,21 @@
 #home .hero-home {
-  padding-top: var(--nav-bar);
+  padding-top: var(--navigation-bar);
   margin-bottom: var(--space-big);
+}
+
+#home .card-list {
+  margin-bottom: var(--space-big);
+  padding: 0 var(--page-space);
+}
+
+#home .card-list .item-card {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Remove scrollbar space */
+#home .card-list div::-webkit-scrollbar {
+  display: none;
 }
 
 #home footer {

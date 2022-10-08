@@ -36,7 +36,7 @@ img {
 }
 
 .admin-pages header {
-  padding-top: var(--nav-bar);
+  padding-top: var(--navigation-bar);
 }
 
 .admin-pages .item-admin {

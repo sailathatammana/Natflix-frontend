@@ -1,7 +1,15 @@
-#content {
-  background-color: red;
+#content header {
+  padding: 0 var(--page-space);
+  padding-top: var(--navigation-bar);
 }
 
-#content header {
-  padding-top: var(--navigation-bar);
+#content .card-list {
+  padding: 0 var(--page-space);
+}
+
+#content .card-list div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-medium);
 }
