@@ -45,10 +45,6 @@ export default function EpisodeChooser({ episodes, onClick }: iProps) {
     <section className="episode-chooser">
       <header>
         <h2>Episodes</h2>
-        <InputSelect
-          state={[selectedSeason, setSelectedSeason]}
-          data={inputSelectLabels}
-        />
       </header>
       <div>{Episodes}</div>
     </section>

@@ -1,8 +1,4 @@
-// Fake data (replace this with a real fetch)
-import fakeFetch from "scripts/fakeFetch";
-
 // Node modules
-import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 // Project files
@@ -18,6 +14,7 @@ import Fields from "data/fields-content.json";
 import eContentType from "interfaces/eContentType";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
+import useFetch from "state/useFetch";
 import { useModal } from "state/ModalContext";
 
 export default function AdminContent() {
@@ -25,42 +22,23 @@ export default function AdminContent() {
   const navigate = useNavigate();
   const { code } = useParams();
   const { setModal } = useModal();
+  const { data, status } = useFetch(`content/${code}/`, null);
 
-  // Local state
-  const [status, setStatus] = useState(eStatus.LOADING);
-  const [data, setData] = useState(new Array<iContent>());
-
-  // Properties
-  const endPoint: string = "content/";
+  // Safeguards
+  if (status === eStatus.LOADING) return <StatusLoading />;
+  if (status === eStatus.ERROR) return <StatusError />;
 
   // Methods
-  useEffect(() => {
-    setStatus(eStatus.LOADING);
-    fakeFetch(endPoint + code + "/")
-      .then((response) => onSuccess(response.data))
-      .catch((error) => onFailure(error));
-  }, [code]);
-
-  function onSuccess(data: iContent[]) {
-    setData(data);
-    setStatus(eStatus.READY);
-  }
-
-  function onFailure(error: string) {
-    console.error(error);
-    setStatus(eStatus.ERROR);
-  }
-
   function onCreate() {
-    setModal(<FormCreate fields={Fields} endPoint={endPoint} />);
+    setModal(<FormCreate fields={Fields} endPoint={"content/"} />);
   }
 
   function onUpdate(item: iContent) {
-    setModal(<FormUpdate endPoint={endPoint} fields={Fields} data={item} />);
+    setModal(<FormUpdate endPoint={"content/"} fields={Fields} data={item} />);
   }
 
   function onDelete(id: number) {
-    setModal(<FormDelete endPoint={endPoint} id={id} />);
+    setModal(<FormDelete endPoint={"content/"} id={id} />);
   }
 
   function onDetails(item: iContent) {
@@ -73,17 +51,13 @@ export default function AdminContent() {
   }
 
   // Components
-  const Items = data.map((item) => (
+  const Items = data.map((item: iContent) => (
     <ItemAdminContent
       key={item.id}
       item={item}
       actions={[onUpdate, onDelete, onDetails]}
     />
   ));
-
-  // Safeguards
-  if (status === eStatus.LOADING) return <StatusLoading />;
-  if (status === eStatus.ERROR) return <StatusError />;
 
   return (
     <div id="admin-content" className="admin-pages">

@@ -18,36 +18,22 @@ import eStatus from "interfaces/eStatus";
 import iDetailsSeries from "interfaces/iDetailsSeries";
 import ItemAdmin from "components/ItemAdminEpisode";
 import { useModal } from "state/ModalContext";
+import useFetch from "state/useFetch";
 
 export default function AdminDetailSeries() {
-  // Global state
-  const { code } = useParams();
-  const { setModal } = useModal();
-
-  // Local state
-  const [status, setStatus] = useState(eStatus.LOADING);
-  const [data, setData] = useState(new Array<iDetailsSeries>());
-
   // Properties
   const endPoint: string = "details-series/:id/";
 
+  // Global state
+  const { code } = useParams();
+  const { setModal } = useModal();
+  const { data, status } = useFetch(endPoint, code);
+
+  // Safeguards
+  if (status === eStatus.LOADING) return <StatusLoading />;
+  if (status === eStatus.ERROR) return <StatusError />;
+
   // Methods
-  useEffect(() => {
-    fakeFetch(endPoint, code)
-      .then((response) => onSuccess(response.data))
-      .catch((error) => onFailure(error));
-  }, []);
-
-  function onSuccess(data: iDetailsSeries[]) {
-    setData(data);
-    setStatus(eStatus.READY);
-  }
-
-  function onFailure(error: string) {
-    console.error(error);
-    setStatus(eStatus.ERROR);
-  }
-
   function onCreate() {
     setModal(<FormCreate fields={Fields} endPoint={endPoint} />);
   }
@@ -61,13 +47,9 @@ export default function AdminDetailSeries() {
   }
 
   // Components
-  const Items = data.map((item) => (
+  const Items = data.map((item: iDetailsSeries) => (
     <ItemAdmin key={item.id} item={item} actions={[onUpdate, onDelete]} />
   ));
-
-  // Safeguards
-  if (status === eStatus.LOADING) return <StatusLoading />;
-  if (status === eStatus.ERROR) return <StatusError />;
 
   return (
     <div id="admin-detail-series" className="admin-pages">

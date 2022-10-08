@@ -8,7 +8,7 @@ export default function VideoPlayer() {
   // Global state
   const { code } = useParams();
 
-  // Properties
+  // Derived state
   const videoSource = `https://youtube.com/embed/${code}`;
 
   return (

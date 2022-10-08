@@ -2,7 +2,7 @@
 import fakeFetch from "scripts/fakeFetch";
 
 // Node modules
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent } from "react";
 import { useParams } from "react-router-dom";
 
 // Project files
@@ -12,45 +12,27 @@ import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
 import Fields from "data/fields-details-other.json";
 import eStatus from "interfaces/eStatus";
+import useFetch from "state/useFetch";
 
 export default function AdminDetailsOther() {
-  // Global state
-  const { code } = useParams();
-
-  // Local state
-  const [status, setStatus] = useState(eStatus.LOADING);
-  const [data, setData] = useState("");
-
   // Properties
   const endPoint: string = "details-other/:id/";
 
-  // Methods
-  useEffect(() => {
-    fakeFetch(endPoint, code)
-      .then((response) => onSuccess(response.data))
-      .catch((error) => onFailure(error));
-  }, []);
-
-  function onSuccess(data: string) {
-    setData(data);
-    setStatus(eStatus.READY);
-  }
-
-  function onFailure(error: string) {
-    console.error(error);
-    setStatus(eStatus.ERROR);
-  }
-
-  function onSubmit(event: FormEvent) {
-    event.preventDefault();
-    fakeFetch(endPoint + "update/", data)
-      .then((response) => alert(response.data))
-      .catch(onFailure);
-  }
+  // Global state
+  const { code } = useParams();
+  const { data, setData, status } = useFetch(endPoint, code);
 
   // Safeguards
   if (status === eStatus.LOADING) return <StatusLoading />;
   if (status === eStatus.ERROR) return <StatusError />;
+
+  // Methods
+  function onSubmit(event: FormEvent) {
+    event.preventDefault();
+    fakeFetch(endPoint + "update/", data)
+      .then((response) => alert(response.data))
+      .catch((error) => alert(error));
+  }
 
   return (
     <div id="admin-detail-others" className="admin-pages">
