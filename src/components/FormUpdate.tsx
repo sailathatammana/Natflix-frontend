@@ -4,16 +4,13 @@ import { FormEvent, useState } from "react";
 // Project files
 import InputField from "components/InputField";
 import { useModal } from "state/ModalContext";
-import iContent from "interfaces/iContent";
-import iDetailsOther from "interfaces/iDetailsOther";
-import iDetailsSeries from "interfaces/iDetailsSeries";
 import { generateFields } from "scripts/formUtilities";
 import fakeFetch from "scripts/fakeFetch";
 
 interface iProps {
   endPoint: string;
   fields: Array<any>;
-  data: iContent | iDetailsOther | iDetailsSeries;
+  data: any;
 }
 
 export default function FormUpdate({ endPoint, fields, data }: iProps) {

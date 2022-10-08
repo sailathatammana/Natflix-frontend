@@ -10,6 +10,7 @@ import VideoPlayer from "pages/VideoPlayer";
 import NotFound from "pages/NotFound";
 import { ModalProvider } from "state/ModalContext";
 import "styles/style.css";
+import AdminDetailsOther from "pages/AdminDetailsOther";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin-content/:code" element={<AdminContent />} />
+            <Route path="/admin-details-other/:code" element={<AdminDetailsOther />} />
             <Route path="/video/:code" element={<VideoPlayer />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

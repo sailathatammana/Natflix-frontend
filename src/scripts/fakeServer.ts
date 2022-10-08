@@ -32,19 +32,15 @@ export default function fakeServer(endPoint: string, data: any = null): any {
     case "content/series":
       return Series;
 
-    // Details
-    case "details/:content-type/:id":
-      return detailsContentType(data);
-    case "details/:content-type/create/:id":
-      return detailsContentType(data);
-    case "details/:content-type/create/:id":
-      return detailsContentType(data);
-    case "details/:content-type/create/:id":
-      return detailsContentType(data);
+    // Details others
+    case "details-other/:id":
+      return detailsOther(data);
+    case "details-other/:id/update":
+      return detailsOtherUpdate(data);
 
-    // Search
-    case "search/:query":
-      return searchQuery(data);
+    // Details series
+    case "details-series/:id":
+      return detailsSeries(data);
 
     // Exception
     default:
@@ -65,13 +61,11 @@ function contentDelete(id: number): string {
   return `Deleted content with id ${id}`;
 }
 
-// Details
-function detailsContentType(id: number): iDetailsOther | iDetailsSeries[] {
+// Details other
+function detailsOther(id: number): iDetailsOther {
   const content = Content.filter((item) => item.id === id)[0];
 
   switch (content.type_id) {
-    case 1:
-      return SingleSerie;
     case 2:
       return SingleMovie;
     case 3:
@@ -81,7 +75,18 @@ function detailsContentType(id: number): iDetailsOther | iDetailsSeries[] {
   }
 }
 
-// Search
-function searchQuery(query: string): string {
-  return `No search results for ${query}`;
+function detailsOtherUpdate(item: iDetailsOther): string {
+  return `Update details id ${item.id}`;
+}
+
+// Details series
+function detailsSeries(id: number): iDetailsSeries[] {
+  const content = Content.filter((item) => item.id === id)[0];
+
+  switch (content.type_id) {
+    case 1:
+      return SingleSerie;
+    default:
+      throw new Error(`Invalid type id ${id}`);
+  }
 }
