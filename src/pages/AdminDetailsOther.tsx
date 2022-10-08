@@ -19,33 +19,35 @@ export default function AdminDetailsOther() {
 
   // Local state
   const [status, setStatus] = useState(eStatus.LOADING);
-  const [videoCode, setVideoCode] = useState("");
+  const [data, setData] = useState("");
 
   // Properties
-  const endPoint: string = `details/`;
+  const endPoint: string = "details-other/:id";
 
   // Methods
   useEffect(() => {
     setStatus(eStatus.LOADING);
-    fakeFetch(endPoint + code)
+    fakeFetch(endPoint, code)
       .then((response) => onSuccess(response.data))
       .catch((error) => onFailure(error));
   }, [code]);
 
+  function onSubmit(event: FormEvent) {
+    event.preventDefault();
+    fakeFetch(endPoint + "/update", data)
+      .then((response) => alert(response.data))
+      .catch(onFailure);
+  }
+
   function onSuccess(data: string) {
-    setVideoCode(data);
+    console.log(data);
+    setData(data);
     setStatus(eStatus.READY);
   }
 
   function onFailure(error: string) {
     console.error(error);
     setStatus(eStatus.ERROR);
-  }
-
-  function onSubmit(event: FormEvent) {
-    event.preventDefault();
-    // Here we create or update the details
-    // fetch(endPoint);
   }
 
   // Safeguards
@@ -58,10 +60,10 @@ export default function AdminDetailsOther() {
       <header>
         <h1>Admin details</h1>
         <form onSubmit={(event) => onSubmit(event)}>
-          <InputField fields={Fields} state={[videoCode, setVideoCode]} />
+          <InputField fields={Fields} state={[data, setData]} />
+          <hr />
+          <button>Save</button>
         </form>
-        <hr />
-        <button>Save</button>
       </header>
     </div>
   );

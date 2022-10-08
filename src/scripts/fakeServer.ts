@@ -25,12 +25,12 @@ export default function fakeServer(endPoint: string, data: any = null): any {
       return contentUpdate(data);
 
     // Content filtered
+    case "content/series":
+      return Series;
     case "content/movies":
       return Movies;
     case "content/documentaries":
       return Documentaries;
-    case "content/series":
-      return Series;
 
     // Details others
     case "details-other/:id":
@@ -63,7 +63,7 @@ function contentDelete(id: number): string {
 
 // Details other
 function detailsOther(id: number): iDetailsOther {
-  const content = Content.filter((item) => item.id === id)[0];
+  const content = Content.filter((item) => item.id === Number(id))[0];
 
   switch (content.type_id) {
     case 2:

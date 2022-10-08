@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
+    "label": "Series",
+    "url": "/admin-content/series",
+    "imageURL": "https://images.unsplash.com/photo-1509281373149-e957c6296406"
+  },
+  {
+    "id": 2,
     "label": "Movies",
     "url": "/admin-content/movies",
     "imageURL": "https://images.unsplash.com/photo-1616530940355-351fabd9524b"
   },
   {
-    "id": 2,
+    "id": 3,
     "label": "Documentaries",
     "url": "/admin-content/documentaries",
     "imageURL": "https://images.unsplash.com/photo-1587656107490-098cfbac52fb"
-  },
-  {
-    "id": 3,
-    "label": "Series",
-    "url": "/admin-content/series",
-    "imageURL": "https://images.unsplash.com/photo-1509281373149-e957c6296406"
   }
 ]
