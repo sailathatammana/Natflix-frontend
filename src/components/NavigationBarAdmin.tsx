@@ -18,7 +18,7 @@ export default function NavigationBarAdmin() {
       <Link to="/admin">
         <img src={Logo} />
       </Link>
-      <div>{Links}</div>
+      {Links}
     </nav>
   );
 }

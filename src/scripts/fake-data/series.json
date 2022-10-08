@@ -4,11 +4,11 @@
     "title": "Seinfield",
     "type_id": 1,
     "category_id": 3,
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "logo_url": "fake-images/logos/1.png",
-    "poster_url": "fake-images/posters/1.png",
-    "banner_url": "fake-images/banners/1.png",
-    "thumbnail_url": "fake-images/thumbnails/1.png"
+    "summary": "The show about nothing is a sitcom landmark, with comic Jerry and his three sardonic friends finding laughs in both the mundane and the ridiculous",
+    "logo_url": "/fake-images/logos/1.png",
+    "poster_url": "/fake-images/posters/1.png",
+    "banner_url": "/fake-images/banners/1.png",
+    "thumbnail_url": "/fake-images/thumbnails/1.png"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/2.png"
+    "thumbnail_url": "/fake-images/thumbnails/2.png"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/3.png"
+    "thumbnail_url": "/fake-images/thumbnails/3.png"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/4.png"
+    "thumbnail_url": "/fake-images/thumbnails/4.png"
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/5.png"
+    "thumbnail_url": "/fake-images/thumbnails/5.png"
   },
   {
     "id": 6,
@@ -63,7 +63,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/6.png"
+    "thumbnail_url": "/fake-images/thumbnails/6.png"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/7.png"
+    "thumbnail_url": "/fake-images/thumbnails/7.png"
   },
   {
     "id": 8,
@@ -85,7 +85,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/8.png"
+    "thumbnail_url": "/fake-images/thumbnails/8.png"
   },
   {
     "id": 9,
@@ -96,7 +96,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/9.png"
+    "thumbnail_url": "/fake-images/thumbnails/9.png"
   },
   {
     "id": 10,
@@ -107,7 +107,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/10.png"
+    "thumbnail_url": "/fake-images/thumbnails/10.png"
   },
   {
     "id": 11,
@@ -118,7 +118,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/11.png"
+    "thumbnail_url": "/fake-images/thumbnails/11.png"
   },
   {
     "id": 12,
@@ -129,7 +129,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/12.png"
+    "thumbnail_url": "/fake-images/thumbnails/12.png"
   },
   {
     "id": 13,
@@ -140,7 +140,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/13.png"
+    "thumbnail_url": "/fake-images/thumbnails/13.png"
   },
   {
     "id": 14,
@@ -151,7 +151,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/14.png"
+    "thumbnail_url": "/fake-images/thumbnails/14.png"
   },
   {
     "id": 15,
@@ -162,7 +162,7 @@
     "logo_url": "",
     "poster_url": "",
     "banner_url": "",
-    "thumbnail_url": "fake-images/thumbnails/15.png"
+    "thumbnail_url": "/fake-images/thumbnails/15.png"
   },
   {
     "id": 28,
@@ -170,9 +170,9 @@
     "type_id": 1,
     "category_id": 3,
     "summary": "In a dystopia riddled with corruption and cybernetic implants, talented but reckless street kid strives to become a mercenary outlaw -an edgerunner.",
-    "logo_url": "fake-images/logos/28.png",
+    "logo_url": "/fake-images/logos/28.png",
     "poster_url": "",
-    "banner_url": "fake-images/banners/28.png",
+    "banner_url": "/fake-images/banners/28.png",
     "thumbnail_url": ""
   }
 ]

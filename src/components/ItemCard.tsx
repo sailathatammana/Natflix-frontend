@@ -17,6 +17,8 @@ export default function ItemCard({ item }: iProps) {
   // Components
   const Modal = <ModalDetails item={item} />;
 
+  console.log(thumbnail_url);
+
   return (
     <article onClick={() => setModal(Modal)} className="item-card">
       <img
