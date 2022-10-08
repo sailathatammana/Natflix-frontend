@@ -40,7 +40,6 @@ export default function AdminDetailsOther() {
   }
 
   function onSuccess(data: string) {
-    console.log(data);
     setData(data);
     setStatus(eStatus.READY);
   }

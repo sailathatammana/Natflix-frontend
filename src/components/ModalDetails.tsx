@@ -13,6 +13,7 @@ import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
+import eContentType from "interfaces/eContentType";
 import iDetailsOther from "interfaces/iDetailsOther";
 import iDetailsSeries from "interfaces/iDetailsSeries";
 import { useModal } from "state/ModalContext";
@@ -34,7 +35,7 @@ export default function ModalDetails({ item }: iProps) {
   const [dataSerie, setDataSerie] = useState(Array<iDetailsSeries>);
 
   // Properties
-  const isASeries: boolean = type_id === 1;
+  const isASeries: boolean = type_id === eContentType.SERIES;
   const emptyOther: boolean = Object(dataOther).length === 0;
   const emptySeries: boolean = dataSerie.length === 0;
   const endPoint = isASeries ? "details-series/:id" : "details-other/:id";

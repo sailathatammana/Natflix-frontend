@@ -18,6 +18,7 @@ import Fields from "data/fields-content.json";
 import eStatus from "interfaces/eStatus";
 import iContent from "interfaces/iContent";
 import { useModal } from "state/ModalContext";
+import eContentType from "interfaces/eContentType";
 
 export default function AdminContent() {
   // Global state
@@ -63,7 +64,7 @@ export default function AdminContent() {
   }
 
   function onDetails(item: iContent) {
-    const isASeries: boolean = item.type_id === 1;
+    const isASeries: boolean = item.type_id === eContentType.SERIES;
     const pageDetailsOthers = `/admin-details-other/${item.id}`;
     const pageDetailsSeries = `/admin-details-series/${item.id}`;
     const pageToNavigate = isASeries ? pageDetailsSeries : pageDetailsOthers;

@@ -1,16 +1,17 @@
 // Fake data
 import Content from "./fake-data/content.json";
-import Movies from "./fake-data/movies.json";
 import Documentaries from "./fake-data/documentaries.json";
+import Movies from "./fake-data/movies.json";
 import Series from "./fake-data/series.json";
 import SingleDocumentary from "./fake-data/singleDocumentary.json";
 import SingleMovie from "./fake-data/singleMovie.json";
 import SingleSerie from "./fake-data/singleSerie.json";
 
 // Project files
+import eContentType from "interfaces/eContentType";
+import iContent from "interfaces/iContent";
 import iDetailsOther from "interfaces/iDetailsOther";
 import iDetailsSeries from "interfaces/iDetailsSeries";
-import iContent from "interfaces/iContent";
 
 export default function fakeServer(endPoint: string, data: any = null): any {
   switch (endPoint) {
@@ -66,9 +67,9 @@ function detailsOther(id: number): iDetailsOther {
   const content = Content.filter((item) => item.id === Number(id))[0];
 
   switch (content.type_id) {
-    case 2:
+    case eContentType.MOVIES:
       return SingleMovie;
-    case 3:
+    case eContentType.DOCUMENTARIES:
       return SingleDocumentary;
     default:
       throw new Error(`Invalid type id ${id}`);
@@ -84,7 +85,7 @@ function detailsSeries(id: number): iDetailsSeries[] {
   const content = Content.filter((item) => item.id === id)[0];
 
   switch (content.type_id) {
-    case 1:
+    case eContentType.SERIES:
       return SingleSerie;
     default:
       throw new Error(`Invalid type id ${id}`);
