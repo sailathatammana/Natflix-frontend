@@ -34,10 +34,10 @@ export default function ModalDetails({ item }: iProps) {
   const [dataSerie, setDataSerie] = useState(Array<iDetailsSeries>);
 
   // Properties
-  const endPoint = "details/:content-type/:id";
   const isASeries: boolean = type_id === 1;
   const emptyOther: boolean = Object(dataOther).length === 0;
   const emptySeries: boolean = dataSerie.length === 0;
+  const endPoint = isASeries ? "details-series/:id" : "details-other/:id";
   const videoCode = isASeries ? dataSerie[0]?.video_code : dataOther.video_code;
 
   // Methods
