@@ -3,7 +3,7 @@ import { ChangeEvent, useState } from "react";
 
 // Project files
 import ItemEpisodes from "components/ItemEpisode";
-import InputSelect from "components/InputSelect";
+import Select from "components/Select";
 import iDetailsSeries from "interfaces/iDetailsSeries";
 import SeriesUtilities from "scripts/seriesUtilities";
 
@@ -38,7 +38,7 @@ export default function EpisodeChooser({ episodes, onClick }: iProps) {
     <section className="episode-chooser">
       <header>
         <h2>Episodes</h2>
-        <InputSelect state={[data, setData]} fields={fields} />
+        <Select state={[data, setData]} fields={fields} />
       </header>
       <div>{Episodes}</div>
     </section>

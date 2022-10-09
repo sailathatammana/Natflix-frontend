@@ -1,4 +1,4 @@
-export default function InputSelect({ fields, state }) {
+export default function Select({ fields, state }) {
   const { label, key, options } = fields;
   const [value, setValue] = state;
 
