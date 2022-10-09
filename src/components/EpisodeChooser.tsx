@@ -3,8 +3,9 @@ import { ChangeEvent, useState } from "react";
 
 // Project files
 import ItemEpisodes from "components/ItemEpisode";
+import InputSelect from "components/InputSelect";
 import iDetailsSeries from "interfaces/iDetailsSeries";
-import InputSelect from "./InputSelect";
+import SeriesUtilities from "scripts/seriesUtilities";
 
 interface iProps {
   episodes: iDetailsSeries[];
@@ -13,42 +14,31 @@ interface iProps {
 
 export default function EpisodeChooser({ episodes, onClick }: iProps) {
   // Local state
-  const [selectedSeason, setSelectedSeason] = useState("1");
+  const [data, setData] = useState({ season_number: 1 });
 
   // Properties
-  const seasonsAvailable = episodes
-    .map((item) => item.season_number)
-    .sort((a, b) => b - a);
-  const numberOfSeasons: number = seasonsAvailable[0]; // take the highest number
-  const selectedEpisodes = episodes.filter(
-    (item) => item.season_number === Number(selectedSeason)
+  const numberOfSeasons = SeriesUtilities.getSeasonsNumber(episodes);
+  const currentEpisodes = SeriesUtilities.getEpisodes(
+    episodes,
+    data.season_number
   );
-  const inputSelectLabels = generateSeasonLabels(numberOfSeasons);
+  const inputSelectLabels = SeriesUtilities.getSeasonLabels(numberOfSeasons);
+  const fields = {
+    key: "season_number",
+    label: "",
+    options: inputSelectLabels,
+  };
 
   // Components
-  const Episodes = selectedEpisodes.map((item) => (
+  const Episodes = currentEpisodes.map((item) => (
     <ItemEpisodes key={item.id} item={item} onClick={onClick} />
   ));
-
-  // Methods
-  function generateSeasonLabels(numberOfSeasons: number): string[] {
-    let result: string[] = [];
-
-    for (let index = 0; index < numberOfSeasons; index++) {
-      result.push(`Season ${index + 1}`);
-    }
-
-    return result;
-  }
 
   return (
     <section className="episode-chooser">
       <header>
         <h2>Episodes</h2>
-        <InputSelect
-          state={[selectedSeason, setSelectedSeason]}
-          data={inputSelectLabels}
-        />
+        <InputSelect state={[data, setData]} fields={fields} />
       </header>
       <div>{Episodes}</div>
     </section>
