@@ -1,17 +1,19 @@
+// Node modules
+import { ChangeEvent } from "react";
+
 // Project files
 import Placeholder from "assets/images/placeholders/card-basic.png";
 import iInputImage from "interfaces/iInputImage";
-import { ChangeEvent } from "react";
 import readFile from "scripts/resize-image/readFile";
 import resizeImage from "scripts/resize-image/resizeImage";
 
 interface iProps {
-  fields: iInputImage;
+  field: iInputImage;
   state: [any, Function];
 }
 
-export default function InputImage({ fields, state }: iProps) {
-  const { key, label, imageWidth } = fields;
+export default function InputImage({ field, state }: iProps) {
+  const { key, label, imageWidth } = field;
   const [value, setValue] = state;
 
   // Properties

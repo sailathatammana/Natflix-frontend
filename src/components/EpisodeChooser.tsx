@@ -6,6 +6,7 @@ import ItemEpisodes from "components/ItemEpisode";
 import InputSelect from "components/InputSelect";
 import iDetailsSeries from "interfaces/iDetailsSeries";
 import SeriesUtilities from "scripts/seriesUtilities";
+import iInputSelect from "interfaces/iInputSelect";
 
 interface iProps {
   episodes: iDetailsSeries[];
@@ -23,10 +24,11 @@ export default function EpisodeChooser({ episodes, onClick }: iProps) {
     data.season_number
   );
   const inputSelectLabels = SeriesUtilities.getSeasonLabels(numberOfSeasons);
-  const fields = {
+  const fields: iInputSelect = {
     key: "season_number",
     label: "",
     options: inputSelectLabels,
+    type: "select",
   };
 
   // Components
@@ -38,7 +40,7 @@ export default function EpisodeChooser({ episodes, onClick }: iProps) {
     <section className="episode-chooser">
       <header>
         <h2>Episodes</h2>
-        <InputSelect state={[data, setData]} fields={fields} />
+        <InputSelect field={fields} state={[data, setData]} />
       </header>
       <div>{Episodes}</div>
     </section>

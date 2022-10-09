@@ -2,11 +2,9 @@
 import { FormEvent, useState } from "react";
 
 // Project files
-import InputField from "components/InputField";
-import InpuSelect from "components/InputSelect";
-import InputImage from "components/InputImage";
-import { useModal } from "state/ModalContext";
+import ListInput from "components/ListInput";
 import { generateFields } from "scripts/formUtilities";
+import { useModal } from "state/ModalContext";
 import fakeFetch from "scripts/fakeFetch";
 
 interface iProps {
@@ -42,25 +40,12 @@ export default function FormUpdate({ endPoint, fields, data }: iProps) {
     alert("Could not edit item");
   }
 
-  // Refactor this is repeated between FormCreate and FormUpdate
-  // Components
-  const InputFields = fields.map((item, index) => {
-    switch (item.type) {
-      case "select":
-        return <InpuSelect key={index} fields={item} state={[form, setForm]} />;
-      case "image":
-        return <InputImage key={index} fields={item} state={[form, setForm]} />;
-      default:
-        return <InputField key={index} fields={item} state={[form, setForm]} />;
-    }
-  });
-
   return (
     <form className="form" onSubmit={onSubmit}>
-      <h2>Update information</h2>
-      {InputFields}
+      <h2>New information</h2>
+      <ListInput fields={fields} state={[form, setForm]} />
       <hr />
-      <button className="button-gray">Save</button>
+      <button className="button-gray">Create</button>
       <button className="button-gray" onClick={() => setModal(null)}>
         Cancel
       </button>

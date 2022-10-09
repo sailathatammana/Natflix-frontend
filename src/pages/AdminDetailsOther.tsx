@@ -58,7 +58,7 @@ export default function AdminDetailsOther() {
       <header>
         <h1>Admin details</h1>
         <form onSubmit={(event) => onSubmit(event)}>
-          <InputField fields={Fields} state={[data, setData]} />
+          <InputField field={Fields} state={[data, setData]} />
           <hr />
           <button>Save</button>
         </form>

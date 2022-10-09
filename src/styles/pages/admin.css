@@ -8,6 +8,7 @@
   width: 240px;
   height: 360px;
   border-radius: var(--radius);
+  background-color: var(--color-gray-2);
 }
 
 /* Larger than tablet */

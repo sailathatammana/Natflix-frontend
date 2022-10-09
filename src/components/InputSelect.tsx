@@ -5,12 +5,12 @@ import { ChangeEvent } from "react";
 import iInputSelect from "interfaces/iInputSelect";
 
 interface iProps {
-  fields: iInputSelect;
+  field: iInputSelect;
   state: [any, Function];
 }
 
-export default function Select({ fields, state }: iProps) {
-  const { label, key, options } = fields;
+export default function Select({ field, state }: iProps) {
+  const { label, key, options } = field;
   const [value, setValue] = state;
 
   // Properties

@@ -5,12 +5,12 @@ import { ChangeEvent } from "react";
 import iInputField from "interfaces/iInputField";
 
 interface iProps {
-  fields: iInputField;
+  field: iInputField;
   state: [any, Function];
 }
 
-export default function InputField({ fields, state }: iProps) {
-  const { key, autoFocus, label, placeholder, type, required } = fields;
+export default function InputField({ field, state }: iProps) {
+  const { key, autoFocus, label, placeholder, type, required } = field;
   const [value, setValue] = state;
 
   // Methods
