@@ -1,11 +1,17 @@
 // Pure
-export default async function readFile(file: File) {
+export default async function readFile(file: File | Blob): Promise<string> {
   const reader = new FileReader();
 
   reader.readAsDataURL(file);
 
-  const result = await new Promise((resolve) => {
-    reader.onload = (event) => resolve(event.target?.result);
+  const result: string = await new Promise((resolve) => {
+    reader.onload = (event) => {
+      if (!event.target?.result) return;
+
+      const target = event.target.result as string;
+
+      return resolve(target);
+    };
   });
 
   return result;

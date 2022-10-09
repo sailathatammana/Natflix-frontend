@@ -11,7 +11,6 @@ export function generateFields(
   fields.forEach((item) => {
     const key = item.key;
 
-    // @ts-ignore
     result[key] = data[key];
   });
 

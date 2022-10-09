@@ -1,9 +1,16 @@
 // Project files
 import Placeholder from "assets/images/placeholders/card-basic.png";
+import iInputImage from "interfaces/iInputImage";
+import { ChangeEvent } from "react";
 import readFile from "scripts/resize-image/readFile";
 import resizeImage from "scripts/resize-image/resizeImage";
 
-export default function InputImage({ fields, state }) {
+interface iProps {
+  fields: iInputImage;
+  state: [any, Function];
+}
+
+export default function InputImage({ fields, state }: iProps) {
   const { key, label, imageWidth } = fields;
   const [value, setValue] = state;
 
@@ -12,10 +19,14 @@ export default function InputImage({ fields, state }) {
   const imageURL = selectedImage === undefined ? Placeholder : selectedImage;
 
   // Methods
-  async function onChange(event) {
-    const file = event.target.files[0];
-    const image = await readFile(file);
-    const resizedImage = await resizeImage(image, imageWidth);
+  async function onChange(event: ChangeEvent<HTMLInputElement>) {
+    // Safeguard
+    if (!event.currentTarget.files) return;
+
+    const files = event.currentTarget.files;
+    const file = files[0];
+    const image: string = await readFile(file);
+    const resizedImage: Blob = await resizeImage(image, imageWidth, 0);
     const finalImage = await readFile(resizedImage);
 
     const clonedItem = { ...value };

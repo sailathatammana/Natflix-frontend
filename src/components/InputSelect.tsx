@@ -1,4 +1,15 @@
-export default function Select({ fields, state }) {
+// Node modules
+import { ChangeEvent } from "react";
+
+// Project files
+import iInputSelect from "interfaces/iInputSelect";
+
+interface iProps {
+  fields: iInputSelect;
+  state: [any, Function];
+}
+
+export default function Select({ fields, state }: iProps) {
   const { label, key, options } = fields;
   const [value, setValue] = state;
 
@@ -6,7 +17,7 @@ export default function Select({ fields, state }) {
   const selectedOption = value[key];
 
   // Methods
-  function onChange(event) {
+  function onChange(event: ChangeEvent<HTMLSelectElement>) {
     const clonedItem = { ...value };
 
     clonedItem[key] = Number(event.target.value);
@@ -15,7 +26,7 @@ export default function Select({ fields, state }) {
   }
 
   // Components
-  const Options = options.map((item, index) => (
+  const Options = options.map((item: string, index: number) => (
     <option key={index} value={index + 1}>
       {item}
     </option>
