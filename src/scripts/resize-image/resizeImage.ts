@@ -1,5 +1,9 @@
 // Pure
-export default async function resizeImage(imageSource, width, height) {
+export default async function resizeImage(
+  imageSource: string,
+  width: number,
+  height: number
+) {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
   const image = await loadImage(imageSource);
@@ -7,15 +11,15 @@ export default async function resizeImage(imageSource, width, height) {
 
   canvas.width = newSize.width;
   canvas.height = newSize.height;
-  context.drawImage(image, 0, 0, newSize.width, newSize.height);
+  context?.drawImage(image, 0, 0, newSize.width, newSize.height);
 
   return await canvasToPNGBlob(canvas);
 }
 
 // Pure
-async function loadImage(image) {
+async function loadImage(source: string) {
   const result = new Image();
-  result.src = image;
+  result.src = source;
 
   await new Promise((resolve) => (result.onload = resolve));
 
@@ -23,7 +27,11 @@ async function loadImage(image) {
 }
 
 // Pure
-function proportionalScaling(image, width, height) {
+function proportionalScaling(
+  image: HTMLImageElement,
+  width: number,
+  height: number
+) {
   let newWidth = image.width;
   let newHeight = image.height;
 
@@ -39,7 +47,7 @@ function proportionalScaling(image, width, height) {
 }
 
 // Pure
-async function canvasToPNGBlob(canvas) {
+async function canvasToPNGBlob(canvas: HTMLCanvasElement) {
   const canvasToDataURL = canvas.toDataURL("image/png");
   const DataURLToBlob = await fetch(canvasToDataURL);
   const result = await DataURLToBlob.blob();
