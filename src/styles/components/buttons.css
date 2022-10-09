@@ -6,6 +6,7 @@ button,
 .button {
   min-width: 136px; /* using min-width sets the initial size while allowing to grow as needed */
   height: 44px;
+  margin-right: var(--space-small);
   background-color: var(--color-netflix-red);
   color: white;
   font-weight: bold;

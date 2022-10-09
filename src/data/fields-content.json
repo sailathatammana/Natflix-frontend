@@ -39,7 +39,8 @@
     "label": "Logo URL",
     "placeholder": "www.google.com/logo.png",
     "required": false,
-    "type": "image"
+    "type": "image",
+    "imageWidth": 400
   },
   {
     "key": "banner_url",
@@ -47,7 +48,8 @@
     "label": "Banner URL",
     "placeholder": "www.google.com/banner.png",
     "required": true,
-    "type": "image"
+    "type": "image",
+    "imageWidth": 1280
   },
   {
     "key": "thumbnail_url",
@@ -55,6 +57,7 @@
     "label": "Thumbail URL",
     "placeholder": "www.google.com/thumbnail.png",
     "required": true,
-    "type": "image"
+    "type": "image",
+    "imageWidth": 260
   }
 ]

@@ -37,7 +37,8 @@
     "label": "Thumbnail",
     "placeholder": "www.google.com/thumbnail.png",
     "required": true,
-    "type": "text"
+    "type": "image",
+    "imageWidth": 260
   },
   {
     "key": "video_code",

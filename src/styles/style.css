@@ -9,7 +9,9 @@
 @import "./components/episode-chooser.css";
 @import "./components/forms.css";
 @import "./components/heroes.css";
+@import "./components/input.css";
 @import "./components/input-field.css";
+@import "./components/input-image.css";
 @import "./components/input-select.css";
 @import "./components/item-admin.css";
 @import "./components/item-card.css";

@@ -3,10 +3,11 @@ import { FormEvent, useState } from "react";
 
 // Project files
 import InputField from "components/InputField";
+import InpuSelect from "./InputSelect";
+import InputImage from "./InputImage";
 import { useModal } from "state/ModalContext";
 import { generateFields } from "scripts/formUtilities";
 import fakeFetch from "scripts/fakeFetch";
-import InputSelect from "./InputSelect";
 
 interface iProps {
   endPoint: string;
@@ -41,16 +42,14 @@ export default function FormUpdate({ endPoint, fields, data }: iProps) {
     alert("Could not edit item");
   }
 
-  // Refactor, move to a single component shared by FormCreate and FormUpdate
+  // Refactor this is repeated between FormCreate and FormUpdate
   // Components
   const InputFields = fields.map((item, index) => {
     switch (item.type) {
       case "select":
-        return (
-          <InputSelect key={index} fields={item} state={[form, setForm]} />
-        );
+        return <InpuSelect key={index} fields={item} state={[form, setForm]} />;
       case "image":
-        return <p key={index}>Image selector comming soon!</p>;
+        return <InputImage key={index} fields={item} state={[form, setForm]} />;
       default:
         return <InputField key={index} fields={item} state={[form, setForm]} />;
     }

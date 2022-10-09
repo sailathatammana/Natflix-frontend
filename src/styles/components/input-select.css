@@ -1,15 +1,3 @@
-.input-select {
-  display: block;
-}
-
-.input-select span {
-  display: block;
-  margin-bottom: var(--space-small);
-  color: white;
-  font-size: var(--default-text-size);
-  font-weight: bold;
-}
-
 .input-select select {
   height: 44px;
   padding-left: var(--space-medium);
@@ -21,5 +9,5 @@
   background-image: url("../../assets/images/icons/icon-caret-down-white.svg");
   background-repeat: no-repeat;
   background-position: right;
-  -webkit-appearance: none; /* to remove a glass like visual effect that Safari puts on inputs by default */
+  appearance: none; /* to remove a glass like visual effect that Safari puts on inputs by default */
 }
