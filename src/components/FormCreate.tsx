@@ -2,7 +2,7 @@
 import { FormEvent, useState } from "react";
 
 // Project files
-import Select from "components/Select";
+import InpuSelect from "components/InputSelect";
 import InputField from "components/InputField";
 import InputImage from "components/InputImage";
 import fakeFetch from "scripts/fakeFetch";
@@ -43,7 +43,7 @@ export default function FormUpdate({ endPoint, fields }: iProps) {
   const InputFields = fields.map((item, index) => {
     switch (item.type) {
       case "select":
-        return <Select key={index} fields={item} state={[form, setForm]} />;
+        return <InpuSelect key={index} fields={item} state={[form, setForm]} />;
       case "image":
         return <InputImage key={index} fields={item} state={[form, setForm]} />;
       default:
