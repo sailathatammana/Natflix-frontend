@@ -1,15 +1,19 @@
-import iContent from "interfaces/iContent";
-import iDetailsOther from "interfaces/iDetailsOther";
-import iDetailsSeries from "interfaces/iDetailsSeries";
+import iInputField from "interfaces/iInputField";
+import iInputImage from "interfaces/iInputImage";
+import iInputSelect from "interfaces/iInputSelect";
+
+interface DynamicObject {
+  [key: string]: string | number | boolean;
+}
 
 export function generateFields(
-  fields: Array<any>,
-  data: iContent | iDetailsOther | iDetailsSeries
+  fields: Array<iInputField | iInputImage | iInputSelect>,
+  data: any
 ) {
-  let result = {};
+  let result: DynamicObject = {};
 
   fields.forEach((item) => {
-    const key = item.key;
+    const key: string = item.key;
 
     result[key] = data[key];
   });

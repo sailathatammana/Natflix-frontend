@@ -1,7 +1,7 @@
 [
   {
     "key": "title",
-    "autofocus": true,
+    "autoFocus": true,
     "label": "Title",
     "placeholder": "Example: Back to the Future",
     "required": true,
@@ -9,7 +9,7 @@
   },
   {
     "key": "type_id",
-    "autofocus": false,
+    "autoFocus": false,
     "label": "Type of content",
     "placeholder": "1 = series, 2 = movies, 3 = documentaries",
     "required": true,
@@ -18,7 +18,7 @@
   },
   {
     "key": "category_id",
-    "autofocus": false,
+    "autoFocus": false,
     "label": "Type of category",
     "placeholder": "1: horror, 2: action, 3: comedy, 4: drama, 5: other",
     "required": true,
@@ -27,7 +27,7 @@
   },
   {
     "key": "summary",
-    "autofocus": false,
+    "autoFocus": false,
     "label": "Summary",
     "placeholder": "A time travel story of a boy and his mentor",
     "required": true,
@@ -35,7 +35,7 @@
   },
   {
     "key": "logo_url",
-    "autofocus": false,
+    "autoFocus": false,
     "label": "Logo URL",
     "placeholder": "www.google.com/logo.png",
     "required": false,
@@ -44,7 +44,7 @@
   },
   {
     "key": "banner_url",
-    "autofocus": false,
+    "autoFocus": false,
     "label": "Banner URL",
     "placeholder": "www.google.com/banner.png",
     "required": true,
@@ -53,7 +53,7 @@
   },
   {
     "key": "thumbnail_url",
-    "autofocus": false,
+    "autoFocus": false,
     "label": "Thumbail URL",
     "placeholder": "www.google.com/thumbnail.png",
     "required": true,
