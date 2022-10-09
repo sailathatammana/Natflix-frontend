@@ -15,7 +15,7 @@ export default function InputImage({ fields, state }) {
   async function onChange(event) {
     const file = event.target.files[0];
     const image = await readFile(file);
-    const resizedImage = await resizeImage(image, 500);
+    const resizedImage = await resizeImage(image, imageWidth);
     const finalImage = await readFile(resizedImage);
 
     const clonedItem = { ...value };
