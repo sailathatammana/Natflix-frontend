@@ -3,18 +3,18 @@
     "id": 1,
     "label": "Series",
     "url": "/admin-content/series",
-    "imageURL": "https://unsplash.com/photos/wMkaMXTJjlQ/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjY1MzM5NDk4&force=true&w=640"
+    "imageURL": "https://unsplash.com/photos/UBhpOIHnazM/download?force=true&w=640"
   },
   {
     "id": 2,
     "label": "Movies",
     "url": "/admin-content/movies",
-    "imageURL": "https://images.unsplash.com/photo-1616530940355-351fabd9524b"
+    "imageURL": "https://unsplash.com/photos/wMkaMXTJjlQ/download?force=true&w=640"
   },
   {
     "id": 3,
     "label": "Documentaries",
     "url": "/admin-content/documentaries",
-    "imageURL": "https://images.unsplash.com/photo-1587656107490-098cfbac52fb"
+    "imageURL": "https://unsplash.com/photos/imMvw-XLuL8/download?&force=true&w=640"
   }
 ]
