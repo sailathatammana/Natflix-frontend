@@ -5,8 +5,8 @@ import { FormEvent, useState } from "react";
 import InpuSelect from "components/InputSelect";
 import InputField from "components/InputField";
 import InputImage from "components/InputImage";
-import fakeFetch from "scripts/fakeFetch";
 import { useModal } from "state/ModalContext";
+import fakeFetch from "scripts/fakeFetch";
 
 interface iProps {
   endPoint: string;
