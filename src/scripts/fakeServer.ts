@@ -1,4 +1,5 @@
 // Fake data
+import Users from "./fake-data/users.json";
 import Content from "./fake-data/content.json";
 import Documentaries from "./fake-data/documentaries.json";
 import Movies from "./fake-data/movies.json";
@@ -15,6 +16,10 @@ import iDetailsSeries from "interfaces/iDetailsSeries";
 
 export default function fakeServer(endPoint: string, data: any = null): any {
   switch (endPoint) {
+    // Auth
+    case "login/":
+      return authLogin(data.email, data.password);
+
     // Content
     case "content/":
       return Content;
@@ -53,6 +58,24 @@ export default function fakeServer(endPoint: string, data: any = null): any {
     default:
       throw new Error(`invalid endpoint ${endPoint}`);
   }
+}
+
+// Auth
+function authLogin(email: string, password: string) {
+  console.log("authLogin", email, password);
+
+  const admin = Users[0];
+  const customer = Users[1];
+
+  if (email === admin.email && password === admin.password) {
+    return admin;
+  }
+
+  if (email === customer.email && password === customer.password) {
+    return customer;
+  }
+
+  throw new Error("Invalid credentials");
 }
 
 // Content
