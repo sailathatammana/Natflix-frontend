@@ -62,8 +62,6 @@ export default function fakeServer(endPoint: string, data: any = null): any {
 
 // Auth
 function authLogin(email: string, password: string) {
-  console.log("authLogin", email, password);
-
   const admin = Users[0];
   const customer = Users[1];
 

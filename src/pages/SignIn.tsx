@@ -11,10 +11,13 @@ import { useUser } from "state/UserContext";
 
 export default function Login() {
   // Global state
-  const { setUser } = useUser();
+  const { user, setUser } = useUser();
 
   // Local state
-  const [form, setForm] = useState({ email: "foo@gmail.com", password: "123" });
+  const [form, setForm] = useState({
+    email: "eduardo.alvarez@novare.com",
+    password: "12345678",
+  });
 
   // Properties
   const endPoint = "login/";
@@ -27,9 +30,10 @@ export default function Login() {
       .catch((error) => onFailure(error));
   }
 
-  function onSuccess(user: iUser) {
+  function onSuccess(newUser: iUser) {
     alert("Logged in");
-    setUser(user);
+    setUser(newUser);
+    console.log(user);
   }
 
   function onFailure(error: string) {

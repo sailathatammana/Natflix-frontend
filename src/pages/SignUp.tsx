@@ -15,7 +15,6 @@ export default function Login() {
 
   // Methods
   function onSubmit(event: FormEvent): void {
-    console.log("submitting credentials", form);
     event.preventDefault();
   }
 
