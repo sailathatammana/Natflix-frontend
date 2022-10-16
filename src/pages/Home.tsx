@@ -1,6 +1,3 @@
-// Fake data (replace this with a real fetch)
-import fakeFetch from "scripts/fakeFetch";
-
 // Node modules
 import { useEffect, useState } from "react";
 
@@ -20,15 +17,16 @@ export default function Home() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
-  const endPoint = "content/";
+  const endPoint = "http://localhost:8080/content";
   const series = data.filter((item) => item.type_id === 1);
   const movies = data.filter((item) => item.type_id === 2);
   const documentaries = data.filter((item) => item.type_id === 3);
 
   // Methods
   useEffect(() => {
-    fakeFetch(endPoint)
-      .then((response) => onSuccess(response.data))
+    fetch(endPoint)
+      .then((response) => response.json())
+      .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
   }, []);
 

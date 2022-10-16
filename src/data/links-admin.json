@@ -2,19 +2,19 @@
   {
     "id": 1,
     "label": "Series",
-    "url": "/admin-content/series",
+    "url": "/admin-content/1",
     "imageURL": "https://unsplash.com/photos/UBhpOIHnazM/download?force=true&w=640"
   },
   {
     "id": 2,
     "label": "Movies",
-    "url": "/admin-content/movies",
+    "url": "/admin-content/2",
     "imageURL": "https://unsplash.com/photos/wMkaMXTJjlQ/download?force=true&w=640"
   },
   {
     "id": 3,
     "label": "Documentaries",
-    "url": "/admin-content/documentaries",
+    "url": "/admin-content/3",
     "imageURL": "https://unsplash.com/photos/imMvw-XLuL8/download?&force=true&w=640"
   }
 ]

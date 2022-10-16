@@ -1,6 +1,3 @@
-// Fake data (replace this with a real fetch)
-import fakeFetch from "scripts/fakeFetch";
-
 // Node modules
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -31,13 +28,14 @@ export default function AdminContent() {
   const [data, setData] = useState(new Array<iContent>());
 
   // Properties
-  const endPoint: string = "content/";
+  const endPoint = `http://localhost:8080/content/?type_id=${code}`;
 
   // Methods
   useEffect(() => {
     setStatus(eStatus.LOADING);
-    fakeFetch(endPoint + code + "/")
-      .then((response) => onSuccess(response.data))
+    fetch(endPoint)
+      .then((response) => response.json())
+      .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
   }, [code]);
 
@@ -52,15 +50,28 @@ export default function AdminContent() {
   }
 
   function onCreate() {
-    setModal(<FormCreate fields={Fields} endPoint={endPoint} />);
+    setModal(
+      <FormCreate
+        fields={Fields}
+        endPoint={"http://localhost:8080/content/create/"}
+      />
+    );
   }
 
   function onUpdate(item: iContent) {
-    setModal(<FormUpdate endPoint={endPoint} fields={Fields} data={item} />);
+    setModal(
+      <FormUpdate
+        endPoint={`http://localhost:8080/content/update/${item.id}`}
+        fields={Fields}
+        data={item}
+      />
+    );
   }
 
   function onDelete(id: number) {
-    setModal(<FormDelete endPoint={endPoint} id={id} />);
+    setModal(
+      <FormDelete endPoint={`http://localhost:8080/content/delete/${id}`} />
+    );
   }
 
   function onDetails(item: iContent) {

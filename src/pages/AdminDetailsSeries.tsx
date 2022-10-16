@@ -1,6 +1,3 @@
-// Fake data (replace this with a real fetch)
-import fakeFetch from "scripts/fakeFetch";
-
 // Node modules
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -33,8 +30,9 @@ export default function AdminDetailSeries() {
 
   // Methods
   useEffect(() => {
-    fakeFetch(endPoint, code)
-      .then((response) => onSuccess(response.data))
+    fetch(`http://localhost:8080/details-series/${code}`)
+      .then((response) => response.json())
+      .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
   }, []);
 
@@ -49,15 +47,30 @@ export default function AdminDetailSeries() {
   }
 
   function onCreate() {
-    setModal(<FormCreate fields={Fields} endPoint={endPoint} />);
+    setModal(
+      <FormCreate
+        fields={Fields}
+        endPoint={`http://localhost:8080/details-series/create/${code}`}
+      />
+    );
   }
 
   function onUpdate(item: iDetailsSeries) {
-    setModal(<FormUpdate endPoint={endPoint} fields={Fields} data={item} />);
+    setModal(
+      <FormUpdate
+        endPoint={`http://localhost:8080/details-series/update/${item.id}`}
+        fields={Fields}
+        data={item}
+      />
+    );
   }
 
   function onDelete(id: number) {
-    setModal(<FormDelete endPoint={endPoint} id={id} />);
+    setModal(
+      <FormDelete
+        endPoint={`http://localhost:8080/details-series/delete/${id}`}
+      />
+    );
   }
 
   // Components

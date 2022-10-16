@@ -1,6 +1,3 @@
-// Fake data (replace this with a real fetch)
-import fakeFetch from "scripts/fakeFetch";
-
 // Node modules
 import { FormEvent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -19,19 +16,22 @@ export default function AdminDetailsOther() {
 
   // Local state
   const [status, setStatus] = useState(eStatus.LOADING);
-  const [data, setData] = useState("");
+  const [data, setData] = useState<any>();
 
   // Properties
   const endPoint: string = "details-other/:id/";
+  const METHOD = "PUT"; // refactor
+  const HEADERS = { "Content-type": "application/json; charset=UTF-8" };
 
   // Methods
   useEffect(() => {
-    fakeFetch(endPoint, code)
-      .then((response) => onSuccess(response.data))
+    fetch(`http://localhost:8080/details-other/${code}`)
+      .then((response) => response.json())
+      .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
   }, []);
 
-  function onSuccess(data: string) {
+  function onSuccess(data: any) {
     setData(data);
     setStatus(eStatus.READY);
   }
@@ -43,8 +43,13 @@ export default function AdminDetailsOther() {
 
   function onSubmit(event: FormEvent) {
     event.preventDefault();
-    fakeFetch(endPoint + "update/", data)
-      .then((response) => alert(response.data))
+    fetch(`http://localhost:8080/details-other/update/${data.id}`, {
+      method: METHOD,
+      headers: HEADERS,
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then(() => alert("Item updated"))
       .catch(onFailure);
   }
 

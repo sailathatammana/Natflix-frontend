@@ -1,6 +1,3 @@
-// Fake data
-import fakeFetch from "scripts/fakeFetch";
-
 // Node modules
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -38,13 +35,16 @@ export default function ModalDetails({ item }: iProps) {
   const isASeries: boolean = type_id === eContentType.SERIES;
   const emptyOther: boolean = Object(dataOther).length === 0;
   const emptySeries: boolean = dataSerie.length === 0;
-  const endPoint = isASeries ? "details-series/:id/" : "details-other/:id/";
+  const endPoint = isASeries
+    ? `http://localhost:8080/details-series/${id}`
+    : `http://localhost:8080/details-other/${id}`;
   const videoCode = isASeries ? dataSerie[0]?.video_code : dataOther.video_code;
 
   // Methods
   useEffect(() => {
-    fakeFetch(endPoint, id)
-      .then((response) => onSuccess(response.data))
+    fetch(endPoint)
+      .then((response) => response.json())
+      .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
   }, []);
 
