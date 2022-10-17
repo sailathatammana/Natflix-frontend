@@ -22,3 +22,9 @@
 .navigation-bar .search {
   margin-left: auto; /* used with flex to push the item to the oposite side */
 }
+
+.search img {
+  margin-left: 8px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}

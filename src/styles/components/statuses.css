@@ -16,6 +16,10 @@
   animation: spin 4s linear infinite;
 }
 
+.text {
+  padding: var(--page-space);
+}
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);
