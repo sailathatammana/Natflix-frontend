@@ -14,10 +14,7 @@ export default function Login() {
   const { user, setUser } = useUser();
 
   // Local state
-  const [form, setForm] = useState({
-    email: "eduardo.alvarez@novare.com",
-    password: "12345678",
-  });
+  const [form, setForm] = useState({ email: "", password: "" });
 
   // Properties
   const endPoint = "login/";
