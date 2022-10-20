@@ -1,3 +1,6 @@
+// Fake fetch
+import fakeFetch from "scripts/fakeFetch";
+
 // Node modules
 import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
@@ -5,7 +8,6 @@ import { Link } from "react-router-dom";
 // Project files
 import ListInput from "components/ListInput";
 import Fields from "data/fields-sign-in.json";
-import fakeFetch from "scripts/fakeFetch";
 import iUser from "interfaces/iUser";
 import { useUser } from "state/UserContext";
 
@@ -22,15 +24,17 @@ export default function Login() {
   // Methods
   function onSubmit(event: FormEvent): void {
     event.preventDefault();
+
     fakeFetch(endPoint, form)
       .then((response) => onSuccess(response.data))
       .catch((error) => onFailure(error));
   }
 
-  function onSuccess(newUser: iUser) {
+  function onSuccess(returningUser: iUser) {
+    console.log(returningUser);
+
     alert("Logged in");
-    setUser(newUser);
-    console.log(user);
+    setUser(returningUser);
   }
 
   function onFailure(error: string) {
