@@ -64,6 +64,7 @@ export default function fakeServer(endPoint: string, data: any = null): any {
 function authLogin(email: string, password: string) {
   const admin = Users[0];
   const customer = Users[1];
+  console.log("form", email, password);
 
   if (email === admin.email && password === admin.password) {
     return admin;
