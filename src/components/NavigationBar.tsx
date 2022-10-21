@@ -11,9 +11,7 @@ import { useUser } from "state/UserContext";
 export default function NavigationBar() {
   // Global state
   const { setUser } = useUser();
-
   const [query, setQuery] = useState("");
-
   const history = useNavigate();
 
   // Components

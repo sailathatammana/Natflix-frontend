@@ -18,6 +18,14 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         {user === null && <UnloggedRoutes />}
+        {user !== null &&
+          user?.type !== eUserType.ADMIN &&
+          user?.type !== eUserType.CUSTOMER && (
+            <div>
+              <p>Invalid Details</p>
+              <UnloggedRoutes />
+            </div>
+          )}
         {user?.type === eUserType.ADMIN && <AdminRoutes />}
         {user?.type === eUserType.CUSTOMER && <CustomerRoutes />}
         {/* To handle the modal/popups of the website */}

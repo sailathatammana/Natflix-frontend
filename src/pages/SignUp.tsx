@@ -1,6 +1,3 @@
-// Fake fetch
-import fakeFetch from "scripts/fakeFetch";
-
 // Node modules
 import { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,21 +17,26 @@ export default function Login() {
   const [form, setForm] = useState({});
 
   // Properties
-  const endPoint = "register/";
+  const endPoint = "http://localhost:8080/register";
+  const METHOD = "POST";
+  const HEADERS = { "Content-type": "application/json; charset=UTF-8" };
 
   // Methods
   function onSubmit(event: FormEvent): void {
     event.preventDefault();
 
-    fakeFetch(endPoint, form)
-      .then((response) => onSuccess(response.data))
+    fetch(endPoint, {
+      method: METHOD,
+      headers: HEADERS,
+      body: JSON.stringify(form),
+    })
+      .then((response) => response.json())
+      .then((json) => onSuccess(json))
       .catch((error) => onFailure(error));
   }
 
   function onSuccess(newUser: iUser) {
     console.log(newUser);
-
-    alert("Welcome to Natflix!");
     setUser(newUser);
     navigate("/");
   }
