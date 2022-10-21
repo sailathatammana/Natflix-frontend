@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 // Project files
 import ListInput from "components/ListInput";
-import Fields from "data/fields-login.json";
+import Fields from "data/fields-sign-up.json";
 
 export default function Login() {
   // Global state
@@ -29,16 +29,16 @@ export default function Login() {
   }
 
   return (
-    <div id="login" className="auth">
+    <div id="sign-up" className="auth">
       <div className="container">
-        <h1>Sign In</h1>
+        <h1>Set up your account</h1>
         <form onSubmit={(event) => onSubmit(event)}>
           <ListInput fields={Fields} state={[form, setForm]} />
-          <button>Sign in</button>
+          <button>Sign up</button>
         </form>
         <footer>
           <p>
-            New to Natflix? <Link to="/sign-up">Sign up now</Link>.
+            Already have an account? <Link to="/login">Sign in instead</Link>.
           </p>
         </footer>
       </div>
