@@ -13,12 +13,15 @@ import eContentType from "interfaces/eContentType";
 import iContent from "interfaces/iContent";
 import iDetailsOther from "interfaces/iDetailsOther";
 import iDetailsSeries from "interfaces/iDetailsSeries";
+import eUserType from "interfaces/eUserType";
 
 export default function fakeServer(endPoint: string, data: any = null): any {
   switch (endPoint) {
     // Auth
     case "login/":
-      return authLogin(data.email, data.password);
+      return authLogin(data);
+    case "register/":
+      return authRegister(data);
 
     // Content
     case "content/":
@@ -61,10 +64,11 @@ export default function fakeServer(endPoint: string, data: any = null): any {
 }
 
 // Auth
-function authLogin(email: string, password: string) {
+function authLogin(data: any) {
+  const { email, password } = data;
+
   const admin = Users[0];
   const customer = Users[1];
-  console.log("form", email, password);
 
   if (email === admin.email && password === admin.password) {
     return admin;
@@ -75,6 +79,31 @@ function authLogin(email: string, password: string) {
   }
 
   throw new Error("Invalid credentials");
+}
+
+/**
+ * Notes to the students
+ * Here you check that the email does not exist on the server.
+ * If so, you return an error message telling this.
+ *
+ * Otherwise you create a customer user by adding the type = 2.
+ *
+ * Note: Admin users are created only inside the database, not from this website.
+ */
+function authRegister(data: any) {
+  const { email } = data;
+
+  const chanceToSucced = generateRandomNumber(5);
+
+  // Existing email account
+  if (chanceToSucced == 1) {
+    return `The user ${email} already exist on our database. Do you want to login instead?`;
+  }
+
+  // Manage to create a new user
+  data.type = eUserType.CUSTOMER; // to convert this user into a customer
+
+  return data;
 }
 
 // Content
@@ -130,4 +159,8 @@ function detailsSeriesUpdate(item: iDetailsSeries) {
 
 function detailsSeriesDelete(id: number) {
   return `Deleted episode with id ${id}`;
+}
+
+function generateRandomNumber(limit: number) {
+  return Math.floor(Math.random() * limit);
 }
