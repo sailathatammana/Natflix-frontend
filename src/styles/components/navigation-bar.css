@@ -29,3 +29,8 @@
   height: 18px;
   filter: brightness(0) invert(1);
 }
+
+.navigation-bar .button-logout {
+  background-color: transparent;
+  font-weight: normal;
+}
