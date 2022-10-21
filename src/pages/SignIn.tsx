@@ -1,31 +1,40 @@
 // Node modules
 import { FormEvent, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Project files
 import ListInput from "components/ListInput";
 import Fields from "data/fields-sign-in.json";
+import fakeFetch from "scripts/fakeFetch";
+import iUser from "interfaces/iUser";
+import { useUser } from "state/UserContext";
 
 export default function Login() {
   // Global state
-  const navigate = useNavigate();
+  const { setUser } = useUser();
 
   // Local state
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({ email: "foo@gmail.com", password: "123" });
+
+  // Properties
+  const endPoint = "login/";
 
   // Methods
   function onSubmit(event: FormEvent): void {
-    console.log("submitting credentials", form);
     event.preventDefault();
+    fakeFetch(endPoint, form)
+      .then((response) => onSuccess(response.data))
+      .catch((error) => onFailure(error));
   }
 
-  function onSuccess() {
+  function onSuccess(user: iUser) {
     alert("Logged in");
-    navigate("/");
+    setUser(user);
   }
 
-  function onFailure() {
-    alert("Invalid credentials");
+  function onFailure(error: string) {
+    console.error(error);
+    alert(error);
   }
 
   return (
