@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 // Project files
 import BannerHome from "components/HeroHome";
 import ContainerCards from "components/ListCards";
-import NavigationBar from "components/NavigationBar";
 import StatusEmpty from "components/StatusEmpty";
 import StatusError from "components/StatusError";
 import StatusLoading from "components/StatusLoading";
@@ -47,7 +46,6 @@ export default function Home() {
 
   return (
     <div id="home">
-      <NavigationBar />
       <BannerHome item={data[0]} />
       <ContainerCards title="Series" data={series} />
       <ContainerCards title="Movies" data={movies} />

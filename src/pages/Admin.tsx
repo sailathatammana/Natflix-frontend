@@ -2,7 +2,6 @@
 import { Link } from "react-router-dom";
 
 // Project files
-import NavigationBarAdmin from "components/NavigationBarAdmin";
 import AdminLinks from "data/links-admin.json";
 
 export default function Admin() {
@@ -16,7 +15,6 @@ export default function Admin() {
 
   return (
     <div id="admin" className="admin-pages">
-      <NavigationBarAdmin />
       <header>
         <h1>Admin main menu</h1>
         <p>
