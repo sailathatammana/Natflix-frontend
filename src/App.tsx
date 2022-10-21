@@ -2,49 +2,34 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Project files
-import Admin from "pages/Admin";
-import AdminContent from "pages/AdminContent";
-import AdminDetailsOther from "pages/AdminDetailsOther";
-import AdminDetailsSeries from "pages/AdminDetailsSeries";
-import Content from "pages/Content";
-import SearchResults from "pages/SearchResults";
-import Home from "pages/Home";
-import SignIn from "pages/SignIn";
-import SignUp from "pages/SignUp";
 import Modal from "components/Modal";
-import NotFound from "pages/NotFound";
-import VideoPlayer from "pages/VideoPlayer";
+import eUserType from "interfaces/eUserType";
+import AdminRoutes from "routes/AdminRoutes";
+import CustomerRoutes from "routes/CustomerRoutes";
+import UnloggedRoutes from "routes/UnlogedRoutes";
 import { ModalProvider } from "state/ModalContext";
+import { UserProvider, useUser } from "state/UserContext";
 import "styles/style.css";
 
 export default function App() {
+  // Global state
+  const { user } = useUser();
+
+  console.log("user", user);
+
   return (
     <div className="App">
-      <ModalProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="*" element={<NotFound />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/content/:code" element={<Content />} />
-            <Route path="/results/:query" element={<SearchResults />} />
-            <Route path="/video/:code" element={<VideoPlayer />} />
-            <Route path="/login" element={<SignIn />} />
-            <Route path="/registration" element={<SignUp />} />
-            <Route path="/admin-content/:code" element={<AdminContent />} />
-            <Route
-              path="/admin-details-other/:code"
-              element={<AdminDetailsOther />}
-            />
-            <Route
-              path="/admin-details-series/:code"
-              element={<AdminDetailsSeries />}
-            />
-            <Route path="/admin" element={<Admin />} />
-          </Routes>
-          {/* To handle the modal/popups of the website */}
-          <Modal />
-        </BrowserRouter>
-      </ModalProvider>
+      <UserProvider>
+        <ModalProvider>
+          <BrowserRouter>
+            {user === null && <UnloggedRoutes />}
+            {user?.type === eUserType.ADMIN && <AdminRoutes />}
+            {user?.type === eUserType.CUSTOMER && <CustomerRoutes />}
+            {/* To handle the modal/popups of the website */}
+            <Modal />
+          </BrowserRouter>
+        </ModalProvider>
+      </UserProvider>
     </div>
   );
 }
