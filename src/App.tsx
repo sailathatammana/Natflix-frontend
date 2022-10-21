@@ -7,6 +7,7 @@ import AdminContent from "pages/AdminContent";
 import AdminDetailsOther from "pages/AdminDetailsOther";
 import AdminDetailsSeries from "pages/AdminDetailsSeries";
 import Content from "pages/Content";
+import SearchResults from "pages/SearchResults";
 import Home from "pages/Home";
 import Login from "pages/Login";
 import Modal from "components/Modal";
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Home />} />
             <Route path="/content/:code" element={<Content />} />
+            <Route path="/results/:query" element={<SearchResults />} />
             <Route path="/video/:code" element={<VideoPlayer />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin-content/:code" element={<AdminContent />} />
