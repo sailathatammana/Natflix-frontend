@@ -26,6 +26,11 @@ export default function NavigationBar() {
     history(`/results/${query}`);
   }
 
+  function onLogout() {
+    setUser(null);
+    history("/");
+  }
+
   return (
     <nav className="navigation-bar">
       <Link to={CustomerLinks[0].url}>
@@ -42,7 +47,7 @@ export default function NavigationBar() {
           />
           <img src={search} alt="search" className="searchicon" />
         </form>
-        <button className="button-logout" onClick={() => setUser(null)}>
+        <button className="button-logout" onClick={onLogout}>
           Logout
         </button>
       </div>

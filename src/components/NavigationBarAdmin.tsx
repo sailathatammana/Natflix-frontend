@@ -1,5 +1,5 @@
 // Node modules
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Project files
 import Logo from "assets/images/logo.svg";
@@ -9,6 +9,7 @@ import { useUser } from "state/UserContext";
 export default function NavigationBarAdmin() {
   // Global state
   const { setUser } = useUser();
+  const navigate = useNavigate();
 
   // Components
   const Links = AdminLinks.map((item) => (
@@ -16,6 +17,11 @@ export default function NavigationBarAdmin() {
       {item.label}
     </Link>
   ));
+
+  function onLogout() {
+    setUser(null);
+    navigate("/");
+  }
 
   return (
     <nav className="navigation-bar">
@@ -25,7 +31,7 @@ export default function NavigationBarAdmin() {
       <div className="links">{Links}</div>
       <div className="left-items">
         {/* Search bar goes here... */}
-        <button className="button-logout" onClick={() => setUser(null)}>
+        <button className="button-logout" onClick={onLogout}>
           Logout
         </button>
       </div>
