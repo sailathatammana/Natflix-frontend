@@ -36,7 +36,6 @@ export default function Login() {
   }
 
   function onSuccess(newUser: iUser) {
-    console.log(newUser);
     setUser(newUser);
     navigate("/");
   }
