@@ -1,20 +1,29 @@
 # Natflix
 
-The frontend for project #5 in the TietoEvry Java Course.
+This is a Netflix clone that gives access to movies, series and documentaries. The Admin role can edit and can add a new movie, series and documentaries.
 
-# About
+In order to access the admin section here are credentials:
 
-This is a dummy frontend meaning that it has hardcoded data. The students must replace the false api calls done using a method called `fakeFetch()` and replace it with the real native `fetch()` method in JavaScript.
+- email : admin@gmail.com
+- password :12345678
 
-- Every tv-series opens information about Seinfield.
-- Every movie opens information about Public servant.
-- Every documentary opens information about The Last Dance.
+## Setup
 
-# Installation
+These are the instructions to run the project:
 
-#0 Clone the repository
-#0 Open a terminal and type `npm install` inside the repository folder
-#0 Run `npm start` to open the project in `localhost:3000`
+1. Clone the backend project:
+   `https://github.com/sailathatammana/Natflix`
+2. In root folder to start databse run:
+   `docker-compose up`
+3. In root folder to start server run:
+   `./gradlew bootRun`
+4. Clone the frontend project :
+   `https://github.com/sailathatammana/Natflix-frontend`
+5. Install dependencies:
+   `npm install`
+6. run the project:
+   `npm start`
+7. Open a browser at : `http://localhost:3000`
 
 # Organization
 
