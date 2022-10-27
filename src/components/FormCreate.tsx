@@ -45,7 +45,7 @@ export default function FormUpdate({ endPoint, fields }: iProps) {
 
   return (
     <form className="form" onSubmit={onSubmit}>
-      <h2>Update information</h2>
+      <h2>New information</h2>
       <ListInput fields={fields} state={[form, setForm]} />
       <hr />
       <button className="button-gray">Create</button>
