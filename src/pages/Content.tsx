@@ -15,7 +15,7 @@ import { useState, useEffect } from "react";
 export default function Content() {
   // Global state
   const { code } = useParams();
-
+  const [tile, setTile] = useState("");
   // Local state
   const [status, setStatus] = useState(eStatus.LOADING);
   const [data, setData] = useState(new Array<iContent>());
@@ -35,6 +35,15 @@ export default function Content() {
   function onSuccess(data: iContent[]) {
     setData(data);
     setStatus(eStatus.READY);
+    if (code == "1") {
+      setTile("series");
+    }
+    if (code == "2") {
+      setTile("movies");
+    }
+    if (code == "3") {
+      setTile("documentaries");
+    }
   }
 
   function onFailure(error: string) {
@@ -51,7 +60,7 @@ export default function Content() {
     <div id="content">
       <NavigationBar />
       <header>
-        <h1>All our {code}</h1>
+        <h1>All our {tile}</h1>
       </header>
       <ContainerCards title="Titles avaialble" data={data} />
     </div>
